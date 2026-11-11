@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麻豆不打烊 - 影视短片在线观看合集</title>
+<meta name="description" content="麻豆不打烊聚焦麻豆传媒系列短片与影视作品，整理剧情短片、都市情感、悬疑短剧、演员专访与幕后花絮，按更新时间与题材分类呈现，适合喜欢短剧叙事与在线观影的观众查找。">
+<meta name="keywords" content="麻豆不打烊">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1b2e'/%3E%3Cpath d='M18 40V24l8 10 8-10v16' stroke='%23ff5a5f' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='46' cy='26' r='5' fill='%23ffc93c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --c-primary:#e8383d;
+  --c-primary-light:#fff1f1;
+  --c-primary-dark:#b21f28;
+  --c-accent:#f7b731;
+  --c-bg:#f7f6f4;
+  --c-panel:#ffffff;
+  --c-ink:#1d1c2b;
+  --c-ink-2:#4c4b60;
+  --c-ink-3:#8a889e;
+  --c-line:#e6e4e0;
+  --r-card:14px;
+  --r-btn:10px;
+  --r-tag:6px;
+  --r-banner:18px;
+  --sh:0 2px 10px rgba(29,28,43,.06);
+  --sh-hover:0 10px 26px rgba(29,28,43,.14);
+  --ann-h:38px;
+  --head-h:64px;
+  --maxw:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ann-h) + var(--head-h) + 12px)}
+body{
+  margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--c-bg);color:var(--c-ink);line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 12px}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font-family:inherit}
+
+/* 吸顶公告条 */
+.announce{
+  position:sticky;top:0;z-index:60;height:var(--ann-h);
+  background:linear-gradient(90deg,var(--c-primary-dark),var(--c-primary));
+  color:#fff;font-size:13px;display:flex;align-items:center;
+}
+.announce .wrap{
+  max-width:var(--maxw);margin:0 auto;width:100%;padding:0 20px;
+  display:flex;align-items:center;gap:18px;overflow:hidden;white-space:nowrap;
+}
+.announce .brand-chip{
+  font-weight:700;letter-spacing:.5px;background:rgba(255,255,255,.16);
+  padding:2px 10px;border-radius:20px;flex:none;
+}
+.announce .ticker{display:flex;gap:34px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 12px),transparent)}
+.announce .ticker span{display:inline-block;animation:slide 34s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.announce .ticker span{animation:none}}
+
+/* 页头 */
+.site-head{
+  position:sticky;top:var(--ann-h);z-index:55;height:var(--head-h);
+  background:rgba(255,255,255,.88);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--c-line);
+}
+.site-head .wrap{max-width:var(--maxw);margin:0 auto;width:100%;padding:0 20px;height:100%;display:flex;align-items:center;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px;flex:none}
+.logo svg{width:32px;height:32px;flex:none}
+.logo .dot{color:var(--c-primary)}
+.nav-main{display:flex;gap:6px;flex:1;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.nav-main::-webkit-scrollbar{display:none}
+.nav-main a{
+  padding:7px 13px;border-radius:var(--r-btn);font-size:14.5px;color:var(--c-ink-2);
+  white-space:nowrap;transition:.18s;
+}
+.nav-main a:hover,.nav-main a:focus-visible{background:var(--c-primary-light);color:var(--c-primary-dark);outline:none}
+.head-actions{display:flex;gap:8px;align-items:center;flex:none}
+.search-box{display:flex;align-items:center;border:1px solid var(--c-line);border-radius:20px;padding:4px 6px 4px 12px;background:#fff;transition:.2s}
+.search-box:focus-within{border-color:var(--c-primary);box-shadow:0 0 0 3px var(--c-primary-light)}
+.search-box input{border:none;outline:none;font-size:13.5px;width:150px;background:transparent;color:var(--c-ink)}
+.search-box button{border:none;background:var(--c-primary);color:#fff;border-radius:16px;padding:5px 12px;font-size:13px;cursor:pointer;transition:.2s}
+.search-box button:hover{background:var(--c-primary-dark)}
+.btn-ghost{padding:7px 14px;border-radius:var(--r-btn);font-size:13.5px;border:1px solid var(--c-line);background:#fff;color:var(--c-ink-2);cursor:pointer;transition:.2s}
+.btn-ghost:hover{border-color:var(--c-primary);color:var(--c-primary-dark);background:var(--c-primary-light)}
+.hamburger{display:none;background:none;border:none;font-size:22px;color:var(--c-ink);cursor:pointer;padding:6px;border-radius:8px}
+.hamburger:focus-visible{outline:2px solid var(--c-primary)}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  background:radial-gradient(1200px 500px at 85% -10%,#3a3355 0%,#1c1b2e 55%,#141320 100%);
+  color:#fff;
+}
+.hero .wrap{max-width:var(--maxw);margin:0 auto;padding:64px 20px 76px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(34px,5vw,56px);letter-spacing:2px;line-height:1.15;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--c-accent)}
+.hero p.desc{font-size:16px;color:#c9c6dd;max-width:520px;margin-bottom:26px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;background:var(--c-primary);color:#fff;
+  padding:11px 22px;border-radius:var(--r-btn);font-weight:600;font-size:15px;transition:.2s;
+}
+.btn-primary:hover{background:var(--c-primary-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(232,56,61,.35)}
+.btn-line{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.35);padding:11px 22px;border-radius:var(--r-btn);font-size:15px;color:#fff;transition:.2s}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.hero-stats{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
+.hero-stats div{font-size:13px;color:#a6a3bb}
+.hero-stats strong{display:block;font-size:22px;color:#fff;font-weight:700}
+.hero-visual{position:relative;height:340px}
+.hero-visual .card-float{
+  position:absolute;border-radius:16px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.12);background:#22213a;
+}
+.hero-visual .c1{width:200px;height:260px;top:10px;left:0;transform:rotate(-6deg);animation:floaty 7s ease-in-out infinite}
+.hero-visual .c2{width:170px;height:220px;top:60px;right:20px;transform:rotate(5deg);animation:floaty 8s ease-in-out infinite reverse}
+.hero-visual .c3{width:130px;height:130px;bottom:0;left:110px;transform:rotate(-2deg)}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(-6deg)}}
+@media (prefers-reduced-motion:reduce){.hero-visual .card-float{animation:none}}
+.hero-visual img{width:100%;height:100%;object-fit:cover}
+.hero-visual .tagline{
+  position:absolute;right:0;bottom:8px;background:var(--c-accent);color:#2b2200;
+  font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.5px;
+}
+
+/* 容器 */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.layout{display:grid;grid-template-columns:180px minmax(0,1fr) 260px;gap:28px;padding:38px 0 60px;align-items:start}
+
+/* 左侧频道索引 */
+.channel-index{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 20px)}
+.channel-index h3{font-size:12px;color:var(--c-ink-3);letter-spacing:2px;margin-bottom:12px;font-weight:600}
+.channel-index a{
+  display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;
+  font-size:14px;color:var(--c-ink-2);transition:.18s;margin-bottom:2px;
+}
+.channel-index a::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--c-line);transition:.18s}
+.channel-index a:hover,.channel-index a.active{background:var(--c-primary-light);color:var(--c-primary-dark);font-weight:600}
+.channel-index a:hover::before,.channel-index a.active::before{background:var(--c-primary)}
+
+/* 主栏 */
+.main-col{min-width:0}
+.section{margin-bottom:44px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.section-head h2{font-size:22px;letter-spacing:.5px}
+.section-head h2 span{color:var(--c-primary);font-size:14px;margin-left:10px;letter-spacing:0;font-weight:500}
+.section-head .more{font-size:13px;color:var(--c-ink-3);transition:.18s}
+.section-head .more:hover{color:var(--c-primary)}
+
+/* 概览 */
+.overview{
+  background:var(--c-panel);border-radius:var(--r-card);padding:26px 28px;box-shadow:var(--sh);
+  border-left:4px solid var(--c-primary);
+}
+.overview p{font-size:15px;color:var(--c-ink-2);margin-bottom:14px;line-height:1.9}
+.overview p:last-child{margin-bottom:0}
+.overview strong{color:var(--c-ink);font-weight:700}
+
+/* 卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{
+  background:var(--c-panel);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh);
+  transition:.22s;display:flex;flex-direction:column;
+}
+.card:hover{box-shadow:var(--sh-hover);transform:translateY(-3px)}
+.card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:#e9e7e2}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.card:hover .thumb img{transform:scale(1.04)}
+.card .badge{
+  position:absolute;top:10px;left:10px;background:rgba(20,19,32,.82);color:#fff;
+  font-size:11.5px;padding:3px 9px;border-radius:6px;backdrop-filter:blur(4px);
+}
+.card .heat{
+  position:absolute;bottom:10px;right:10px;background:var(--c-accent);color:#2b2200;
+  font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:6px;
+}
+.card .body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:15.5px;margin-bottom:8px;line-height:1.45}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
+.card .tags span{font-size:11.5px;background:var(--c-primary-light);color:var(--c-primary-dark);padding:2px 8px;border-radius:var(--r-tag)}
+.card .info{font-size:13px;color:var(--c-ink-3);margin-top:auto;line-height:1.6}
+
+/* 最新更新列表 */
+.update-list{background:var(--c-panel);border-radius:var(--r-card);box-shadow:var(--sh);overflow:hidden}
+.update-item{display:flex;gap:16px;padding:16px 22px;border-bottom:1px solid var(--c-line);transition:.18s;align-items:flex-start}
+.update-item:last-child{border-bottom:none}
+.update-item:hover{background:var(--c-primary-light)}
+.update-item .date{flex:none;width:64px;font-size:12.5px;color:var(--c-ink-3);font-variant-numeric:tabular-nums;padding-top:2px}
+.update-item .txt{flex:1;min-width:0}
+.update-item h4{font-size:15px;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.update-item .pill{font-size:11px;background:var(--c-primary);color:#fff;padding:1px 7px;border-radius:5px;font-weight:500}
+.update-item p{font-size:13.5px;color:var(--c-ink-2);margin:0;line-height:1.65}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.cat-item{
+  display:flex;flex-direction:column;gap:4px;padding:16px 16px;background:var(--c-panel);
+  border-radius:var(--r-card);box-shadow:var(--sh);transition:.2s;border:1px solid transparent;
+}
+.cat-item:hover{border-color:var(--c-primary);transform:translateY(-2px);box-shadow:var(--sh-hover)}
+.cat-item b{font-size:15px}
+.cat-item small{font-size:12px;color:var(--c-ink-3);line-height:1.5}
+
+/* 深度解析 */
+.deep{
+  background:var(--c-panel);border-radius:var(--r-card);padding:30px 32px;box-shadow:var(--sh);
+}
+.deep h3{font-size:18px;margin:26px 0 10px;padding-left:12px;border-left:4px solid var(--c-primary);line-height:1.4}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:15px;color:var(--c-ink-2);line-height:1.95;margin-bottom:14px}
+.deep ul{margin:6px 0 16px;padding-left:0}
+.deep ul li{font-size:14.5px;color:var(--c-ink-2);line-height:1.85;padding-left:18px;position:relative;margin-bottom:8px}
+.deep ul li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:2px;background:var(--c-primary);transform:rotate(45deg)}
+.deep .quote{
+  background:var(--c-primary-light);border-radius:10px;padding:14px 18px;font-size:14px;
+  color:var(--c-primary-dark);margin:14px 0;border-left:3px solid var(--c-primary);
+}
+.check-table{margin:14px 0 18px;border-radius:10px;overflow:hidden;border:1px solid var(--c-line)}
+.check-table .row{display:grid;grid-template-columns:1.2fr 1fr 1fr;font-size:13.5px}
+.check-table .row>div{padding:10px 14px;border-bottom:1px solid var(--c-line);line-height:1.6}
+.check-table .row.head>div{background:#faf9f7;font-weight:700;color:var(--c-ink);font-size:13px}
+.check-table .row:last-child>div{border-bottom:none}
+.check-table .row>div:not(:last-child){border-right:1px solid var(--c-line)}
+
+/* 消费路径 */
+.path-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.path-item{background:var(--c-panel);border-radius:var(--r-card);padding:20px;box-shadow:var(--sh);position:relative;transition:.2s}
+.path-item:hover{box-shadow:var(--sh-hover);transform:translateY(-2px)}
+.path-item .num{
+  font-size:26px;font-weight:800;color:var(--c-primary-light);
+  -webkit-text-stroke:1.5px var(--c-primary);line-height:1;margin-bottom:10px;
+}
+.path-item h4{font-size:15px;margin-bottom:8px}
+.path-item p{font-size:13.5px;color:var(--c-ink-2);margin:0;line-height:1.7}
+
+/* FAQ */
+.faq{background:var(--c-panel);border-radius:var(--r-card);box-shadow:var(--sh);overflow:hidden}
+.faq details{border-bottom:1px solid var(--c-line)}
+.faq details:last-child{border-bottom:none}
+.faq summary{
+  list-style:none;cursor:pointer;padding:16px 22px;font-size:15px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;transition:.18s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{background:var(--c-primary-light);color:var(--c-primary-dark)}
+.faq summary::after{content:"+";font-size:20px;color:var(--c-primary);font-weight:400;transition:.2s;flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq details[open] summary{background:var(--c-primary-light);color:var(--c-primary-dark)}
+.faq .ans{padding:0 22px 18px;font-size:14px;color:var(--c-ink-2);line-height:1.85}
+
+/* 评论 */
+.comments{background:var(--c-panel);border-radius:var(--r-card);padding:24px;box-shadow:var(--sh)}
+.comments .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.comment{background:#faf9f7;border-radius:10px;padding:14px 16px;transition:.2s;border:1px solid transparent}
+.comment:hover{border-color:var(--c-line);background:#fff;box-shadow:var(--sh)}
+.comment .u{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.comment .avatar{
+  width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--c-primary),var(--c-accent));
+  color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700;flex:none;
+}
+.comment .name{font-size:13px;font-weight:700;color:var(--c-ink)}
+.comment .time{margin-left:auto;font-size:11.5px;color:var(--c-ink-3)}
+.comment p{font-size:13.5px;color:var(--c-ink-2);margin:0;line-height:1.7}
+
+/* 资讯 */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.news{background:var(--c-panel);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh);transition:.2s;display:flex;flex-direction:column}
+.news:hover{box-shadow:var(--sh-hover);transform:translateY(-2px)}
+.news img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.news .nb{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.news .nd{font-size:12px;color:var(--c-ink-3);margin-bottom:6px}
+.news h4{font-size:15px;margin-bottom:8px;line-height:1.45}
+.news p{font-size:13px;color:var(--c-ink-2);margin:0;line-height:1.7}
+
+/* 相关推荐 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:10px}
+.rec-tags a{
+  font-size:13.5px;padding:8px 16px;background:var(--c-panel);border-radius:20px;
+  box-shadow:var(--sh);transition:.2s;border:1px solid var(--c-line);
+}
+.rec-tags a:hover{background:var(--c-primary);color:#fff;border-color:var(--c-primary);transform:translateY(-2px)}
+
+/* 热门榜 */
+.rank{background:var(--c-panel);border-radius:var(--r-card);box-shadow:var(--sh);overflow:hidden}
+.rank-item{display:flex;gap:14px;padding:14px 20px;border-bottom:1px solid var(--c-line);align-items:center;transition:.18s}
+.rank-item:last-child{border-bottom:none}
+.rank-item:hover{background:var(--c-primary-light)}
+.rank-item .no{
+  font-size:18px;font-weight:800;color:var(--c-ink-3);width:28px;text-align:center;flex:none;
+  font-variant-numeric:tabular-nums;
+}
+.rank-item:nth-child(1) .no{color:var(--c-primary)}
+.rank-item:nth-child(2) .no{color:#f7873c}
+.rank-item:nth-child(3) .no{color:#e2a91d}
+.rank-item .rt{flex:1;min-width:0}
+.rank-item h4{font-size:14.5px;margin-bottom:2px}
+.rank-item small{font-size:12px;color:var(--c-ink-3)}
+.rank-item .score{font-size:13px;color:var(--c-primary);font-weight:700;flex:none}
+
+/* 互动区 */
+.interact{
+  background:linear-gradient(135deg,#fff1f1,#fff8e8);border-radius:var(--r-banner);
+  padding:26px 28px;border:1px solid #ffe0c0;
+}
+.interact h2{font-size:21px;margin-bottom:8px}
+.interact p{font-size:14px;color:var(--c-ink-2);margin-bottom:18px;max-width:640px}
+.interact .actions{display:flex;gap:12px;flex-wrap:wrap}
+.interact .actions .btn-primary{background:var(--c-primary)}
+.interact .actions .btn-ghost{background:#fff}
+
+/* 右侧栏 */
+.side-col{display:flex;flex-direction:column;gap:22px;position:sticky;top:calc(var(--ann-h) + var(--head-h) + 20px)}
+.side-card{background:var(--c-panel);border-radius:var(--r-card);padding:20px;box-shadow:var(--sh)}
+.side-card h3{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.side-card h3::before{content:"";width:4px;height:16px;background:var(--c-primary);border-radius:2px}
+.hot-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--c-line);align-items:baseline}
+.hot-list li:last-child{border-bottom:none}
+.hot-list .idx{font-size:12px;font-weight:800;color:var(--c-ink-3);width:18px;flex:none;font-style:italic}
+.hot-list li:nth-child(1) .idx,.hot-list li:nth-child(2) .idx,.hot-list li:nth-child(3) .idx{color:var(--c-primary)}
+.hot-list a{font-size:13.5px;line-height:1.5;transition:.18s;display:block}
+.hot-list a:hover{color:var(--c-primary-dark)}
+.hot-list small{display:block;font-size:11.5px;color:var(--c-ink-3);margin-top:2px}
+.side-card .mini-note{font-size:12.5px;color:var(--c-ink-3);line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid var(--c-line)}
+.sched li{display:flex;gap:10px;font-size:13px;padding:7px 0;color:var(--c-ink-2)}
+.sched .d{color:var(--c-primary);font-weight:700;flex:none;font-variant-numeric:tabular-nums}
+
+/* 页脚 */
+.site-foot{background:#1c1b2e;color:#b9b6cc;margin-top:20px;padding:50px 0 26px}
+.site-foot .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.foot-top{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:32px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand .logo{color:#fff;margin-bottom:14px}
+.foot-brand p{font-size:13.5px;line-height:1.8;color:#9693ad;max-width:360px}
+.foot-col h4{font-size:14px;color:#fff;margin-bottom:14px;font-weight:700}
+.foot-col a{display:block;font-size:13px;color:#9693ad;padding:5px 0;transition:.18s}
+.foot-col a:hover{color:var(--c-accent)}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:22px;font-size:12.5px;color:#7a7790;flex-wrap:wrap}
+.foot-bottom p{margin:0}
+.foot-bottom .disclaim{max-width:620px;line-height:1.7}
+
+/* 回顶 */
+.backtop{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--c-primary);color:#fff;border:none;font-size:18px;cursor:pointer;
+  box-shadow:0 6px 18px rgba(232,56,61,.4);opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:.25s;z-index:50;
+}
+.backtop.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.backtop:hover{background:var(--c-primary-dark)}
+
+/* 无结果 */
+.no-result{display:none;padding:30px;text-align:center;color:var(--c-ink-3);font-size:14px;background:var(--c-panel);border-radius:var(--r-card)}
+
+/* 遮罩 */
+.mask{display:none;position:fixed;inset:0;background:rgba(20,19,32,.5);z-index:70;backdrop-filter:blur(2px)}
+.mask.show{display:block}
+
+/* 响应式 */
+@media (max-width:1180px){
+  .layout{grid-template-columns:170px minmax(0,1fr)}
+  .side-col{display:none}
+}
+@media (max-width:1024px){
+  .hero .wrap{grid-template-columns:1fr;padding:48px 20px 56px}
+  .hero-visual{height:260px;max-width:460px}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .search-box input{width:110px}
+}
+@media (max-width:740px){
+  :root{--head-h:58px;--ann-h:34px}
+  .layout{grid-template-columns:1fr}
+  .channel-index{display:none}
+  .nav-main{
+    position:fixed;top:calc(var(--ann-h) + var(--head-h));left:0;right:0;bottom:0;
+    background:#fff;flex-direction:column;padding:18px;gap:4px;z-index:75;
+    transform:translateX(-100%);transition:transform .25s;overflow-y:auto;
+  }
+  .nav-main.open{transform:translateX(0)}
+  .nav-main a{padding:13px 16px;font-size:16px}
+  .hamburger{display:block}
+  .search-box{display:none}
+  .head-actions .btn-ghost{display:none}
+  .hero h1{font-size:34px}
+  .hero-stats{gap:18px}
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+  .card h3{font-size:14px}
+  .deep{padding:22px 20px}
+  .comments{padding:18px}
+  .cgrid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .check-table .row{grid-template-columns:1fr;font-size:13px}
+  .check-table .row>div:not(:last-child){border-right:none}
+  .check-table .row.head{display:none}
+  .update-item{padding:14px 16px;gap:10px}
+  .update-item .date{width:56px;font-size:11.5px}
+  .backtop{right:14px;bottom:18px;width:40px;height:40px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce" role="region" aria-label="站内公告">
+  <div class="wrap">
+    <span class="brand-chip">麻豆不打烊</span>
+    <div class="ticker">
+      <span>11月8日 · 《夜班便利店》第7集上线　|　11月7日 · 新增「都市情感」分类42部　|　11月6日 · 演员林晚专访《镜头外的三小时》发布　|　11月5日 · 悬疑短剧《第九个乘客》完结　|　11月8日 · 《夜班便利店》第7集上线　|　11月7日 · 新增「都市情感」分类42部　|　11月6日 · 演员林晚专访《镜头外的三小时》发布　|　11月5日 · 悬疑短剧《第九个乘客》完结</span>
+    </div>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="/#top" aria-label="麻豆不打烊首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1c1b2e"/><path d="M18 40V24l8 10 8-10v16" stroke="#e8383d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46" cy="26" r="5" fill="#f7b731"/></svg>
+      <span>麻豆不打烊<span class="dot">.</span></span>
+    </a>
+    <nav class="nav-main" id="navMain" aria-label="主导航">
+      <a href="/#overview">内容概览</a>
+      <a href="/#featured">精选片单</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">观影路径</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">观众评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#rank">人气榜</a>
+    </nav>
+    <div class="head-actions">
+      <form class="search-box" id="searchForm" role="search" aria-label="站内搜索">
+        <input type="search" id="searchInput" placeholder="搜片名 / 演员" aria-label="搜索片名或演员">
+        <button type="submit">查找</button>
+      </form>
+      <button class="btn-ghost" type="button" id="submitBtn">投稿</button>
+      <button class="hamburger" type="button" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="navMain">☰</button>
+    </div>
+  </div>
+</header>
+<div class="mask" id="mask"></div>
+
+<main id="top">
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>麻豆<em>不打烊</em></h1>
+      <p class="desc">汇集麻豆传媒出品的剧情短片、都市情感与悬疑短剧，按题材、演员与更新节奏排列。想看一集能讲完的故事，这里有完整的片目、演员表与幕后花絮。</p>
+      <div class="cta">
+        <a class="btn-primary" href="/#featured">浏览精选片单 →</a>
+        <a class="btn-line" href="/#updates">查看最新更新</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>486</strong>部短剧收录</div>
+        <div><strong>12</strong>个题材频道</div>
+        <div><strong>11.08</strong>今日更新</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="card-float c1"><img src="https://picsum.photos/seed/madou-night7/400/600" width="400" height="600" alt="《夜班便利店》第7集主视觉" loading="lazy"></div>
+      <div class="card-float c2"><img src="https://picsum.photos/seed/madou-passenger/400/600" width="400" height="600" alt="悬疑短剧《第九个乘客》封面" loading="lazy"></div>
+      <div class="card-float c3"><img src="https://picsum.photos/seed/madou-interview/400/400" width="400" height="400" alt="演员林晚专访拍摄现场" loading="lazy"></div>
+      <span class="tagline">今日上新 · 11.08</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+<div class="layout">
+
+  <!-- 左频道索引 -->
+  <aside class="channel-index" aria-label="频道索引">
+    <h3>频道索引</h3>
+    <a href="/#overview">内容概览</a>
+    <a href="/#featured">精选片单</a>
+    <a href="/#updates">最新更新</a>
+    <a href="/#categories">题材分类</a>
+    <a href="/#deep">深度解析</a>
+    <a href="/#guide">观影路径</a>
+    <a href="/#faq">常见问答</a>
+    <a href="/#comments">观众评论</a>
+    <a href="/#news">相关资讯</a>
+    <a href="/#rank">人气榜</a>
+    <a href="/#interact">投稿互动</a>
+  </aside>
+
+  <!-- 主内容 -->
+  <div class="main-col">
+
+    <!-- 概览 -->
+    <section class="section" id="overview">
+      <div class="section-head"><h2>短剧内容概览<span>剧情短片 · 都市情感 · 悬疑</span></h2></div>
+      <div class="overview">
+        <p>麻豆传媒出品的短剧形态大致分三类：<strong>单集完整叙事的剧情短片</strong>、<strong>8—15集连播的都市情感剧</strong>、<strong>偏推理与反转的悬疑短剧</strong>。前两类占目前片库的七成以上，单集时长多在12—25分钟，节奏比长剧快，靠对白和场景切换推进。</p>
+        <p>2026年下半年的内容重心明显向「夜班」「出租屋」「通勤」这类生活场景倾斜。《夜班便利店》从10月上线后连续四周位居站内播放前列，第7集在11月8日更新；悬疑线则以《第九个乘客》为代表，11月5日完结，共12集，结尾反转在观众讨论区引发大量复盘。</p>
+        <p>演员方面，<strong>林晚</strong>、<strong>陈默</strong>、<strong>周知夏</strong>是近期出镜频率较高的几位，其中林晚主演的《出租屋的第七天》与《夜班便利店》形成题材呼应。幕后内容也在扩充，11月6日发布的《镜头外的三小时》专访记录了林晚一场夜戏的完整拍摄流程。</p>
+        <p>如果只是偶尔想看一集，建议从「单集剧情」分类入手，优先挑评分与讨论量都靠前的条目；想追连载，关注「最新更新」里的连载标签即可。</p>
+      </div>
+    </section>
+
+    <!-- 精选推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head"><h2>精选片单<span>按题材与口碑挑选</span></h2><a class="more" href="/#rank">查看人气榜 →</a></div>
+      <div class="card-grid" id="cardGrid">
+        <article class="card" data-key="夜班便利店 都市 剧情 林晚">
+          <div class="thumb"><span class="badge">都市情感</span><span class="heat">热度 9.6</span><img src="https://picsum.photos/seed/madou-store7/400/300" width="400" height="300" alt="《夜班便利店》剧照：深夜收银台场景" loading="lazy"></div>
+          <div class="body"><h3>夜班便利店</h3><div class="tags"><span>连载中</span><span>林晚</span><span>深夜场景</span></div><p class="info">第7集11月8日更新。以24小时便利店为舞台，每集一位夜班顾客，靠几句对话交代一个完整故事。</p></div>
+        </article>
+        <article class="card" data-key="第九个乘客 悬疑 反转 陈默">
+          <div class="thumb"><span class="badge">悬疑短剧</span><span class="heat">评分 9.2</span><img src="https://picsum.photos/seed/madou-passenger2/400/300" width="400" height="300" alt="《第九个乘客》车厢对峙场景" loading="lazy"></div>
+          <div class="body"><h3>第九个乘客</h3><div class="tags"><span>已完结</span><span>12集</span><span>陈默</span></div><p class="info">11月5日完结。一辆夜班公交上八名乘客身份逐集揭晓，第九个座位始终空着，最后一集给出解释。</p></div>
+        </article>
+        <article class="card" data-key="出租屋的第七天 都市 林晚 合租">
+          <div class="thumb"><span class="badge">都市情感</span><span class="heat">热度 8.9</span><img src="https://picsum.photos/seed/madou-rent7/400/300" width="400" height="300" alt="《出租屋的第七天》合租客厅场景" loading="lazy"></div>
+          <div class="body"><h3>出租屋的第七天</h3><div class="tags"><span>已完结</span><span>8集</span><span>合租题材</span></div><p class="info">一对陌生合租者约定只共处七天，每集推进一天。台词密度高，冲突集中在厨房与客厅两个空间。</p></div>
+        </article>
+        <article class="card" data-key="电梯里的第三个人 悬疑 密室 周知夏">
+          <div class="thumb"><span class="badge">悬疑短剧</span><span class="heat">评分 8.7</span><img src="https://picsum.photos/seed/madou-elevator/400/300" width="400" height="300" alt="《电梯里的第三个人》电梯内景" loading="lazy"></div>
+          <div class="body"><h3>电梯里的第三个人</h3><div class="tags"><span>单集</span><span>密室</span><span>周知夏</span></div><p class="info">22分钟单集，两个人在故障电梯里等救援，第三个人的存在只通过声音与影子呈现，结尾留白。</p></div>
+        </article>
+        <article class="card" data-key="通勤四十分钟 都市 地铁 短剧">
+          <div class="thumb"><span class="badge">都市情感</span><span class="heat">热度 8.5</span><img src="https://picsum.photos/seed/madou-commute/400/300" width="400" height="300" alt="《通勤四十分钟》地铁站台场景" loading="lazy"></div>
+          <div class="body"><h3>通勤四十分钟</h3><div class="tags"><span>连载中</span><span>已更5集</span><span>地铁题材</span></div><p class="info">以固定通勤路线为线索，每集换一位同车乘客的视角，第5集开始两条人物线交汇。</p></div>
+        </article>
+        <article class="card" data-key="雨夜代驾 剧情 短片 陈默">
+          <div class="thumb"><span class="badge">剧情短片</span><span class="heat">评分 8.8</span><img src="https://picsum.photos/seed/madou-drive/400/300" width="400" height="300" alt="《雨夜代驾》雨夜车内视角" loading="lazy"></div>
+          <div class="body"><h3>雨夜代驾</h3><div class="tags"><span>单集</span><span>18分钟</span><span>陈默</span></div><p class="info">一位代驾司机在暴雨夜接了四单，每单乘客讲一段自己的事，第四单才点明司机自己的处境。</p></div>
+        </article>
+        <article class="card" data-key="楼下的早餐店 都市 温情 群像">
+          <div class="thumb"><span class="badge">都市情感</span><span class="heat">热度 8.3</span><img src="https://picsum.photos/seed/madou-breakfast/400/300" width="400" height="300" alt="《楼下的早餐店》早餐店内景" loading="lazy"></div>
+          <div class="body"><h3>楼下的早餐店</h3><div class="tags"><span>连载中</span><span>已更3集</span><span>群像</span></div><p class="info">早餐店老板娘与熟客的日常，每集用一份早点带出一个人的近况，节奏偏慢，适合当背景剧。</p></div>
+        </article>
+        <article class="card" data-key="凌晨三点的电话 悬疑 反转 周知夏">
+          <div class="thumb"><span class="badge">悬疑短剧</span><span class="heat">评分 8.6</span><img src="https://picsum.photos/seed/madou-phone/400/300" width="400" height="300" alt="《凌晨三点的电话》深夜卧室场景" loading="lazy"></div>
+          <div class="body"><h3>凌晨三点的电话</h3><div class="tags"><span>6集</span><span>已完结</span><span>时间循环</span></div><p class="info">同一个凌晨三点，同一通电话，六集里主角做了六种不同的应对，第6集才交代电话来源。</p></div>
+        </article>
+      </div>
+      <div class="no-result" id="noResult">没有找到匹配的片目，换个片名或演员名试试。</div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-head"><h2>最新更新<span>11月5日—11月8日</span></h2></div>
+      <div class="update-list">
+        <div class="update-item"><span class="date">11-08</span><div class="txt"><h4>《夜班便利店》第7集 <span class="pill">连载</span></h4><p>本集顾客是一位连续一周买同一种便当的中年男人，林晚饰演的店员第一次主动开口问原因。</p></div></div>
+        <div class="update-item"><span class="date">11-08</span><div class="txt"><h4>《通勤四十分钟》第5集 <span class="pill">连载</span></h4><p>两条人物线在地铁换乘通道交汇，此前四集各自独立的乘客故事开始互相引用。</p></div></div>
+        <div class="update-item"><span class="date">11-07</span><div class="txt"><h4>演员林晚专访《镜头外的三小时》上线</h4><p>记录一场夜戏从晚上十点到凌晨一点的完整拍摄过程，含两次NG与导演现场调整台词的段落。</p></div></div>
+        <div class="update-item"><span class="date">11-07</span><div class="txt"><h4>「都市情感」分类新增42部</h4><p>集中在2025—2026年出品的合租、通勤、夜班场景类短剧，分类页已按上线时间排序。</p></div></div>
+        <div class="update-item"><span class="date">11-06</span><div class="txt"><h4>《楼下的早餐店》第3集 <span class="pill">连载</span></h4><p>本集视角转向常客老郑，一份豆浆油条交代了他退休后的作息变化。</p></div></div>
+        <div class="update-item"><span class="date">11-05</span><div class="txt"><h4>《第九个乘客》第12集完结 <span class="pill">完结</span></h4><p>第九个座位的解释放在最后一集片尾，陈默饰演的司机身份与前十一集的线索对应。</p></div></div>
+        <div class="update-item"><span class="date">11-05</span><div class="txt"><h4>《凌晨三点的电话》全6集上线</h4><p>一次性放出全集，时间循环设定，每集对应主角的一种应对方式。</p></div></div>
+        <div class="update-item"><span class="date">11-04</span><div class="txt"><h4>《雨夜代驾》幕后花絮</h4><p>四单乘客的拍摄顺序与正片不同，花絮里能看到剪辑如何重排时间线。</p></div></div>
+        <div class="update-item"><span class="date">11-03</span><div class="txt"><h4>「悬疑短剧」分类页改版</h4><p>新增「单集反转」「多集解谜」两个筛选标签，可按集数区间过滤。</p></div></div>
+        <div class="update-item"><span class="date">11-02</span><div class="txt"><h4>《出租屋的第七天》导演解说音轨上线</h4><p>逐集讲解厨房与客厅两场戏的空间安排，第4集有一段关于关门声的处理说明。</p></div></div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head"><h2>题材分类<span>按场景与叙事类型</span></h2></div>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#featured"><b>都市情感</b><small>合租、通勤、夜班场景（142部）</small></a>
+        <a class="cat-item" href="/#featured"><b>悬疑短剧</b><small>单集反转与多集解谜（67部）</small></a>
+        <a class="cat-item" href="/#featured"><b>单集剧情</b><small>20分钟内讲完一个故事（118部）</small></a>
+        <a class="cat-item" href="/#featured"><b>深夜场景</b><small>便利店、代驾、夜班公交（54部）</small></a>
+        <a class="cat-item" href="/#featured"><b>合租题材</b><small>陌生人共处一室的关系推进（38部）</small></a>
+        <a class="cat-item" href="/#featured"><b>时间循环</b><small>同一时间点反复重来（21部）</small></a>
+        <a class="cat-item" href="/#featured"><b>演员专访</b><small>林晚、陈默、周知夏幕后（29条）</small></a>
+        <a class="cat-item" href="/#featured"><b>幕后花絮</b><small>拍摄顺序与剪辑对照（46条）</small></a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="section" id="deep">
+      <div class="section-head"><h2>短剧叙事深度解析<span>类型差异与判断依据</span></h2></div>
+      <div class="deep">
+        <p>短剧和长剧最大的区别不在时长，而在信息分配的方式。一集20分钟里，开头三分钟要交代人物处境，中段推进一次关系变化，结尾给出一个可独立的收束点。这个结构决定了哪些内容适合做短剧，哪些做了会显得仓促。</p>
+
+        <h3>单集叙事与连载叙事的取舍</h3>
+        <p>《雨夜代驾》是单集叙事的典型：四个乘客、四段对话、一次身份揭示，18分钟内完成，不依赖前情。这类结构的优势是任何一集都能独立观看，劣势是人物难以积累。相比之下，《夜班便利店》选择连载，每集一位顾客，但店员与便利店本身是固定线索，观众追的是「这家店还会遇到谁」。</p>
+        <p>判断一部短剧该做单集还是连载，看它有没有一个能反复使用的固定场景。《电梯里的第三个人》只有一个电梯间，做连载会很快耗尽观众耐心，做单集刚好。反例是部分合租题材，8集都在同一个客厅推进，到第5集就开始重复冲突。</p>
+
+        <h3>悬疑短剧的线索密度问题</h3>
+        <p>《第九个乘客》12集，前六集每集抛出一个乘客的背景，第七集开始回收。它的线索密度大致是每集2—3条有效信息，其中至少一条在后续被证伪。这种「给一条、撤一条」的节奏是悬疑短剧的常见做法，但撤得太频繁会让观众放弃推理。</p>
+        <p>《凌晨三点的电话》选择了另一种做法：六集里每集给出一种应对方式，等于六条平行线索，最后只解释其中一条的来源。观众讨论区里对第6集的评价分歧较大，有人认为留白处理得当，有人认为前五集的铺垫没有被完整回收。两种看法都成立，取决于观众把这部剧当成解谜还是当成氛围片。</p>
+
+        <h3>夜班场景为什么反复出现</h3>
+        <p>2026年下半年至少有14部短剧把主要场景设在夜间营业的场所：便利店、代驾、夜班公交、24小时早餐店。这类场景的好处是人物流动性高，陌生人之间的短对话有天然合理性，不需要额外解释「他们为什么认识」。</p>
+        <p>代价是场景本身容易脸谱化。便利店的冷柜、收银台、门口的塑料凳，几乎每部剧都会用到，观众看多了会产生既视感。<strong>《夜班便利店》第7集</strong>的处理是把镜头更多给到顾客手里的商品，用买什么、买几次来交代人物，而不是靠台词直接说。</p>
+
+        <h3>如何核对一部短剧的制作信息</h3>
+        <p>判断一部短剧的完成度，可以按下面三项逐条核对，缺一项就要打折看：</p>
+        <div class="check-table">
+          <div class="row head"><div>核对项</div><div>可查位置</div><div>缺失时的信号</div></div>
+          <div class="row"><div>完整演职员表</div><div>条目页底部</div><div>只列主演，配角无名</div></div>
+          <div class="row"><div>分集时长与集数</div><div>条目页信息栏</div><div>只写「多集」，无具体数字</div></div>
+          <div class="row"><div>上线与完结日期</div><div>更新列表</div><div>日期与更新记录对不上</div></div>
+        </div>
+        <p>三项齐全的条目，通常制作流程相对完整；缺演职员表的，多半是早期试水作品，表演与剪辑稳定性会差一些。这个判断方法不绝对，但能过滤掉大部分信息不全的条目。</p>
+        <div class="quote">一个可被反驳的判断：短剧的集数越少，单集的信息密度要求越高；12集以上的连载，允许有1—2集用于铺垫，8集以内基本没有这个空间。</div>
+      </div>
+    </section>
+
+    <!-- 观影路径 -->
+    <section class="section" id="guide">
+      <div class="section-head"><h2>观影路径<span>从哪部开始、怎么比较</span></h2></div>
+      <div class="path-grid">
+        <div class="path-item"><div class="num">01</div><h4>先定时间预算</h4><p>只有20分钟，直接进「单集剧情」，挑《雨夜代驾》《电梯里的第三个人》这类一集完结的。有整晚时间再考虑连载。</p></div>
+        <div class="path-item"><div class="num">02</div><h4>按场景偏好筛</h4><p>喜欢密闭空间看《电梯里的第三个人》，喜欢流动人群看《夜班便利店》，喜欢固定关系推进看《出租屋的第七天》。</p></div>
+        <div class="path-item"><div class="num">03</div><h4>看前两集定去留</h4><p>连载剧前两集如果还没建立固定场景或核心悬念，后面大概率靠重复冲突撑集数，可以放弃。</p></div>
+        <div class="path-item"><div class="num">04</div><h4>比较同题材条目</h4><p>同为合租题材，《出租屋的第七天》用七天倒计时制造压力，多数同类条目只是日常堆叠，差别在有没有明确的时间边界。</p></div>
+        <div class="path-item"><div class="num">05</div><h4>留意完结标记</h4><p>悬疑短剧优先选已完结的，未完结的条目在等更期间容易忘记前情线索，复盘成本高。</p></div>
+        <div class="path-item"><div class="num">06</div><h4>花絮可作补充</h4><p>正片看完再去看幕后，能对上拍摄顺序与剪辑顺序的差异，《雨夜代驾》的花絮尤其明显。</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head"><h2>常见问答<span>关于片目与观看</span></h2></div>
+      <div class="faq">
+        <details>
+          <summary>《夜班便利店》一共多少集，现在更新到哪了？</summary>
+          <div class="ans">计划16集，11月8日更新到第7集。前6集各自独立，第7集开始店员与常客的关系出现连续线索，建议从第5集往后连着看。</div>
+        </details>
+        <details>
+          <summary>《第九个乘客》的结尾到底怎么解释第九个座位？</summary>
+          <div class="ans">第12集片尾用一段不到两分钟的镜头交代，第九个座位对应的是司机陈默在前几集里反复提到的那位旧乘客。前面第3集和第8集各有一次铺垫，回看时能对上。</div>
+        </details>
+        <details>
+          <summary>单集剧情和连载短剧，哪个更值得先看？</summary>
+          <div class="ans">单集剧情适合试水，20分钟内能判断自己是否接受这种叙事节奏；连载短剧的人物关系更完整，但需要连续投入。《雨夜代驾》和《夜班便利店》分别代表两种，可以各看一集再决定。</div>
+        </details>
+        <details>
+          <summary>林晚近期主演了哪几部？</summary>
+          <div class="ans">《夜班便利店》（连载中）和《出租屋的第七天》（已完结，8集）是近期两部主要作品，另有11月6日上线的专访《镜头外的三小时》记录她的夜戏拍摄过程。</div>
+        </details>
+        <details>
+          <summary>悬疑短剧为什么大多选择12集左右的篇幅？</summary>
+          <div class="ans">12集大致对应一个「抛线索—证伪—回收」的完整周期，前六集铺陈、后六集回收，每集2—3条有效信息，再多就容易失控。《凌晨三点的电话》只做6集，是另一种压缩做法，代价是部分线索不做回收。</div>
+        </details>
+        <details>
+          <summary>短剧的评分和热度分别代表什么？</summary>
+          <div class="ans">评分来自观看后的打分，反映完成度；热度按近七天播放与讨论量计算，反映当下关注度。两者经常不一致，比如《楼下的早餐店》热度8.3但评分偏低，属于看的人多、评价分化的情况。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 评论 -->
+    <section class="section" id="comments">
+      <div class="section-head"><h2>观众评论<span>关于具体条目</span></h2></div>
+      <div class="comments">
+        <div class="cgrid">
+          <div class="comment"><div class="u"><span class="avatar">阿</span><span class="name">阿哲不加班</span><span class="time">11-08</span></div><p>《夜班便利店》第7集那个买便当的男人，前面几集其实出现过一次，就是第2集结尾排队那个，回头翻才看到。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">南</span><span class="name">南瓜粥少糖</span><span class="time">11-08</span></div><p>《第九个乘客》第12集看完有点空，前面十一集攒的劲，最后两分钟就交代完了，节奏太快。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">林</span><span class="name">林间有雾</span><span class="time">11-08</span></div><p>《出租屋的第七天》厨房那场戏台词太满了，两个人一直在说，反而没有沉默的时候。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">陈</span><span class="name">陈年旧铁盒</span><span class="time">11-07</span></div><p>《雨夜代驾》18分钟四单，第三单那个乘客讲的事最戳我，结果后面没再提，有点可惜。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">小</span><span class="name">小满今天早睡</span><span class="time">11-07</span></div><p>《凌晨三点的电话》第6集那个解释我接受，前面五集就是五种如果，人生哪有那么多如果。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">电</span><span class="name">电梯里发呆</span><span class="time">11-07</span></div><p>《电梯里的第三个人》只有22分钟但一点都不赶，最后那个影子我看了两遍才对上前面的一句台词。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">周</span><span class="name">周末不想动</span><span class="time">11-06</span></div><p>林晚那场夜戏的专访看了，NG两次其实不多，导演现场改台词那段挺有意思。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">通</span><span class="name">通勤四十分</span><span class="time">11-06</span></div><p>《通勤四十分钟》第5集两条线交汇那段剪辑有点跳，前一秒还在站台，下一秒直接到换乘通道了。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">豆</span><span class="name">豆角焖面</span><span class="time">11-05</span></div><p>《楼下的早餐店》节奏真的慢，我是当背景音放的，第3集老郑那段还行，其他就那样。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">半</span><span class="name">半杯冰美式</span><span class="time">11-05</span></div><p>悬疑短剧现在就爱搞第十二集反转，其实前八集就能猜到个大概，剩下的靠剪辑吊着。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">今</span><span class="name">今天也在等更</span><span class="time">11-04</span></div><p>有没有人觉得《夜班便利店》的店内布景换过一次，第4集之后冷柜位置不对了。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">路</span><span class="name">路灯下的猫</span><span class="time">11-04</span></div><p>陈默在《雨夜代驾》里话不多，比《第九个乘客》里那个司机演得自然，可能是台词少的原因。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">三</span><span class="name">三点半醒着</span><span class="time">11-03</span></div><p>《凌晨三点的电话》第2集的应对方式最合理，其他几种多少有点强行。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">不</span><span class="name">不吃香菜</span><span class="time">11-03</span></div><p>最近睡眠不好，半夜看这些夜班题材反而更精神了，不太适合我。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">一</span><span class="name">一只闷葫芦</span><span class="time">11-02</span></div><p>《出租屋的第七天》结尾那个关门声，导演解说里专门讲过，回听确实处理得干净。</p></div>
+          <div class="comment"><div class="u"><span class="avatar">小</span><span class="name">小陈爱看片</span><span class="time">11-02</span></div><p>《第九个乘客》第3集那段广播词和第8集重复了，不知道是不是故意的。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 资讯 -->
+    <section class="section" id="news">
+      <div class="section-head"><h2>相关资讯<span>11月2日—11月8日</span></h2></div>
+      <div class="news-grid">
+        <article class="news">
+          <img src="https://picsum.photos/seed/madou-news-store/600/400" width="600" height="400" alt="《夜班便利店》片场夜戏拍摄" loading="lazy">
+          <div class="nb"><div class="nd">11-08</div><h4>《夜班便利店》第7集上线，常客线开始收束</h4><p>本集之后剩余9集，剧组在11月6日的看片会上确认第10集有角色身份转折，具体细节未公开。</p></div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/madou-news-passenger/600/400" width="600" height="400" alt="《第九个乘客》完结海报" loading="lazy">
+          <div class="nb"><div class="nd">11-05</div><h4>《第九个乘客》12集完结，片尾解释引发复盘讨论</h4><p>完结当晚讨论区新增复盘帖超过300条，其中约四成集中在第3集与第8集的广播词重复问题。</p></div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/madou-news-interview/600/400" width="600" height="400" alt="林晚专访拍摄现场灯光布置" loading="lazy">
+          <div class="nb"><div class="nd">11-06</div><h4>林晚专访《镜头外的三小时》发布，记录一场夜戏全流程</h4><p>片长28分钟，从晚上10点开拍到凌晨1点收工，含两次NG与一次导演现场改词，台词调整内容在片中有完整呈现。</p></div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/madou-news-commute/600/400" width="600" height="400" alt="《通勤四十分钟》地铁换乘通道取景" loading="lazy">
+          <div class="nb"><div class="nd">11-03</div><h4>《通勤四十分钟》确认延长至10集</h4><p>原计划8集，因第5集两条人物线交汇后反响较好，制作方在11月3日确认追加2集，预计12月中旬上线。</p></div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/madou-news-category/600/400" width="600" height="400" alt="悬疑短剧分类页筛选界面" loading="lazy">
+          <div class="nb"><div class="nd">11-03</div><h4>悬疑短剧分类新增两个筛选标签</h4><p>新增「单集反转」与「多集解谜」，支持按集数区间过滤，目前标签下分别收录31部和36部。</p></div>
+        </article>
+        <article class="news">
+          <img src="https://picsum.photos/seed/madou-news-breakfast/600/400" width="600" height="400" alt="《楼下的早餐店》店内布景" loading="lazy">
+          <div class="nb"><div class="nd">11-02</div><h4>《楼下的早餐店》更新节奏调整为每周一集</h4><p>此前为每两周更新一集，11月2日制作方确认改为每周更新，第4集定于11月9日上线。</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="section" id="recommend">
+      <div class="section-head"><h2>相关推荐<span>具体方向与条目</span></h2></div>
+      <div class="rec-tags">
+        <a href="/#featured">夜班便利店 第7集解析</a>
+        <a href="/#featured">第九个乘客 片尾镜头</a>
+        <a href="/#featured">林晚 夜戏专访</a>
+        <a href="/#featured">出租屋的第七天 关门声处理</a>
+        <a href="/#featured">雨夜代驾 四单乘客顺序</a>
+        <a href="/#featured">凌晨三点的电话 六种应对</a>
+        <a href="/#featured">通勤四十分钟 双线交汇</a>
+        <a href="/#featured">悬疑短剧 集数选择</a>
+      </div>
+    </section>
+
+    <!-- 人气榜 -->
+    <section class="section" id="rank">
+      <div class="section-head"><h2>本周人气榜<span>11月1日—11月8日播放与讨论</span></h2></div>
+      <div class="rank">
+        <div class="rank-item"><span class="no">1</span><div class="rt"><h4>夜班便利店</h4><small>连载中 · 第7集 · 都市情感</small></div><span class="score">9.6</span></div>
+        <div class="rank-item"><span class="no">2</span><div class="rt"><h4>第九个乘客</h4><small>已完结 · 12集 · 悬疑短剧</small></div><span class="score">9.2</span></div>
+        <div class="rank-item"><span class="no">3</span><div class="rt"><h4>出租屋的第七天</h4><small>已完结 · 8集 · 都市情感</small></div><span class="score">8.9</span></div>
+        <div class="rank-item"><span class="no">4</span><div class="rt"><h4>雨夜代驾</h4><small>单集 · 18分钟 · 剧情短片</small></div><span class="score">8.8</span></div>
+        <div class="rank-item"><span class="no">5</span><div class="rt"><h4>电梯里的第三个人</h4><small>单集 · 22分钟 · 悬疑短剧</small></div><span class="score">8.7</span></div>
+        <div class="rank-item"><span class="no">6</span><div class="rt"><h4>凌晨三点的电话</h4><small>已完结 · 6集 · 时间循环</small></div><span class="score">8.6</span></div>
+        <div class="rank-item"><span class="no">7</span><div class="rt"><h4>通勤四十分钟</h4><small>连载中 · 第5集 · 都市情感</small></div><span class="score">8.5</span></div>
+        <div class="rank-item"><span class="no">8</span><div class="rt"><h4>楼下的早餐店</h4><small>连载中 · 第3集 · 群像</small></div><span class="score">8.3</span></div>
+      </div>
+    </section>
+
+    <!-- 互动 -->
+    <section class="section" id="interact">
+      <div class="interact">
+        <h2>投稿与交流</h2>
+        <p>有想推荐的单集、发现片目信息有误，或者想写一篇关于某部短剧的观后复盘，都可以投稿。稿件通过后会放在「观众评论」与「相关推荐」里。</p>
+        <div class="actions">
+          <button class="btn-primary" type="button" id="submitArticle">投稿一篇观后复盘</button>
+          <a class="btn-ghost" href="/#comments">看看别人在聊什么</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 右侧栏 -->
+  <aside class="side-col" aria-label="辅助栏">
+    <div class="side-card">
+      <h3>今日热榜</h3>
+      <ul class="hot-list">
+        <li><span class="idx">1</span><div><a href="/#featured">夜班便利店 第7集</a><small>11-08 更新</small></div></li>
+        <li><span class="idx">2</span><div><a href="/#featured">第九个乘客 第12集</a><small>11-05 完结</small></div></li>
+        <li><span class="idx">3</span><div><a href="/#featured">出租屋的第七天</a><small>8集全</small></div></li>
+        <li><span class="idx">4</span><div><a href="/#featured">雨夜代驾</a><small>单集 18分钟</small></div></li>
+        <li><span class="idx">5</span><div><a href="/#featured">通勤四十分钟 第5集</a><small>11-08 更新</small></div></li>
+        <li><span class="idx">6</span><div><a href="/#featured">凌晨三点的电话</a><small>6集全</small></div></li>
+      </ul>
+      <div class="mini-note">热榜按近七天播放与讨论量排序，每日零点更新。</div>
+    </div>
+    <div class="side-card">
+      <h3>近期更新日历</h3>
+      <ul class="sched">
+        <li><span class="d">11-09</span><span>《楼下的早餐店》第4集</span></li>
+        <li><span class="d">11-10</span><span>《夜班便利店》第8集</span></li>
+        <li><span class="d">11-12</span><span>陈默专访上线</span></li>
+        <li><span class="d">11-15</span><span>《通勤四十分钟》第6集</span></li>
+        <li><span class="d">12月中</span><span>《通勤四十分钟》追加2集</span></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h3>题材速查</h3>
+      <div class="rec-tags">
+        <a href="/#categories">都市情感</a>
+        <a href="/#categories">悬疑短剧</a>
+        <a href="/#categories">单集剧情</a>
+        <a href="/#categories">深夜场景</a>
+        <a href="/#categories">合租题材</a>
+        <a href="/#categories">时间循环</a>
+        <a href="/#categories">演员专访</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+</div>
+</main>
+
+<!-- 页脚 -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2e2c44"/><path d="M18 40V24l8 10 8-10v16" stroke="#e8383d" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46" cy="26" r="5" fill="#f7b731"/></svg>
+          <span>麻豆不打烊</span>
+        </div>
+        <p>收录2023—2026年出品的短剧486部，其中单集剧情118部、连载短剧271部、演员专访与幕后花絮97条。片目每工作日更新，连载剧按制作方排期同步上线，完结条目保留完整分集与演职员表。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容频道</h4>
+        <a href="/#featured">精选片单</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">题材分类</a>
+        <a href="/#rank">人气榜</a>
+      </div>
+      <div class="foot-col">
+        <h4>了解与参与</h4>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观影路径</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#interact">投稿交流</a>
+      </div>
+      <div class="foot-col">
+        <h4>近期动态</h4>
+        <a href="/#news">相关资讯</a>
+        <a href="/#comments">观众评论</a>
+        <a href="/#updates">11月更新记录</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="disclaim">站内片目名称、评分、热度、评论均为内容聚合示例数据，用于展示短剧条目的组织方式；具体作品信息以制作方发布为准。</p>
+      <p>© 2026 麻豆不打烊 · 内容示例页</p>
+    </div>
+  </div>
+</footer>
+
+<button class="backtop" id="backtop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var navMain=document.getElementById('navMain');
+  var hamburger=document.getElementById('hamburger');
+  var mask=document.getElementById('mask');
+  var backtop=document.getElementById('backtop');
+  var searchForm=document.getElementById('searchForm');
+  var searchInput=document.getElementById('searchInput');
+  var cardGrid=document.getElementById('cardGrid');
+  var noResult=document.getElementById('noResult');
+
+  function closeMenu(){
+    navMain.classList.remove('open');
+    mask.classList.remove('show');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','打开菜单');
+  }
+  function openMenu(){
+    navMain.classList.add('open');
+    mask.classList.add('show');
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.setAttribute('aria-label','关闭菜单');
+  }
+  hamburger.addEventListener('click',function(){
+    if(navMain.classList.contains('open')){closeMenu();}else{openMenu();}
+  });
+  mask.addEventListener('click',closeMenu);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){closeMenu();}
+  });
+  navMain.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){closeMenu();}
+  });
+
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>window.innerHeight*0.8){backtop.classList.add('show');}
+    else{backtop.classList.remove('show');}
+  },{passive:true});
+  backtop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var cards=cardGrid?Array.prototype.slice.call(cardGrid.querySelectorAll('.card')):[];
+  if(searchForm){
+    searchForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      var q=(searchInput.value||'').trim().toLowerCase();
+      if(!q){
+        cards.forEach(function(c){c.style.display='';});
+        noResult.style.display='none';
+        return;
+      }
+      var count=0;
+      cards.forEach(function(c){
+        var key=(c.getAttribute('data-key')||'')+' '+c.textContent.toLowerCase();
+        if(key.toLowerCase().indexOf(q)>-1){c.style.display='';count++;}
+        else{c.style.display='none';}
+      });
+      noResult.style.display=count===0?'block':'none';
+      if(count===0){document.getElementById('featured').scrollIntoView({behavior:'smooth'});}
+    });
+  }
+
+  var submitBtn=document.getElementById('submitBtn');
+  var submitArticle=document.getElementById('submitArticle');
+  function toInteract(){
+    var el=document.getElementById('interact');
+    if(el){el.scrollIntoView({behavior:'smooth'});}
+  }
+  if(submitBtn){submitBtn.addEventListener('click',toInteract);}
+  if(submitArticle){submitArticle.addEventListener('click',toInteract);}
+
+  var sections=Array.prototype.slice.call(document.querySelectorAll('main .section[id]'));
+  var sideLinks=Array.prototype.slice.call(document.querySelectorAll('.channel-index a'));
+  if('IntersectionObserver' in window && sections.length){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id=en.target.id;
+          sideLinks.forEach(function(a){
+            a.classList.toggle('active',a.getAttribute('href')==='/# '+id || a.getAttribute('href')==='/' + '#' + id || a.getAttribute('href').indexOf('#'+id)>-1);
+          });
+        }
+      });
+    },{rootMargin:'-120px 0px -70% 0px'});
+    sections.forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"麻豆不打烊",
+  "description":"汇集麻豆传媒出品的剧情短片、都市情感与悬疑短剧，按题材、演员与更新节奏排列，提供完整片目、演员表与幕后花絮。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"《夜班便利店》一共多少集，现在更新到哪了？","acceptedAnswer":{"@type":"Answer","text":"计划16集，11月8日更新到第7集。前6集各自独立，第7集开始店员与常客的关系出现连续线索，建议从第5集往后连着看。"}},
+    {"@type":"Question","name":"《第九个乘客》的结尾到底怎么解释第九个座位？","acceptedAnswer":{"@type":"Answer","text":"第12集片尾用一段不到两分钟的镜头交代，第九个座位对应的是司机陈默在前几集里反复提到的那位旧乘客。前面第3集和第8集各有一次铺垫，回看时能对上。"}},
+    {"@type":"Question","name":"单集剧情和连载短剧，哪个更值得先看？","acceptedAnswer":{"@type":"Answer","text":"单集剧情适合试水，20分钟内能判断自己是否接受这种叙事节奏；连载短剧的人物关系更完整，但需要连续投入。《雨夜代驾》和《夜班便利店》分别代表两种，可以各看一集再决定。"}},
+    {"@type":"Question","name":"林晚近期主演了哪几部？","acceptedAnswer":{"@type":"Answer","text":"《夜班便利店》（连载中）和《出租屋的第七天》（已完结，8集）是近期两部主要作品，另有11月6日上线的专访《镜头外的三小时》记录她的夜戏拍摄过程。"}},
+    {"@type":"Question","name":"悬疑短剧为什么大多选择12集左右的篇幅？","acceptedAnswer":{"@type":"Answer","text":"12集大致对应一个「抛线索—证伪—回收」的完整周期，前六集铺陈、后六集回收，每集2—3条有效信息，再多就容易失控。《凌晨三点的电话》只做6集，是另一种压缩做法，代价是部分线索不做回收。"}},
+    {"@type":"Question","name":"短剧的评分和热度分别代表什么？","acceptedAnswer":{"@type":"Answer","text":"评分来自观看后的打分，反映完成度；热度按近七天播放与讨论量计算，反映当下关注度。两者经常不一致，比如《楼下的早餐店》热度8.3但评分偏低，属于看的人多、评价分化的情况。"}}
+  ]
+}
+</script>
+</body>
+                                             </html>
