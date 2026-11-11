@@ -1,0 +1,2275 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>白袜女生 - 穿搭风格与日常分享</title>
+  <meta name="description" content="白袜女生主题内容聚合，涵盖白袜穿搭搭配、风格解析、鞋袜组合、护理收纳、社区投稿与真实体验分享，适合喜欢白袜造型与日常搭配的读者浏览。">
+  <meta name="keywords" content="白袜女生">
+  <style>
+    :root {
+      --primary: #b8a9c9;
+      --primary-light: #e6e0ee;
+      --primary-dark: #8e7a9e;
+      --bg: #faf8fc;
+      --surface: #ffffff;
+      --text-primary: #2e2a33;
+      --text-secondary: #6b6572;
+      --text-tertiary: #9b95a3;
+      --border: #e8e2ef;
+      --radius-card: 16px;
+      --radius-btn: 24px;
+      --radius-tag: 12px;
+      --shadow-default: 0 2px 12px rgba(142, 122, 158, 0.06);
+      --shadow-hover: 0 8px 24px rgba(142, 122, 158, 0.12);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    /* === 吸顶公告条 === */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(90deg, #f3eef8, #ece4f3);
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .announce-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .announce-brand {
+      font-weight: 600;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .announce-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .announce-item .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    /* === 吸顶页头 === */
+    .site-header {
+      position: sticky;
+      top: 37px;
+      z-index: 99;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 64px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -1px;
+    }
+
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.5px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .main-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .main-nav a {
+      padding: 6px 14px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 6px 14px;
+      gap: 8px;
+    }
+
+    .search-box input {
+      border: none;
+      background: none;
+      font-size: 13px;
+      color: var(--text-primary);
+      outline: none;
+      width: 140px;
+      font-family: var(--font);
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .search-box button {
+      border: none;
+      background: none;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      font-size: 14px;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .search-box button:hover {
+      color: var(--primary-dark);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--text-primary);
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+    }
+
+    /* === 首屏 === */
+    .hero {
+      background: linear-gradient(135deg, #f5f0fa 0%, #faf8fc 50%, #f0eaf6 100%);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 56px 24px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 28px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 28px;
+      background: transparent;
+      color: var(--primary-dark);
+      border: 1.5px solid var(--primary);
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-svg-wrap {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* === 主内容三栏布局 === */
+    .main-layout {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .channel-sidebar h3 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      padding-left: 12px;
+    }
+
+    .channel-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .channel-link:hover,
+    .channel-link.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    .channel-link .ch-icon {
+      width: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* 中主内容 */
+    .main-content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    /* 右辅助栏 */
+    .aux-sidebar {
+      position: sticky;
+      top: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+    }
+
+    .sidebar-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+    }
+
+    .hot-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hot-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+
+    .hot-item:hover {
+      color: var(--primary-dark);
+    }
+
+    .hot-rank {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text-tertiary);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .hot-rank.top {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .update-item {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .update-time {
+      flex-shrink: 0;
+      font-size: 11px;
+      color: var(--text-tertiary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* === 板块通用 === */
+    .section {
+      scroll-margin-top: 120px;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .section-header p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* 领域概览 */
+    .overview-text {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
+
+    .overview-text p + p {
+      margin-top: 14px;
+    }
+
+    /* 精选卡片 */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .card-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .content-card:hover .card-thumb img {
+      transform: scale(1.04);
+    }
+
+    .card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-type {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      margin-bottom: 8px;
+      width: fit-content;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 12px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .card-tag {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      background: var(--bg);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    .card-heat {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    /* 动态列表 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 16px;
+      background: var(--surface);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: background 0.2s;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .news-item:hover {
+      background: #fdfcfe;
+    }
+
+    .news-date {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-variant-numeric: tabular-nums;
+      min-width: 72px;
+    }
+
+    .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex-shrink: 0;
+    }
+
+    .news-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 16px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .category-item:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: var(--primary);
+    }
+
+    .category-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .category-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .category-count {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    /* 深度解析 */
+    .deep-read {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+    }
+
+    .deep-read h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .deep-read h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 26px 0 12px;
+      color: var(--text-primary);
+      padding-left: 12px;
+      border-left: 3px solid var(--primary);
+    }
+
+    .deep-read h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-read p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    .deep-read ul {
+      margin: 8px 0 16px 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .deep-read li {
+      margin-bottom: 4px;
+    }
+
+    .deep-read .callout {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border-left: 3px solid var(--primary);
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .guide-step {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+      position: relative;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .guide-step h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .guide-step p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-default);
+    }
+
+    .faq-item summary {
+      padding: 16px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 18px;
+      color: var(--text-tertiary);
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+      color: var(--primary-dark);
+    }
+
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* 评论 */
+    .comments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .comment-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .comment-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-left: auto;
+    }
+
+    .comment-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* 资讯 */
+    .news-article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .news-article {
+      display: flex;
+      gap: 16px;
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s;
+      align-items: flex-start;
+    }
+
+    .news-article:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .news-article-thumb {
+      flex-shrink: 0;
+      width: 100px;
+      height: 70px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .news-article-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .news-article-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .news-article-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .news-article-meta {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+
+    .news-article-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关推荐 */
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag-index-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 8px 18px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .tag-index-item:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    /* 补充：榜单 */
+    .rank-board {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+    }
+
+    .rank-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rank-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text-tertiary);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .rank-num.top3 {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .rank-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .rank-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .rank-desc {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .rank-heat {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+
+    /* 投稿互动 */
+    .contribute-banner {
+      background: linear-gradient(135deg, var(--primary-light), #f5f0fa);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .contribute-text h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .contribute-text p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: #2e2a33;
+      color: #c9c2d1;
+      padding: 48px 24px 32px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #a9a2b3;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: #a9a2b3;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1380px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid #3d3845;
+      font-size: 12px;
+      color: #7d7689;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 90;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-top:hover {
+      transform: translateY(-3px);
+    }
+
+    /* 搜索无结果 */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 15px;
+      color: var(--text-tertiary);
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+    }
+
+    .no-results.show {
+      display: block;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1200px) {
+      .main-layout {
+        grid-template-columns: 160px 1fr 220px;
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .main-layout {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 38px;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+        padding: 24px 16px 48px;
+      }
+      .aux-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .header-inner {
+        gap: 12px;
+        padding: 0 16px;
+      }
+      .main-nav {
+        display: none;
+      }
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        padding: 16px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-hover);
+        z-index: 50;
+      }
+      .hamburger {
+        display: block;
+      }
+      .search-box {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+      .hero-inner {
+        padding: 36px 16px 40px;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .announce-inner {
+        padding: 6px 16px;
+        font-size: 12px;
+        gap: 10px;
+      }
+      .site-header {
+        top: 33px;
+      }
+      .contribute-banner {
+        padding: 20px;
+      }
+      .back-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+      .news-article-thumb {
+        display: none;
+      }
+      .aux-sidebar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" id="announce-bar">
+    <div class="announce-inner">
+      <span class="announce-brand">白袜女生</span>
+      <span class="announce-item"><span class="dot"></span>11月6日 · “秋冬白袜叠穿指南”已更新</span>
+      <span class="announce-item"><span class="dot"></span>本周新增 23 篇穿搭投稿</span>
+      <span class="announce-item"><span class="dot"></span>11月7日 · 袜口松紧对比评测上线</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <div class="logo-mark">白</div>
+        <span class="logo-text">白袜女生</span>
+      </div>
+      <nav class="main-nav" id="main-nav">
+        <a href="#overview" class="active">风格概览</a>
+        <a href="#featured">精选推荐</a>
+        <a href="#updates">最新动态</a>
+        <a href="#categories">分类入口</a>
+        <a href="#deep-read">深度解析</a>
+        <a href="#guide">体验指南</a>
+        <a href="#faq">常见问答</a>
+        <a href="#comments">用户评论</a>
+        <a href="#news">相关资讯</a>
+        <a href="#recommend">相关推荐</a>
+        <a href="#ranking">热门榜单</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="搜索条目…" aria-label="搜索内容">
+          <button type="button" id="search-btn" aria-label="搜索">🔍</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>白袜女生</h1>
+        <p class="hero-desc">汇聚白袜造型搭配、鞋袜组合方案、袜口细节评测、日常护理收纳与真实穿着体验，面向喜欢白袜风格与简约穿搭的读者。</p>
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">浏览精选搭配</button>
+          <button class="btn-outline" onclick="document.getElementById('contribute').scrollIntoView({behavior:'smooth'})">投稿分享</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-svg-wrap">
+          <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="白袜与鞋履搭配的抽象插画">
+            <rect x="0" y="0" width="400" height="320" rx="24" fill="#f0eaf6"/>
+            <circle cx="320" cy="60" r="50" fill="#e6e0ee" opacity="0.6"/>
+            <circle cx="80" cy="260" r="40" fill="#e6e0ee" opacity="0.4"/>
+            <path d="M140 220 Q140 180 160 160 L200 120 Q220 100 240 120 L260 140 Q280 160 260 180 L220 220 Q200 240 180 220 Z" fill="#ffffff" stroke="#b8a9c9" stroke-width="2"/>
+            <path d="M160 160 Q180 150 200 170" stroke="#b8a9c9" stroke-width="1.5" fill="none"/>
+            <rect x="180" y="180" width="60" height="8" rx="4" fill="#e6e0ee"/>
+            <circle cx="260" cy="200" r="6" fill="#b8a9c9" opacity="0.5"/>
+            <circle cx="280" cy="170" r="4" fill="#b8a9c9" opacity="0.3"/>
+            <rect x="60" y="60" width="80" height="100" rx="12" fill="#ffffff" stroke="#e8e2ef" stroke-width="1.5"/>
+            <rect x="72" y="76" width="56" height="6" rx="3" fill="#e6e0ee"/>
+            <rect x="72" y="90" width="40" height="6" rx="3" fill="#f0eaf6"/>
+            <rect x="72" y="104" width="48" height="6" rx="3" fill="#f0eaf6"/>
+            <rect x="72" y="118" width="36" height="6" rx="3" fill="#e6e0ee"/>
+            <rect x="72" y="132" width="52" height="6" rx="3" fill="#f0eaf6"/>
+            <path d="M300 240 L340 240 L340 280 L300 280 Z" fill="#ffffff" stroke="#e8e2ef" stroke-width="1.5" rx="6"/>
+            <path d="M310 250 L330 250" stroke="#e6e0ee" stroke-width="2" stroke-linecap="round"/>
+            <path d="M310 260 L326 260" stroke="#f0eaf6" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容三栏布局 -->
+  <div class="main-layout">
+    <!-- 左频道索引 -->
+    <aside class="channel-sidebar" aria-label="频道导航">
+      <h3>频道索引</h3>
+      <a href="#overview" class="channel-link active"><span class="ch-icon">📖</span>风格概览</a>
+      <a href="#featured" class="channel-link"><span class="ch-icon">✨</span>精选推荐</a>
+      <a href="#updates" class="channel-link"><span class="ch-icon">🕐</span>最新动态</a>
+      <a href="#categories" class="channel-link"><span class="ch-icon">📂</span>分类入口</a>
+      <a href="#deep-read" class="channel-link"><span class="ch-icon">🔍</span>深度解析</a>
+      <a href="#guide" class="channel-link"><span class="ch-icon">🧭</span>体验指南</a>
+      <a href="#faq" class="channel-link"><span class="ch-icon">💬</span>常见问答</a>
+      <a href="#comments" class="channel-link"><span class="ch-icon">👣</span>用户评论</a>
+      <a href="#news" class="channel-link"><span class="ch-icon">📰</span>相关资讯</a>
+      <a href="#recommend" class="channel-link"><span class="ch-icon">🏷️</span>相关推荐</a>
+      <a href="#ranking" class="channel-link"><span class="ch-icon">🏆</span>热门榜单</a>
+      <a href="#contribute" class="channel-link"><span class="ch-icon">✍️</span>投稿互动</a>
+    </aside>
+
+    <!-- 中主内容 -->
+    <main class="main-content">
+      <!-- 领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-header">
+          <h2>白袜风格领域概览</h2>
+          <p>从材质、版型到搭配场景的完整梳理</p>
+        </div>
+        <div class="overview-text">
+          <p>白袜在近年日常穿搭中的存在感持续上升，从纯棉中筒袜到罗纹堆堆袜，从学院风到运动混搭，白色袜品已经脱离“校服配件”的单一印象，成为连接鞋履与整体造型的关键细节。当前值得关注的几个方向：棉质与再生纤维混纺的透气性改进、袜口无痕工艺的迭代、以及白袜在玛丽珍鞋、乐福鞋、厚底运动鞋等不同鞋型上的搭配逻辑。</p>
+          <p>在材质选择上，精梳棉含量超过 75% 的款式在吸汗与抗起球两项指标上表现更稳定；添加 5%—8% 氨纶的袜口在多次水洗后仍能保持贴合度。版型方面，中筒高度（约 12—15cm 袜筒）对小腿线条的修饰效果被讨论得最多，而堆堆袜的褶皱密度与袜筒长度直接相关。搭配场景中，白袜配黑色乐福鞋的“学院通勤”组合在小红书相关笔记量已超过 18 万篇，白袜配德训鞋则更偏向休闲周末场景。</p>
+          <p>值得留意的细分趋势：带立体编织纹理的华夫格白袜在 2026 年秋季的搜索量环比上升约 34%；袜底加厚毛圈的运动款在跑步与健身房场景中复购率较高。护理层面，白袜泛黄问题主要来自洗涤剂残留与汗渍氧化，含氧漂白剂配合 40℃ 以下水温的清洗方案被多次验证有效。</p>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section class="section" id="featured">
+        <div class="section-header">
+          <h2>白袜造型精选推荐</h2>
+          <p>近期关注度较高的搭配方案与单品条目</p>
+        </div>
+        <div class="cards-grid" id="cards-container">
+          <article class="content-card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/whitesock01/400/300" alt="白色中筒袜搭配黑色乐福鞋的学院风造型" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-type">搭配方案</span>
+              <h3 class="card-title">白袜配黑色乐福鞋·学院通勤</h3>
+              <p class="card-desc">中筒白袜露出 3cm 袜口，与黑色皮质乐福鞋形成明暗对比。适合九分西裤或百褶裙，袜筒高度控制在脚踝上 10—12cm 最利落。</p>
+              <div class="card-tags">
+                <span class="card-tag">乐福鞋</span>
+                <span class="card-tag">学院风</span>
+                <span class="card-tag">通勤</span>
+              </div>
+              <div class="card-meta">
+                <span class="card-heat">热度 9.2</span>
+                <span>更新于 11月6日</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/whitesock02/400/300" alt="华夫格纹理白袜细节特写" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-type">单品评测</span>
+              <h3 class="card-title">华夫格纹理白袜·秋冬季实测</h3>
+              <p class="card-desc">立体编织纹理在视觉上增加厚度感，实测 220g 克重款在 12℃ 环境下单穿不冷。袜口弹性衰减在 15 次机洗后约为 8%。</p>
+              <div class="card-tags">
+                <span class="card-tag">华夫格</span>
+                <span class="card-tag">秋冬</span>
+                <span class="card-tag">厚款</span>
+              </div>
+              <div class="card-meta">
+                <span class="card-heat">热度 8.7</span>
+                <span>更新于 11月5日</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/whitesock03/400/300" alt="白袜搭配德训鞋的休闲造型" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-type">搭配方案</span>
+              <h3 class="card-title">白袜配德训鞋·周末休闲</h3>
+              <p class="card-desc">德训鞋的麂皮拼接与白袜形成材质层次。建议选罗纹收口款，袜筒 8—10cm 刚好卡在鞋帮上方，不堆褶也不下滑。</p>
+              <div class="card-tags">
+                <span class="card-tag">德训鞋</span>
+                <span class="card-tag">休闲</span>
+                <span class="card-tag">罗纹</span>
+              </div>
+              <div class="card-meta">
+                <span class="card-heat">热度 8.4</span>
+                <span>更新于 11月4日</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/whitesock04/400/300" alt="堆堆袜搭配玛丽珍鞋的甜系造型" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-type">搭配方案</span>
+              <h3 class="card-title">堆堆袜配玛丽珍鞋·褶皱控制</h3>
+              <p class="card-desc">堆堆袜的褶皱密度取决于袜筒长度与弹性，22cm 袜筒在脚踝处自然堆叠 3—4 层效果最佳。搭配粗跟玛丽珍鞋重心更稳。</p>
+              <div class="card-tags">
+                <span class="card-tag">玛丽珍</span>
+                <span class="card-tag">堆堆袜</span>
+                <span class="card-tag">甜系</span>
+              </div>
+              <div class="card-meta">
+                <span class="card-heat">热度 8.1</span>
+                <span>更新于 11月3日</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/whitesock05/400/300" alt="运动白袜搭配厚底跑鞋" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-type">运动场景</span>
+              <h3 class="card-title">毛圈底运动白袜·跑步实测</h3>
+              <p class="card-desc">袜底毛圈厚度 3mm 的款式在 5km 跑步中缓震感知明显，足弓处加宽橡筋带减少滑动。速干性能在 30 分钟后接近干燥。</p>
+              <div class="card-tags">
+                <span class="card-tag">运动袜</span>
+                <span class="card-tag">毛圈底</span>
+                <span class="card-tag">跑步</span>
+              </div>
+              <div class="card-meta">
+                <span class="card-heat">热度 7.9</span>
+                <span>更新于 11月2日</span>
+              </div>
+            </div>
+          </article>
+          <article class="content-card">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/whitesock06/400/300" alt="白袜泛黄清洗前后的对比示意" width="400" height="300" loading="lazy">
+            </div>
+            <div class="card-body">
+              <span class="card-type">护理技巧</span>
+              <h3 class="card-title">白袜泛黄清洗·含氧漂白方案</h3>
+              <p class="card-desc">60℃ 温水加 15g 过碳酸钠浸泡 40 分钟，对汗渍氧化泛黄的去除率实测约 85%。避免与深色衣物混洗导致染色。</p>
+              <div class="card-tags">
+                <span class="card-tag">泛黄</span>
+                <span class="card-tag">清洗</span>
+                <span class="card-tag">过碳酸钠</span>
+              </div>
+              <div class="card-meta">
+                <span class="card-heat">热度 7.6</span>
+                <span>更新于 11月1日</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新动态 -->
+      <section class="section" id="updates">
+        <div class="section-header">
+          <h2>白袜内容最新动态</h2>
+          <p>近期更新与讨论热点</p>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <span class="news-date">11月7日</span>
+            <span class="news-title">袜口松紧对比评测</span>
+            <span class="news-summary">6 款热门白袜横向测试，无痕袜口在 8 小时穿着后压痕深度比传统橡筋款浅 42%。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">11月6日</span>
+            <span class="news-title">秋冬白袜叠穿指南</span>
+            <span class="news-summary">白袜与打底裤、短靴的三层叠穿方案，重点在袜筒露出比例与颜色过渡。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">11月5日</span>
+            <span class="news-title">再生纤维白袜实测</span>
+            <span class="news-summary">含 40% 再生涤纶的款式在透气性上略逊纯棉，但抗皱性提升明显，适合长时间坐姿场景。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">11月4日</span>
+            <span class="news-title">白袜配厚底鞋比例讨论</span>
+            <span class="news-summary">鞋底厚度超过 5cm 时，白袜露出面积建议控制在鞋帮上方 5cm 以内避免头重脚轻。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">11月3日</span>
+            <span class="news-title">棉含量与起球关系</span>
+            <span class="news-summary">精梳棉 80% 以上的白袜在 30 次摩擦测试后起球面积比普通棉低约六成。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">11月2日</span>
+            <span class="news-title">白袜收纳防黄方法</span>
+            <span class="news-summary">密封袋加干燥剂存放可减缓氧化速度，实测六个月后黄变指数比敞放低 3 个等级。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">11月1日</span>
+            <span class="news-title">运动白袜尺码选择</span>
+            <span class="news-summary">脚长 23.5cm 选 M 码的实测贴合度最高，袜筒过短易滑入鞋内。</span>
+          </div>
+          <div class="news-item">
+            <span class="news-date">10月30日</span>
+            <span class="news-title">白袜配乐福鞋颜色搭配</span>
+            <span class="news-summary">米白袜比纯白袜与棕色乐福鞋的色温更协调，冷白袜适合配黑色鞋款。</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="categories">
+        <div class="section-header">
+          <h2>白袜分类入口</h2>
+          <p>按场景与单品类型快速定位</p>
+        </div>
+        <div class="category-grid">
+          <div class="category-item">
+            <span class="category-icon">👟</span>
+            <span class="category-name">乐福鞋搭配</span>
+            <span class="category-count">42 篇内容</span>
+          </div>
+          <div class="category-item">
+            <span class="category-icon">🥿</span>
+            <span class="category-name">玛丽珍鞋搭配</span>
+            <span class="category-count">28 篇内容</span>
+          </div>
+          <div class="category-item">
+            <span class="category-icon">🏃</span>
+            <span class="category-name">运动跑步袜</span>
+            <span class="category-count">35 篇内容</span>
+          </div>
+          <div class="category-item">
+            <span class="category-icon">🧶</span>
+            <span class="category-name">堆堆袜</span>
+            <span class="category-count">19 篇内容</span>
+          </div>
+          <div class="category-item">
+            <span class="category-icon">🧺</span>
+            <span class="category-name">清洗护理</span>
+            <span class="category-count">24 篇内容</span>
+          </div>
+          <div class="category-item">
+            <span class="category-icon">📏</span>
+            <span class="category-name">袜口松紧评测</span>
+            <span class="category-count">16 篇内容</span>
+          </div>
+          <div class="category-item">
+            <span class="category-icon">🎨</span>
+            <span class="category-name">颜色与材质</span>
+            <span class="category-count">31 篇内容</span>
+          </div>
+          <div class="category-item">
+            <span class="category-icon">📦</span>
+            <span class="category-name">收纳防黄</span>
+            <span class="category-count">12 篇内容</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section" id="deep-read">
+        <div class="deep-read">
+          <h2>白袜选购与搭配的深度拆解</h2>
+          <p>白袜的选购门槛看似很低，实际使用体验的差异主要来自三个可量化的环节：棉纤维的加工方式、袜口橡筋的布局、以及袜筒高度与鞋帮的匹配关系。把这三项拆开看，大部分“买回来穿两次就闲置”的问题都能提前判断。</p>
+
+          <h3>精梳棉与普梳棉的耐用性差距</h3>
+          <p>精梳棉在纺纱阶段剔除了短纤维和杂质，纱线强度更高。实测数据：同为 200g 克重的白袜，精梳棉 80% 款在 30 次标准机洗后表面起球面积为 12%，普梳棉 80% 款为 31%。差距在第三次水洗后开始显现，到第十次时肉眼可辨。精梳棉的代价是单价通常高出 30%—50%，如果只是短期穿着或更换频率高，普梳棉的性价比并不差。</p>
+          <p>另一个容易被忽略的变量是纱线捻度。捻度高的白袜表面更光滑、不易粘毛，但弹性回复率略低；捻度低的触感柔软，洗后容易变形。包装上通常不标注捻度，只能通过手感判断——用力拉伸后松手，回弹快且表面纹路清晰的，捻度相对较高。</p>
+
+          <h3>袜口橡筋的两种工艺与压痕差异</h3>
+          <p>传统橡筋袜口采用编织时嵌入弹性纱的方式，成本低但压力集中在一条窄带上，8 小时穿着后脚踝处压痕深度约 1.2mm。无痕袜口将弹性纱分散到 2—3cm 宽的区域，同等条件下压痕深度约 0.7mm，且恢复时间更短。2026 年秋季上市的新款中，无痕袜口的占比从去年同期的 18% 上升到 27%，价格区间也下探到 15—25 元/双。</p>
+          <p>无痕袜口的短板是弹性衰减更快。实验室数据：连续 15 次机洗后，无痕款的袜口回弹率从 92% 降至 78%，传统款从 95% 降至 88%。如果洗涤频率高，传统款反而更耐久。一个折中方案是选择半无痕设计——前侧宽幅、后侧窄幅，兼顾压痕与寿命。</p>
+
+          <div class="callout">
+            <strong>可核对的判断结构：</strong>一条白袜“耐不耐穿”可以拆成——①精梳棉占比是否 ≥75%（看成分标签）；②袜口是否采用宽幅分散橡筋（拉伸后观察弹性纱分布）；③袜筒高度是否与常用鞋帮匹配（乐福鞋选 10—12cm，运动鞋选 8—10cm）。三项中两项不达标，通常在一个月内就会出现起球、松垮或滑落问题。
+          </div>
+
+          <h3>袜筒高度与鞋型的匹配规则</h3>
+          <p>袜筒露出过多会压缩小腿视觉比例，过少则容易滑入鞋内。以常见鞋型为例：乐福鞋鞋帮高度约 6—7cm，白袜筒高出鞋帮 4—6cm 时露出的袜段最完整；德训鞋鞋帮约 8cm，袜筒高出 2—4cm 即可；高帮帆布鞋鞋帮 12cm 以上，白袜筒需达到 15cm 才能露出，否则只会露出鞋舌边缘的一小截。</p>
+          <p>堆堆袜是例外。它的视觉重心在褶皱堆积处，袜筒长度 20—24cm 最合适，太短堆不起来，太长会滑落。搭配厚底玛丽珍鞋时，鞋底厚度 4—5cm 与堆堆袜的厚重感更平衡；鞋底超过 6cm 时建议换薄款中筒袜，否则下半身视觉重量会失衡。</p>
+
+          <h3>白袜泛黄的成因与清洗优先级</h3>
+          <p>泛黄主要来自三方面：汗液中的尿素氧化、洗涤剂残留与自来水中的铁离子沉积。三者的处理方式不同——尿素氧化用含氧漂白剂（过碳酸钠）有效；洗涤剂残留需要增加漂洗次数；铁离子沉积则要用含螯合剂的洗涤产品。多数人把泛黄统一归因于“没洗干净”，反复加量洗涤剂，反而加重残留。</p>
+          <p>实操建议：新买的白袜第一次穿之前用清水加少量白醋浸泡 10 分钟，可以中和碱性残留，延缓泛黄起点。已经泛黄的袜子，60℃ 温水加 15g 过碳酸钠浸泡 40 分钟，对尿素氧化型泛黄的去除率约 85%，但对铁离子沉积型效果有限，需要配合螯合剂。含氯漂白剂不建议使用，会损伤棉纤维并导致袜口橡筋脆化。</p>
+        </div>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-header">
+          <h2>白袜内容消费路径指南</h2>
+          <p>先看什么、怎么判断、如何比较</p>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="step-number">1</div>
+            <h4>先明确穿着场景</h4>
+            <p>通勤、休闲、运动三类场景对白袜的要求完全不同。通勤看袜口压痕与颜色搭配，休闲看堆叠效果，运动看毛圈厚度与速干性。先定场景再看条目，能过滤掉七成不相关的内容。</p>
+          </div>
+          <div class="guide-step">
+            <div class="step-number">2</div>
+            <h4>核对材质与工艺参数</h4>
+            <p>优先看含精梳棉比例、氨纶添加量、袜口工艺三项。精梳棉 75% 以上、氨纶 5%—8%、无痕或半无痕袜口，是通勤场景的基准线。低于这个配置的条目直接略过。</p>
+          </div>
+          <div class="guide-step">
+            <div class="step-number">3</div>
+            <h4>横向比较同价位产品</h4>
+            <p>同价位（15—30 元/双）的白袜，差异集中在袜口寿命和抗起球两项。看评测时找有具体洗涤次数和起球面积数据的，没有数字的“耐穿”描述参考价值有限。</p>
+          </div>
+          <div class="guide-step">
+            <div class="step-number">4</div>
+            <h4>按鞋型反推袜筒高度</h4>
+            <p>先量常用鞋的鞋帮高度，再选袜筒。乐福鞋配 10—12cm 袜筒，德训鞋配 8—10cm，堆堆袜配 20—24cm。不要按身高体重选，按鞋帮高度选，合脚率会高很多。</p>
+          </div>
+          <div class="guide-step">
+            <div class="step-number">5</div>
+            <h4>护理方案提前定</h4>
+            <p>白袜的寿命一半取决于洗法。含氧漂白剂、40℃ 以下水温、单独洗涤三条做到，泛黄和染色风险都能明显降低。看护理类内容时重点找具体剂量和时长。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2>白袜常见问题</h2>
+          <p>围绕材质、搭配与护理的具体问答</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>白袜穿多久会松口？</summary>
+            <div class="faq-answer">取决于袜口工艺和洗涤频率。传统窄幅橡筋款在每周洗涤 3 次的情况下，约 20—25 次后开始明显松垮；无痕宽幅款约 15—18 次后回弹率下降。手洗、冷水、不拧干可以延长约三分之一的寿命。</div>
+          </details>
+          <details class="faq-item">
+            <summary>精梳棉白袜和普通棉白袜差在哪？</summary>
+            <div class="faq-answer">精梳棉在纺纱时剔除了短纤维，纱线更光滑、强度更高。同等克重下，精梳棉款的起球面积在 30 次机洗后约为普通棉款的三分之一，但单价通常贵 30%—50%。如果更换频率高，普通棉也够用。</div>
+          </details>
+          <details class="faq-item">
+            <summary>堆堆袜怎么堆才不容易掉？</summary>
+            <div class="faq-answer">袜筒长度选 20—24cm，袜口弹性适中的款式。穿的时候先拉到脚踝上方，再往下推 3—4cm 形成褶皱，让袜口自然卡在小腿最细处。袜筒太短堆不起来，太长会因为自重下滑。</div>
+          </details>
+          <details class="faq-item">
+            <summary>白袜配乐福鞋露出多少合适？</summary>
+            <div class="faq-answer">乐福鞋鞋帮约 6—7cm，白袜筒高出鞋帮 4—6cm 时露出的袜段最完整。少于 3cm 容易被鞋帮遮住，多于 8cm 会显得袜筒过长，比例上压小腿。</div>
+          </details>
+          <details class="faq-item">
+            <summary>白袜泛黄用漂白水能洗白吗？</summary>
+            <div class="faq-answer">含氯漂白水不建议用于棉袜，会损伤纤维并让袜口橡筋脆化。汗渍氧化型泛黄用 60℃ 温水加过碳酸钠浸泡 40 分钟，去除率约 85%；洗涤剂残留导致的泛黄需要增加漂洗次数。</div>
+          </details>
+          <details class="faq-item">
+            <summary>运动白袜和日常白袜能混穿吗？</summary>
+            <div class="faq-answer">可以，但运动白袜的毛圈底厚度通常在 2—3mm，日常鞋款内空间有限时会挤脚。反过来，日常薄款白袜用于跑步，足底缓震不足，5km 以上距离容易磨脚。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-header">
+          <h2>穿白袜的人怎么说</h2>
+          <p>来自真实穿着场景的反馈</p>
+        </div>
+        <div class="comments-grid">
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">林</div>
+              <span class="comment-name">林小满</span>
+              <span class="comment-time">11月7日</span>
+            </div>
+            <p class="comment-text">华夫格那款我买了，确实厚，但配乐福鞋太挤了，鞋头塞不进去。后来换薄款才正常。厚袜还是留给运动鞋吧。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">周</div>
+              <span class="comment-name">周三岁</span>
+              <span class="comment-time">11月7日</span>
+            </div>
+            <p class="comment-text">无痕袜口压痕浅是真的，但洗了十几次就开始松，现在走路会往下滑。传统款丑是丑，耐造。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">陈</div>
+              <span class="comment-name">陈一白</span>
+              <span class="comment-time">11月6日</span>
+            </div>
+            <p class="comment-text">堆堆袜配玛丽珍那个方案试了，褶皱堆 3 层刚好，4 层就有点邋遢。鞋跟 4cm 比平底好看。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">阿</div>
+              <span class="comment-name">阿茶</span>
+              <span class="comment-time">11月6日</span>
+            </div>
+            <p class="comment-text">过碳酸钠泡袜子那个方法有用，我泡了 50 分钟，发黄的袜底白回来不少。就是味道有点冲。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">M</div>
+              <span class="comment-name">Momo酱</span>
+              <span class="comment-time">11月5日</span>
+            </div>
+            <p class="comment-text">精梳棉贵是有道理的，之前买十块钱三双那种，穿两次脚后跟就起球。现在换 25 一双的，三个月了还好好的。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">大</div>
+              <span class="comment-name">大橘为重</span>
+              <span class="comment-time">11月5日</span>
+            </div>
+            <p class="comment-text">德训鞋配白袜确实好看，但麂皮部分蹭到袜子容易留印子，得注意。我那双已经有点灰了。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">南</div>
+              <span class="comment-name">南风知我意</span>
+              <span class="comment-time">11月4日</span>
+            </div>
+            <p class="comment-text">袜筒高度那个表挺实用的，我之前一直买错，配高帮帆布鞋袜子永远只露一截，原来是筒长不够。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">小</div>
+              <span class="comment-name">小圆饼干</span>
+              <span class="comment-time">11月4日</span>
+            </div>
+            <p class="comment-text">只有我觉得白袜洗起来很烦吗……每次都要单独洗，混洗一次就染成粉的。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">K</div>
+              <span class="comment-name">Kiko_</span>
+              <span class="comment-time">11月3日</span>
+            </div>
+            <p class="comment-text">运动白袜毛圈底那个，跑步确实舒服，但平时穿帆布鞋会顶脚背，鞋带得松一点。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">老</div>
+              <span class="comment-name">老张头</span>
+              <span class="comment-time">11月3日</span>
+            </div>
+            <p class="comment-text">路过看看，我闺女天天白袜子配黑皮鞋，原来还有这么多讲究。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">Y</div>
+              <span class="comment-name">Yuki酱</span>
+              <span class="comment-time">11月2日</span>
+            </div>
+            <p class="comment-text">白醋泡新袜子那个我试了，确实没那么容易黄，但泡完要彻底冲干净，不然有酸味。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">半</div>
+              <span class="comment-name">半糖去冰</span>
+              <span class="comment-time">11月2日</span>
+            </div>
+            <p class="comment-text">堆堆袜夏天穿太热，冬天穿又不够暖，尴尬。可能是我买的太薄了。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">七</div>
+              <span class="comment-name">七月的风</span>
+              <span class="comment-time">11月1日</span>
+            </div>
+            <p class="comment-text">乐福鞋露 4cm 那个建议靠谱，之前露太多显得腿短，现在调整了一下顺眼多了。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">柠</div>
+              <span class="comment-name">柠檬不酸</span>
+              <span class="comment-time">11月1日</span>
+            </div>
+            <p class="comment-text">再生纤维那个评测有点意思，抗皱是真的，但吸汗不行，走一天路脚底闷。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">Z</div>
+              <span class="comment-name">Zoe在摸鱼</span>
+              <span class="comment-time">10月31日</span>
+            </div>
+            <p class="comment-text">无痕袜口 15 一双的价格今年确实降了，去年买还要 25。多囤了几双。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <div class="comment-avatar">果</div>
+              <span class="comment-name">果冻橙</span>
+              <span class="comment-time">10月30日</span>
+            </div>
+            <p class="comment-text">白袜收纳用密封袋加干燥剂这个方法，我放了三个月，确实没黄。就是有点占地方。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-header">
+          <h2>白袜相关资讯</h2>
+          <p>近期动态与数据更新</p>
+        </div>
+        <div class="news-article-list">
+          <article class="news-article">
+            <div class="news-article-thumb">
+              <img src="https://picsum.photos/seed/newsock01/600/400" alt="袜类材质检测实验室场景" width="600" height="400" loading="lazy">
+            </div>
+            <div class="news-article-body">
+              <h3 class="news-article-title">精梳棉白袜抽检：12 批次中 3 批棉含量标注偏差超 5%</h3>
+              <div class="news-article-meta">2026年11月6日 · 消费品检测</div>
+              <p class="news-article-summary">第三方检测机构对电商平台在售的 12 批次白袜进行成分复核，实际棉含量与标签标注的偏差在 1.2%—7.8% 之间，其中 3 批次偏差超过 5%，主要出现在低价区间产品。</p>
+            </div>
+          </article>
+          <article class="news-article">
+            <div class="news-article-thumb">
+              <img src="https://picsum.photos/seed/newsock02/600/400" alt="堆堆袜在社交平台的话题页面示意" width="600" height="400" loading="lazy">
+            </div>
+            <div class="news-article-body">
+              <h3 class="news-article-title">堆堆袜话题笔记量突破 18 万篇，秋季环比增长 34%</h3>
+              <div class="news-article-meta">2026年11月4日 · 社交平台数据</div>
+              <p class="news-article-summary">小红书“堆堆袜”相关笔记在 10 月新增约 4.6 万篇，其中带“玛丽珍”关键词的组合笔记互动量最高，平均收藏数是纯单品笔记的 2.1 倍。</p>
+            </div>
+          </article>
+          <article class="news-article">
+            <div class="news-article-thumb">
+              <img src="https://picsum.photos/seed/newsock03/600/400" alt="白袜洗涤护理产品展示" width="600" height="400" loading="lazy">
+            </div>
+            <div class="news-article-body">
+              <h3 class="news-article-title">过碳酸钠类洗涤产品销量上涨，白袜护理成细分场景</h3>
+              <div class="news-article-meta">2026年11月2日 · 电商观察</div>
+              <p class="news-article-summary">某电商平台数据显示，10 月过碳酸钠类清洁产品销量环比增长 27%，评论区中提及“白袜”“泛黄”的用户占比从 8% 上升至 14%，商家开始推出小包装袜类专用款。</p>
+            </div>
+          </article>
+          <article class="news-article">
+            <div class="news-article-thumb">
+              <img src="https://picsum.photos/seed/newsock04/600/400" alt="无痕袜口工艺截面示意" width="600" height="400" loading="lazy">
+            </div>
+            <div class="news-article-body">
+              <h3 class="news-article-title">无痕袜口工艺下放至 15 元价位，中端市场竞争加剧</h3>
+              <div class="news-article-meta">2026年10月30日 · 行业动态</div>
+              <p class="news-article-summary">2025 年无痕袜口主要集中在 25 元以上价位，2026 年秋季多个国产品牌将同工艺产品定价拉至 15—18 元区间，传统橡筋款在 10 元以下市场仍占七成份额。</p>
+            </div>
+          </article>
+          <article class="news-article">
+            <div class="news-article-thumb">
+              <img src="https://picsum.photos/seed/newsock05/600/400" alt="再生纤维纱线生产环节" width="600" height="400" loading="lazy">
+            </div>
+            <div class="news-article-body">
+              <h3 class="news-article-title">再生涤纶白袜占比升至 19%，透气性仍是主要争议点</h3>
+              <div class="news-article-meta">2026年10月28日 · 材料趋势</div>
+              <p class="news-article-summary">含再生涤纶的袜类产品在 2026 年第三季度占白袜 SKU 的 19%，较去年同期提升 6 个百分点。用户评价中“透气”相关负向反馈占比约 22%，高于纯棉款的 9%。</p>
+            </div>
+          </article>
+          <article class="news-article">
+            <div class="news-article-thumb">
+              <img src="https://picsum.photos/seed/newsock06/600/400" alt="白袜搭配乐福鞋的街拍风格" width="600" height="400" loading="lazy">
+            </div>
+            <div class="news-article-body">
+              <h3 class="news-article-title">“白袜+乐福鞋”搜索量秋季增长 41%，通勤场景为主力</h3>
+              <div class="news-article-meta">2026年10月26日 · 搜索趋势</div>
+              <p class="news-article-summary">某搜索平台数据显示，9—10 月“白袜 乐福鞋”组合搜索量环比增长 41%，其中“通勤”“西裤”为关联度最高的场景词，20—28 岁用户占搜索量的 63%。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="recommend">
+        <div class="section-header">
+          <h2>相关推荐方向</h2>
+          <p>具体内容方向与热门条目索引</p>
+        </div>
+        <div class="tag-index">
+          <span class="tag-index-item">白袜配黑色乐福鞋</span>
+          <span class="tag-index-item">华夫格中筒袜</span>
+          <span class="tag-index-item">堆堆袜褶皱控制</span>
+          <span class="tag-index-item">毛圈底跑步袜</span>
+          <span class="tag-index-item">无痕袜口评测</span>
+          <span class="tag-index-item">白袜泛黄清洗</span>
+          <span class="tag-index-item">德训鞋搭配</span>
+          <span class="tag-index-item">玛丽珍鞋甜系</span>
+          <span class="tag-index-item">精梳棉含量对比</span>
+          <span class="tag-index-item">白袜收纳防黄</span>
+        </div>
+      </section>
+
+      <!-- 补充板块：热门榜单 -->
+      <section class="section" id="ranking">
+        <div class="section-header">
+          <h2>白袜热门榜单</h2>
+          <p>本周关注度较高的条目与单品</p>
+        </div>
+        <div class="rank-board">
+          <div class="rank-item">
+            <span class="rank-num top3">1</span>
+            <div class="rank-info">
+              <div class="rank-title">白袜配黑色乐福鞋·学院通勤</div>
+              <div class="rank-desc">搭配方案 · 收藏 1.2 万</div>
+            </div>
+            <span class="rank-heat">9.2</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num top3">2</span>
+            <div class="rank-info">
+              <div class="rank-title">华夫格纹理白袜·秋冬季实测</div>
+              <div class="rank-desc">单品评测 · 收藏 8600</div>
+            </div>
+            <span class="rank-heat">8.7</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num top3">3</span>
+            <div class="rank-info">
+              <div class="rank-title">堆堆袜配玛丽珍鞋·褶皱控制</div>
+              <div class="rank-desc">搭配方案 · 收藏 7200</div>
+            </div>
+            <span class="rank-heat">8.1</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">4</span>
+            <div class="rank-info">
+              <div class="rank-title">毛圈底运动白袜·跑步实测</div>
+              <div class="rank-desc">运动场景 · 收藏 5400</div>
+            </div>
+            <span class="rank-heat">7.9</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">5</span>
+            <div class="rank-info">
+              <div class="rank-title">白袜泛黄清洗·含氧漂白方案</div>
+              <div class="rank-desc">护理技巧 · 收藏 5100</div>
+            </div>
+            <span class="rank-heat">7.6</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 投稿互动 -->
+      <section class="section" id="contribute">
+        <div class="contribute-banner">
+          <div class="contribute-text">
+            <h3>分享你的白袜搭配</h3>
+            <p>上传穿搭照片或护理心得，优质投稿将出现在精选推荐中。</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn-primary" onclick="alert('投稿功能为示例演示，暂未接入真实提交。')">我要投稿</button>
+            <button class="btn-outline" onclick="alert('上传功能为示例演示。')">上传图片</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="aux-sidebar" aria-label="辅助信息">
+      <div class="sidebar-card">
+        <h3>本周热榜</h3>
+        <div class="hot-list">
+          <a href="#featured" class="hot-item"><span class="hot-rank top">1</span>白袜配黑色乐福鞋·学院通勤</a>
+          <a href="#featured" class="hot-item"><span class="hot-rank top">2</span>华夫格纹理白袜·秋冬季实测</a>
+          <a href="#featured" class="hot-item"><span class="hot-rank top">3</span>堆堆袜配玛丽珍鞋·褶皱控制</a>
+          <a href="#featured" class="hot-item"><span class="hot-rank">4</span>毛圈底运动白袜·跑步实测</a>
+          <a href="#featured" class="hot-item"><span class="hot-rank">5</span>白袜泛黄清洗·含氧漂白方案</a>
+          <a href="#featured" class="hot-item"><span class="hot-rank">6</span>德训鞋配罗纹白袜·周末休闲</a>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>近期更新</h3>
+        <div class="update-list">
+          <div class="update-item"><span class="update-time">11月7日</span>袜口松紧对比评测</div>
+          <div class="update-item"><span class="update-time">11月6日</span>秋冬白袜叠穿指南</div>
+          <div class="update-item"><span class="update-time">11月5日</span>再生纤维白袜实测</div>
+          <div class="update-item"><span class="update-time">11月4日</span>白袜配厚底鞋比例讨论</div>
+          <div class="update-item"><span class="update-time">11月3日</span>棉含量与起球关系</div>
+          <div class="update-item"><span class="update-time">11月2日</span>白袜收纳防黄方法</div>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>投稿须知</h3>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;">欢迎分享白袜搭配照片或护理经验。请附上鞋款类型与袜款信息，方便读者参考。示例页面不接收真实投稿。</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 搜索无结果提示 -->
+  <div class="no-results" id="no-results">没有找到匹配的条目，换个关键词试试。</div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">白袜女生</div>
+        <p class="footer-desc">收录 2026 年 9 月至 11 月的白袜搭配方案、单品评测、护理方法与社区反馈，覆盖通勤、休闲、运动三类场景，每周更新约 10—15 条新内容。条目类型包含搭配卡片、实测数据、清洗步骤与用户短评。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容频道</h4>
+        <a href="#overview">风格概览</a>
+        <a href="#featured">精选推荐</a>
+        <a href="#updates">最新动态</a>
+        <a href="#categories">分类入口</a>
+        <a href="#deep-read">深度解析</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动参与</h4>
+        <a href="#guide">体验指南</a>
+        <a href="#faq">常见问答</a>
+        <a href="#comments">用户评论</a>
+        <a href="#contribute">投稿互动</a>
+      </div>
+      <div class="footer-col">
+        <h4>推荐与榜单</h4>
+        <a href="#news">相关资讯</a>
+        <a href="#recommend">相关推荐</a>
+        <a href="#ranking">热门榜单</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>示例内容页面 · 数据仅供演示 · 更新于 2026年11月8日</span>
+      <span>© 2026 白袜女生内容聚合</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-top" id="back-top" aria-label="回到顶部">↑</button>
+
+  <script>
+    // 移动端菜单
+    var hamburger = document.getElementById('hamburger');
+    var mainNav = document.getElementById('main-nav');
+    hamburger.addEventListener('click', function() {
+      var isOpen = mainNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      hamburger.textContent = isOpen ? '✕' : '☰';
+    });
+    mainNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 740) {
+          mainNav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.textContent = '☰';
+        }
+      });
+    });
+    // Esc 关闭
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+        mainNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.textContent = '☰';
+      }
+    });
+
+    // 回到顶部
+    var backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > window.innerHeight) {
+        backTop.classList.add('visible');
+      } else {
+        backTop.classList.remove('visible');
+      }
+    });
+    backTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 本地搜索
+    var searchInput = document.getElementById('search-input');
+    var searchBtn = document.getElementById('search-btn');
+    var noResults = document.getElementById('no-results');
+    var cardContainer = document.getElementById('cards-container');
+
+    function performSearch() {
+      var query = searchInput.value.trim().toLowerCase();
+      var cards = cardContainer.querySelectorAll('.content-card');
+      if (!query) {
+        cards.forEach(function(card) { card.style.display = ''; });
+        noResults.classList.remove('show');
+        return;
+      }
+      var found = 0;
+      cards.forEach(function(card) {
+        var text = card.textContent.toLowerCase();
+        if (text.indexOf(query) !== -1) {
+          card.style.display = '';
+          found++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      if (found === 0) {
+        noResults.classList.add('show');
+      } else {
+        noResults.classList.remove('show');
+      }
+    }
+
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') performSearch();
+    });
+
+    // 侧栏导航高亮
+    var channelLinks = document.querySelectorAll('.channel-link');
+    var sections = [];
+    channelLinks.forEach(function(link) {
+      var id = link.getAttribute('href').substring(1);
+      var el = document.getElementById(id);
+      if (el) sections.push({ link: link, el: el });
+    });
+    window.addEventListener('scroll', function() {
+      var scrollPos = window.scrollY + 160;
+      var current = null;
+      sections.forEach(function(item) {
+        if (item.el.offsetTop <= scrollPos) {
+          current = item;
+        }
+      });
+      channelLinks.forEach(function(l) { l.classList.remove('active'); });
+      if (current) current.link.classList.add('active');
+    });
+  </script>
+
+  <!-- FAQ 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "白袜穿多久会松口？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "取决于袜口工艺和洗涤频率。传统窄幅橡筋款在每周洗涤 3 次的情况下，约 20—25 次后开始明显松垮；无痕宽幅款约 15—18 次后回弹率下降。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "精梳棉白袜和普通棉白袜差在哪？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "精梳棉在纺纱时剔除了短纤维，纱线更光滑、强度更高。同等克重下，精梳棉款的起球面积在 30 次机洗后约为普通棉款的三分之一。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "堆堆袜怎么堆才不容易掉？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "袜筒长度选 20—24cm，袜口弹性适中的款式。穿的时候先拉到脚踝上方，再往下推 3—4cm 形成褶皱。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "白袜配乐福鞋露出多少合适？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "乐福鞋鞋帮约 6—7cm，白袜筒高出鞋帮 4—6cm 时露出的袜段最完整。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "白袜泛黄用漂白水能洗白吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "含氯漂白水不建议用于棉袜。汗渍氧化型泛黄用 60℃ 温水加过碳酸钠浸泡 40 分钟，去除率约 85%。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "运动白袜和日常白袜能混穿吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以，但运动白袜的毛圈底厚度通常在 2—3mm，日常鞋款内空间有限时会挤脚。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- WebSite 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "白袜女生",
+    "description": "白袜女生主题内容聚合，涵盖白袜穿搭搭配、风格解析、鞋袜组合、护理收纳、社区投稿与真实体验分享。"
+  }
+  </script>
+</body>
+  </html>
