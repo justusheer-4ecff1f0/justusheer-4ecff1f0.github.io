@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电梯粉衣女子番号 - 条目聚合与观看指南</title>
+  <meta name="description" content="电梯粉衣女子番号聚合页，收录相关作品条目、番号索引、网友评论与更新动态，适合想快速定位具体番号、了解作品类型与观看顺序的读者。">
+  <meta name="keywords" content="电梯粉衣女子番号">
+  <style>
+    :root {
+      --brand: #6b2d5c;
+      --brand-light: #a45a8a;
+      --brand-dark: #3e1a35;
+      --bg: #faf7f5;
+      --panel: #ffffff;
+      --text-primary: #1f1b1e;
+      --text-secondary: #5f5760;
+      --text-muted: #8f8590;
+      --border: #e4d9df;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 6px;
+      --shadow-default: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 6px 16px rgba(0,0,0,0.08);
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-top: 104px;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 吸顶公告条 */
+    .announcement {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--brand-dark);
+      color: #fff;
+      font-size: 0.82rem;
+      padding: 6px 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      line-height: 1.4;
+    }
+    .announcement span { white-space: nowrap; }
+    .announcement .sep { width: 1px; height: 12px; background: rgba(255,255,255,0.3); }
+
+    /* 页头 */
+    .header {
+      position: fixed;
+      top: 34px;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--brand-dark);
+      flex-shrink: 0;
+    }
+    .logo svg { width: 32px; height: 32px; }
+    .nav-main {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .nav-main a { color: var(--text-secondary); font-weight: 500; }
+    .nav-main a:hover { color: var(--brand); }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(145deg, #f3eaf0 0%, #faf7f5 60%, #e8d9e3 100%);
+      border-radius: var(--radius-card);
+      padding: 48px 40px;
+      margin: 24px 0 32px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-content { flex: 1 1 400px; position: relative; z-index: 2; }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--brand-dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--brand-dark); text-decoration: none; }
+    .btn-outline {
+      background: transparent;
+      color: var(--brand);
+      padding: 10px 24px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1.5px solid var(--brand);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { background: var(--brand); color: #fff; text-decoration: none; }
+
+    .hero-visual {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-visual svg { max-width: 320px; width: 100%; height: auto; }
+
+    /* 三栏布局 */
+    .layout-3col {
+      display: grid;
+      grid-template-columns: 180px 1fr 240px;
+      gap: 32px;
+      align-items: start;
+    }
+    .sidebar-left {
+      position: sticky;
+      top: 120px;
+      font-size: 0.88rem;
+    }
+    .sidebar-left h3 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .channel-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .channel-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--radius-btn);
+      color: var(--text-secondary);
+      transition: background 0.15s;
+    }
+    .channel-list a:hover { background: #f0e8ee; color: var(--brand-dark); text-decoration: none; }
+
+    .sidebar-right {
+      position: sticky;
+      top: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .side-block {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+    .side-block h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--brand-dark);
+    }
+    .hot-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .hot-list li {
+      display: flex;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .hot-list .rank {
+      font-weight: 700;
+      color: var(--brand);
+      min-width: 18px;
+    }
+
+    /* 主内容区 */
+    .main-content { display: flex; flex-direction: column; gap: 40px; }
+
+    .section { scroll-margin-top: 120px; }
+    .section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--brand-light);
+      display: inline-block;
+    }
+
+    /* 概览 */
+    .overview-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 760px;
+    }
+    .overview-text p { margin-bottom: 14px; }
+
+    /* 精选卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+    .card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #eee; }
+    .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      background: #f0e8ee;
+      color: var(--brand);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .card h3 { font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--text-primary); }
+    .card-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; flex: 1; }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* 更新列表 */
+    .update-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .update-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-date { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; min-width: 80px; }
+    .update-title { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+    .update-summary { font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px; }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 16px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      transition: all 0.2s;
+      box-shadow: var(--shadow-default);
+    }
+    .category-item:hover { border-color: var(--brand-light); background: #fdf9fc; text-decoration: none; }
+    .category-item span { display: block; font-size: 0.72rem; font-weight: 400; color: var(--text-muted); margin-top: 4px; }
+
+    /* 深度解析 */
+    .deep-dive { max-width: 760px; }
+    .deep-dive h3 { font-size: 1.15rem; font-weight: 700; color: var(--brand-dark); margin: 24px 0 12px; }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 14px; }
+    .deep-dive ul { padding-left: 20px; margin-bottom: 14px; }
+    .deep-dive li { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 6px; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+    details {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      overflow: hidden;
+    }
+    summary {
+      padding: 14px 18px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: var(--text-primary);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "＋"; font-size: 1rem; color: var(--brand); font-weight: 400; }
+    details[open] summary::after { content: "－"; }
+    details[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-answer { padding: 14px 18px; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+
+    /* 评论 */
+    .comment-list { display: flex; flex-direction: column; gap: 0; }
+    .comment-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+    }
+    .comment-item:last-child { border-bottom: none; }
+    .comment-avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .comment-body { flex: 1; }
+    .comment-nick { font-weight: 600; font-size: 0.85rem; color: var(--text-primary); margin-bottom: 2px; }
+    .comment-text { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* 资讯 */
+    .news-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .news-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-title { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); margin-bottom: 4px; }
+    .news-meta { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; }
+    .news-summary { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* 相关推荐 */
+    .related-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .related-tag {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+    .related-tag:hover { border-color: var(--brand); color: var(--brand); text-decoration: none; }
+
+    /* 榜单 */
+    .chart-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .chart-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .chart-item:last-child { border-bottom: none; }
+    .chart-rank {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--brand-light);
+      min-width: 28px;
+      text-align: center;
+    }
+    .chart-rank.top { color: var(--brand); }
+    .chart-info { flex: 1; }
+    .chart-name { font-weight: 600; font-size: 0.9rem; }
+    .chart-score { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* 页脚 */
+    .footer {
+      background: var(--brand-dark);
+      color: #d9c8d3;
+      padding: 48px 20px 32px;
+      margin-top: 64px;
+      font-size: 0.85rem;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer h4 { color: #fff; font-size: 0.9rem; margin-bottom: 12px; font-weight: 600; }
+    .footer p { line-height: 1.7; margin-bottom: 8px; }
+    .footer a { color: #d9c8d3; }
+    .footer a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.78rem;
+      color: #a48e9b;
+      text-align: center;
+    }
+
+    /* 移动端菜单按钮 */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--brand-dark);
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-default);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 90;
+      transition: background 0.2s;
+    }
+    .back-top:hover { background: var(--brand-dark); }
+    .back-top.show { display: flex; }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout-3col { grid-template-columns: 1fr 240px; }
+      .sidebar-left { display: none; }
+      .menu-toggle { display: block; }
+      .nav-main { display: none; }
+      .nav-main.open { display: flex; position: absolute; top: 70px; left: 0; right: 0; background: #fff; padding: 16px 20px; border-bottom: 1px solid var(--border); flex-direction: column; gap: 8px; z-index: 98; }
+    }
+    @media (max-width: 740px) {
+      body { padding-top: 96px; }
+      .layout-3col { grid-template-columns: 1fr; }
+      .sidebar-right { position: static; }
+      .hero { padding: 32px 24px; }
+      .hero h1 { font-size: 1.7rem; }
+      .announcement { font-size: 0.75rem; gap: 12px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announcement">
+  <span>电梯粉衣女子番号</span>
+  <span class="sep"></span>
+  <span>2026-11-08 更新：番号索引新增 3 条</span>
+  <span class="sep"></span>
+  <span>今日热榜：EP-3482 升至第 2 位</span>
+</div>
+
+<!-- 页头 -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="2" width="24" height="28" rx="3" stroke="#6b2d5c" stroke-width="2"/>
+        <line x1="10" y1="2" x2="10" y2="30" stroke="#6b2d5c" stroke-width="1.5"/>
+        <line x1="22" y1="2" x2="22" y2="30" stroke="#6b2d5c" stroke-width="1.5"/>
+        <circle cx="16" cy="10" r="2" fill="#a45a8a"/>
+        <path d="M13 22l3-4 3 4" stroke="#a45a8a" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>电梯粉衣女子番号</span>
+    </div>
+    <button class="menu-toggle" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+    <nav class="nav-main" id="mainNav">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#chart">热门榜单</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>电梯粉衣女子番号</h1>
+      <p class="hero-desc">汇聚电梯场景中粉衣女子相关作品条目、番号索引与类型标注。包含场景还原、演员对照、发行时间与网友讨论，方便按番号、题材或年份快速定位。</p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">浏览精选条目</a>
+        <a href="/#categories" class="btn-outline">按分类查找</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="20" width="240" height="200" rx="8" fill="#e8d9e3" opacity="0.5"/>
+        <rect x="60" y="40" width="200" height="160" rx="4" fill="#fff" stroke="#c4a8b8" stroke-width="1.5"/>
+        <line x1="100" y1="40" x2="100" y2="200" stroke="#c4a8b8" stroke-width="1"/>
+        <line x1="220" y1="40" x2="220" y2="200" stroke="#c4a8b8" stroke-width="1"/>
+        <rect x="110" y="80" width="100" height="80" rx="3" fill="#f3eaf0"/>
+        <circle cx="160" cy="110" r="14" fill="#d9b8cc"/>
+        <path d="M130 160 Q160 140 190 160" stroke="#a45a8a" stroke-width="2" stroke-linecap="round"/>
+        <rect x="140" y="180" width="40" height="4" rx="2" fill="#c4a8b8"/>
+        <rect x="150" y="188" width="20" height="3" rx="1.5" fill="#c4a8b8"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 三栏布局 -->
+  <div class="layout-3col">
+
+    <!-- 左侧频道索引 -->
+    <aside class="sidebar-left">
+      <h3>频道索引</h3>
+      <ul class="channel-list">
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#featured">精选推荐</a></li>
+        <li><a href="/#updates">最新更新</a></li>
+        <li><a href="/#categories">分类入口</a></li>
+        <li><a href="/#deep-dive">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#related">相关推荐</a></li>
+        <li><a href="/#chart">热门榜单</a></li>
+        <li><a href="/#submit">投稿交流</a></li>
+      </ul>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main-content">
+
+      <!-- 领域概览 -->
+      <section id="overview" class="section">
+        <h2>电梯场景作品领域概览</h2>
+        <div class="overview-text">
+          <p>电梯密闭空间题材在影像作品中自成一类。粉衣女子作为视觉锚点，常出现在两类作品中：一类是日常场景轻叙事，另一类是悬疑或冲突型短剧。按发行渠道分，有独立制作番号、平台自制系列和合集剪辑版。2026 年 10 月至 11 月期间，新上架条目集中在 EP 系列与 KZ 系列，共 17 条，其中粉衣设定占 11 条。</p>
+          <p>番号体系并不统一。EP 系列采用“EP-四位数字”格式，KZ 系列用“KZ-字母数字组合”，部分独立制作只用发行日期加场景代号。查找时以番号前缀区分制作方，比按标题搜索更准。电梯场景的辨识点包括：镜面反射构图、楼层显示牌、关门瞬间的定格。粉衣在画面中的色值约在 #f0a0c0 至 #e878a8 之间，后期调色偏冷时会压成藕荷色。</p>
+          <p>目前可检索到的条目中，带完整番号信息的约 140 条，其中标注了演员名的 86 条，标注了发行日期的 112 条。EP-3482 是本月讨论量最高的一条，评论区集中在场景调度上。KZ-771 因片尾追加了 40 秒电梯外镜头，被多个论坛列为“版本差异”对比对象。</p>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section id="featured" class="section">
+        <h2>精选番号条目推荐</h2>
+        <div class="card-grid">
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/elevatorEP3482/400/300" alt="EP-3482 电梯镜面构图场景" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">EP系列</span><span class="tag">镜面构图</span><span class="tag">粉衣</span></div>
+              <h3>EP-3482 镜面反射下的粉衣定格</h3>
+              <p class="card-desc">全长 22 分钟，第 7 分钟电梯门关闭瞬间用镜面同时拍到前后景，粉衣色值经调色后偏冷。片尾有 15 秒花絮，展示同一镜位的备用角度。</p>
+              <div class="card-meta"><span>热度 9,420</span><span>评分 7.8</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/kz771elevator/400/300" alt="KZ-771 电梯楼层显示牌特写" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">KZ系列</span><span class="tag">版本差异</span><span class="tag">追加镜头</span></div>
+              <h3>KZ-771 片尾追加 40 秒电梯外景</h3>
+              <p class="card-desc">正片 18 分钟，片尾字幕前插入电梯门外走廊镜头。导演在 10 月 14 日直播中解释追加原因是补拍时发现了更好的收尾节奏。</p>
+              <div class="card-meta"><span>热度 8,150</span><span>评分 7.5</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/ep3501pink/400/300" alt="EP-3501 粉衣女子进入电梯画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">EP系列</span><span class="tag">新上架</span><span class="tag">日常向</span></div>
+              <h3>EP-3501 日常通勤场景的粉衣系列新作</h3>
+              <p class="card-desc">11 月 3 日上架，电梯场景占全片 70%，几乎没有对白。服装配色参考了 2019 年同系列 EP-2104 的粉衣方案，色号相近但材质从棉质换成了聚酯纤维。</p>
+              <div class="card-meta"><span>热度 6,870</span><span>评分 7.2</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/kz788mirror/400/300" alt="KZ-788 电梯镜面中的粉衣倒影" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">KZ系列</span><span class="tag">悬疑</span><span class="tag">双版本</span></div>
+              <h3>KZ-788 两个结局版本的番号区分</h3>
+              <p class="card-desc">KZ-788A 和 KZ-788B 仅在第 14 分钟分岔：A 版电梯停在 13 楼，B 版直接到 1 楼。发行方 10 月 22 日公告称 B 版为最终版，A 版不再补货。</p>
+              <div class="card-meta"><span>热度 7,340</span><span>评分 7.6</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/ep3499hand/400/300" alt="EP-3499 手持镜头电梯内景" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">EP系列</span><span class="tag">手持摄影</span><span class="tag">长镜头</span></div>
+              <h3>EP-3499 手持跟拍长镜头 8 分 12 秒</h3>
+              <p class="card-desc">从进入电梯到出电梯一镜到底，摄影师在 1.5 平米空间内完成 4 次走位切换。花絮显示用了稳定器加广角附加镜，粉衣在广角下偏红约 5%。</p>
+              <div class="card-meta"><span>热度 5,960</span><span>评分 7.0</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/kz754date/400/300" alt="KZ-754 电梯楼层按钮特写" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">KZ系列</span><span class="tag">独立制作</span><span class="tag">日期番号</span></div>
+              <h3>KZ-754 以日期命名的独立番号</h3>
+              <p class="card-desc">番号中的 754 指 7 月 54 号场景，不是日期。制作方在 10 月 8 日说明命名规则后，论坛里此前猜测“7 月 5 日第 4 版”的帖子被纠正。</p>
+              <div class="card-meta"><span>热度 4,780</span><span>评分 6.9</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section id="updates" class="section">
+        <h2>番号条目最新更新</h2>
+        <ul class="update-list">
+          <li class="update-item">
+            <span class="update-date">2026-11-08</span>
+            <div><div class="update-title">EP-3505 上架</div><div class="update-summary">粉衣设定回归，电梯场景 14 分钟，新增了楼层显示屏的 4K 特写镜头。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-11-07</span>
+            <div><div class="update-title">KZ-792 番号更正</div><div class="update-summary">发行方将原编号 KZ-782 更正为 KZ-792，因与 2024 年旧番号冲突，已购用户可凭订单换新索引。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-11-06</span>
+            <div><div class="update-title">EP-3482 追加字幕轨</div><div class="update-summary">新增中文注释字幕，标注了镜面构图中粉衣反射角度的技术说明。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-11-05</span>
+            <div><div class="update-title">KZ-788B 补货</div><div class="update-summary">B 版最终版恢复供应，A 版渠道已确认不再上架。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-11-04</span>
+            <div><div class="update-title">EP-3501 评论破千</div><div class="update-summary">讨论集中在日常向场景是否缺少冲突设计，有用户逐帧对比了粉衣色号。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-11-02</span>
+            <div><div class="update-title">KZ-771 追加花絮</div><div class="update-summary">追加了走廊镜头的备用机位素材，时长 2 分 18 秒，仅在数字版中提供。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-10-30</span>
+            <div><div class="update-title">EP-3499 评分升至 7.0</div><div class="update-summary">长镜头讨论帖在影像技术版块被引用 23 次，评分从 6.6 上调。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-10-28</span>
+            <div><div class="update-title">KZ-754 命名规则说明</div><div class="update-summary">制作方发布图文解释“754”的构成，澄清了此前论坛的日期猜测。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-10-24</span>
+            <div><div class="update-title">EP-3488 下架</div><div class="update-summary">发行方以“场景授权到期”为由下架，未涉及粉衣设定，已有下载不受影响。</div></div>
+          </li>
+          <li class="update-item">
+            <span class="update-date">2026-10-20</span>
+            <div><div class="update-title">KZ-760 新增预告</div><div class="update-summary">30 秒预告包含电梯关门和楼层跳变两个镜头，粉衣在预告中只出现 4 秒。</div></div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 分类入口 -->
+      <section id="categories" class="section">
+        <h2>按场景与类型查找番号</h2>
+        <div class="category-grid">
+          <a href="/#featured" class="category-item">EP 系列番号<span>镜面构图与长镜头</span></a>
+          <a href="/#featured" class="category-item">KZ 系列番号<span>独立制作与版本差异</span></a>
+          <a href="/#updates" class="category-item">本周新上架<span>11 月 1 日至 8 日</span></a>
+          <a href="/#deep-dive" class="category-item">粉衣色号对照<span>调色与材质差异</span></a>
+          <a href="/#chart" class="category-item">热度排行<span>按讨论量与评分</span></a>
+          <a href="/#news" class="category-item">版本变更记录<span>追加、更正与下架</span></a>
+          <a href="/#comments" class="category-item">用户实测评论<span>逐帧对比与吐槽</span></a>
+          <a href="/#guide" class="category-item">观看顺序建议<span>按类型与时长</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section id="deep-dive" class="section">
+        <h2>电梯场景番号的辨识与版本判断</h2>
+        <div class="deep-dive">
+          <h3>番号前缀为什么比标题可靠</h3>
+          <p>标题在转载过程中会被改写。同一条作品，在三个论坛分别叫“电梯粉衣完整版”“镜面走廊加长版”和“EP-3482 无删减”。只有 EP-3482 是发行方原编号。2026 年 10 月 12 日，影像索引版块做过一次抽样：随机抽取 50 条标题含“电梯粉衣”的帖子，能对应到有效番号的只有 31 条，其余 19 条标题中的关键词与正片内容不匹配——有的只是封面用了粉色衣服，正片场景在楼梯间。</p>
+          <p>按番号前缀区分制作方是目前最稳的办法。EP 开头对应一家制作方的连续编号，KZ 开头对应另一家的场景编号体系。前缀不同，命名规则完全不同：EP 是流水号，数字越大越新；KZ 是“场景号 + 版本字母”，数字不连续，同一场景可能有 A/B 两个版本。把 KZ 当流水号去推算发布日期，会得出错误结论。</p>
+
+          <h3>版本差异的核对清单</h3>
+          <p>KZ-788 的 A/B 双版本是 10 月下旬讨论最集中的案例。发行方 10 月 22 日公告明确：B 版为最终版，A 版不再补货。但公告没有逐条列出差异。论坛用户“帧数计”在 10 月 25 日发帖逐帧对比了两个版本，列出三处不同：</p>
+          <ul>
+            <li>第 14 分 02 秒电梯停靠楼层：A 版显示 13 楼，B 版显示 1 楼。</li>
+            <li>第 14 分 09 秒粉衣角色动作：A 版转身面向电梯门，B 版保持背对。</li>
+            <li>第 17 分 31 秒配乐：A 版有低频持续音，B 版在关门前 8 秒淡出。</li>
+          </ul>
+          <p>这三处中，楼层显示牌的变化最容易被截图传播，但真正影响叙事的是第二处动作方向。A 版转身面向门，暗示角色要离开；B 版背对，暗示停留。发行方在 11 月 5 日补货公告中没有解释为什么改动作，只在评论区回复了一句“试映反馈”。这条回复被截图转发 200 余次，但回复本身没有提供更多细节。在版本判断上，逐帧对比帖的可核对程度高于官方一句回复，因为对比帖附了时间码和截图。</p>
+
+          <h3>色号标注的可信度分层</h3>
+          <p>粉衣色号是另一个容易被模糊处理的信息。有用户拿不同来源的截图去测色值，得出 #e878a8 和 #d96a98 两个结果，差了约 6% 的明度。差异来自哪里？可以拆成三个环节核对：第一，片源是数字版还是转录版；第二，播放器有没有开色彩管理；第三，截图用的是原始帧还是压缩后的预览帧。三个环节任一不同，色值就会偏移。目前能查到的最完整记录来自 10 月 19 日一个调色爱好者的帖子，他用了同一片源的原始帧、关闭色彩管理、导出 PNG 再取色，得出 #e878a8，并附了取色过程截图。这个结果比“看着像粉红”的描述更有参考价值，但也不能当成发行方官方色号——发行方从未公布过色号。</p>
+          <p>按可信度分层，官方公告属于“已公开事实”，但只覆盖发行和版本；逐帧对比帖属于“用户核实”，精度高但依赖个人操作；调色取色帖属于“技术分析”，可复现但样本单一。三类信息中，版本差异看逐帧帖，发行状态看公告，色号参考看取色帖。把三类混在一起作为“番号信息”使用，容易把推测当事实。</p>
+        </div>
+      </section>
+
+      <!-- 体验指南 -->
+      <section id="guide" class="section">
+        <h2>观看顺序与投入判断</h2>
+        <div class="deep-dive">
+          <h3>先看哪一类</h3>
+          <p>电梯场景作品时长普遍在 15 到 25 分钟之间，单条投入不大，但番号体系乱。建议按类型切入，而不是按热度排序。日常向（EP-3501 这类）节奏慢，适合先看，用来熟悉场景调度和粉衣设定。悬疑向（KZ-788 这类）信息密度高，放在后面看，避免先入为主把版本差异当成剧情漏洞。独立制作（KZ-754 这类）时长和画质不稳定，适合在看完两到三条标准制作之后再判断要不要追。</p>
+
+          <h3>判断一条值不值得看</h3>
+          <p>三个可核对指标：番号是否连续、有无花絮或追加镜头、评论区有没有逐帧帖。番号连续说明制作方还在维护这个系列，后续可能有新条目；有花絮说明拍摄时有备用素材，通常意味着制作方对场景调度有要求；评论区出现时间码和截图，说明有人认真看过，信息可交叉验证。三个指标全无的条目，热度再高也先放一放。</p>
+
+          <h3>同类条目怎么比较</h3>
+          <p>拿 EP-3482 和 KZ-771 比：前者镜面构图完整，但片尾花絮只有 15 秒；后者追加了 40 秒走廊镜头，但正片电梯内景占比只有 60%。比的时候先定权重——要看构图选 EP-3482，要看场景延伸选 KZ-771。两个都想要的话，先看 EP-3482 再补 KZ-771 的追加部分，因为 KZ-771 的走廊镜头理解门槛低，放在后面不影响对电梯内景的判断。</p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section">
+        <h2>常见问答</h2>
+        <div class="faq-list">
+          <details>
+            <summary>EP-3482 和 KZ-771 哪个版本更完整？</summary>
+            <div class="faq-answer">EP-3482 正片 22 分钟，片尾花絮 15 秒；KZ-771 正片 18 分钟，片尾追加走廊镜头 40 秒。论电梯内场景时长，EP-3482 更长；论片尾附加内容，KZ-771 更多。两者不是同一制作方，番号不能直接换算时长。</div>
+          </details>
+          <details>
+            <summary>粉衣色号有官方标准吗？</summary>
+            <div class="faq-answer">发行方没有公布过色号。目前可参考的是用户用原始帧取色得出的 #e878a8，来自 10 月 19 日调色帖。这个值受片源和播放器影响，不能当官方标准用。不同条目之间的粉衣色值本身就有差异，EP-3501 的材质是聚酯纤维，反光比棉质高，色值会偏亮。</div>
+          </details>
+          <details>
+            <summary>KZ-788A 和 KZ-788B 有什么区别？</summary>
+            <div class="faq-answer">三处不同：第 14 分 02 秒楼层显示 A 版 13 楼、B 版 1 楼；第 14 分 09 秒粉衣角色 A 版转身面向门、B 版背对；第 17 分 31 秒配乐 A 版有低频持续音、B 版淡出。发行方 10 月 22 日公告确认 B 版为最终版。</div>
+          </details>
+          <details>
+            <summary>番号里的数字是日期吗？</summary>
+            <div class="faq-answer">EP 系列的数字是流水号，越大越新，不是日期。KZ 系列的数字是场景号，也不是日期；KZ-754 里的 754 指 7 月 54 号场景，制作方 10 月 8 日专门发过说明。把番号数字当日期去算发布年份，会出错。</div>
+          </details>
+          <details>
+            <summary>EP-3488 为什么下架了？</summary>
+            <div class="faq-answer">发行方给出的原因是“场景授权到期”，没有涉及内容修改或粉衣设定。10 月 24 日下架，已下载的数字版不受影响。同系列其他条目目前正常供应。</div>
+          </details>
+          <details>
+            <summary>哪里能看到逐帧对比的讨论？</summary>
+            <div class="faq-answer">影像索引版块和评论区都有。10 月 25 日用户“帧数计”发的 KZ-788 A/B 对比帖是讨论量最高的一篇，附了时间码和截图。调色帖在技术分析分类下，搜“粉衣色号 原始帧”可以找到。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 用户评论 -->
+      <section id="comments" class="section">
+        <h2>用户评论</h2>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="comment-avatar">帧</div>
+            <div class="comment-body">
+              <div class="comment-nick">帧数计</div>
+              <div class="comment-text">KZ-788B 第 14 分 09 秒那个背对动作改得好，A 版转身面向门太像赶着下班了。不过低频音淡出有点突然，戴耳机听会明显断一下。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">粉</div>
+            <div class="comment-body">
+              <div class="comment-nick">粉色偏执狂</div>
+              <div class="comment-text">EP-3501 的粉衣材质换了，反光比 EP-2104 厉害，截图的时候高光过曝。日常向拍成这样已经可以了，没对白反而看得下去。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">电</div>
+            <div class="comment-body">
+              <div class="comment-nick">电梯观察员</div>
+              <div class="comment-text">EP-3482 镜面那个镜头，前后景同时拍到，调度确实花了心思。就是花絮太短，15 秒还没反应过来就没了。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">路</div>
+            <div class="comment-body">
+              <div class="comment-nick">路人甲_1987</div>
+              <div class="comment-text">KZ-754 那个命名说明看了，之前真以为是 7 月 5 日第 4 版，还跟人争了半天。行吧，是我错了。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">调</div>
+            <div class="comment-body">
+              <div class="comment-nick">调色盘不调色</div>
+              <div class="comment-text">取色帖那个 #e878a8 我也试了，用的是转录版，出来 #d96a98。片源差异确实大，建议所有人都用原始帧再说话。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">番</div>
+            <div class="comment-body">
+              <div class="comment-nick">番号收集癖</div>
+              <div class="comment-text">EP 系列编号到 3505 了，按这个速度一个月出七八条，追不动。现在只收带花絮的。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">半</div>
+            <div class="comment-body">
+              <div class="comment-nick">半截话</div>
+              <div class="comment-text">KZ-771 走廊那 40 秒，说实话可有可无。正片电梯里就够看了。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">长</div>
+            <div class="comment-body">
+              <div class="comment-nick">长镜头爱好者</div>
+              <div class="comment-text">EP-3499 那个 8 分 12 秒一镜到底，走位切换的时候镜头晃了一下，稳定器没吃住。不过 1.5 平米空间能拍成这样已经不容易。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">路</div>
+            <div class="comment-body">
+              <div class="comment-nick">路过的猫</div>
+              <div class="comment-text">今天中午吃了碗面，有点咸。回来接着说，EP-3505 楼层显示屏那个 4K 特写倒是清楚，连按钮上的指纹都看得见。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">版</div>
+            <div class="comment-body">
+              <div class="comment-nick">版本控</div>
+              <div class="comment-text">KZ-788 A 版不再补货这事，公告写得太简略了。要不是帧数计那篇对比帖，根本不知道改了哪。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">新</div>
+            <div class="comment-body">
+              <div class="comment-nick">新人求带</div>
+              <div class="comment-text">刚接触这个系列，EP 和 KZ 看哪个先？上面指南说日常向先看，那我去找 EP-3501 了。</div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">吐</div>
+            <div class="comment-body">
+              <div class="comment-nick">吐槽专用号</div>
+              <div class="comment-text">标题写“粉衣女子”，点进去全程楼梯间，这种帖子能不能少一点。番号对不上真的很烦。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section id="news" class="section">
+        <h2>番号领域相关资讯</h2>
+        <ul class="news-list">
+          <li class="news-item">
+            <div class="news-title">EP-3505 上架首日下载量超 EP-3501 同期 22%</div>
+            <div class="news-meta">2026-11-08</div>
+            <div class="news-summary">发行方后台数据显示，首日下载 3,400 次，其中带字幕版占 61%。新增的 4K 楼层显示屏特写被截图转发 400 余次。</div>
+          </li>
+          <li class="news-item">
+            <div class="news-title">KZ-792 番号更正公告发布，旧编号 KZ-782 停用</div>
+            <div class="news-meta">2026-11-07</div>
+            <div class="news-summary">发行方称更正原因是与 2024 年 3 月一条旧番号冲突，已购用户可在 11 月 30 日前凭订单换新索引，不影响片源本身。</div>
+          </li>
+          <li class="news-item">
+            <div class="news-title">EP-3482 追加中文注释字幕，标注镜面角度</div>
+            <div class="news-meta">2026-11-06</div>
+            <div class="news-summary">注释字幕在第 7 分 14 秒出现，标注了镜面反射角约 42 度、粉衣在画面中的色值范围。制作方称字幕由摄影指导校对。</div>
+          </li>
+          <li class="news-item">
+            <div class="news-title">KZ-788B 恢复供应，A 版渠道确认不再上架</div>
+            <div class="news-meta">2026-11-05</div>
+            <div class="news-summary">B 版补货 1,200 份，发行方在公告中未解释动作修改原因，评论区回复“试映反馈”获 200 余次转发。</div>
+          </li>
+          <li class="news-item">
+            <div class="news-title">EP-3499 长镜头技术帖被影像版块引用 23 次</div>
+            <div class="news-meta">2026-10-30</div>
+            <div class="news-summary">帖子分析了稳定器型号和广角附加镜倍率，指出 1.5 平米空间内四次走位切换中第三次有 0.3 秒画面抖动。</div>
+          </li>
+          <li class="news-item">
+            <div class="news-title">KZ-754 制作方发布命名规则图解</div>
+            <div class="news-meta">2026-10-28</div>
+            <div class="news-summary">图解说明“754”指 7 月 54 号场景，不是日期。此前论坛中“7 月 5 日第 4 版”的猜测帖被作者自行标注为错误。</div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section id="related" class="section">
+        <h2>相关番号与内容方向</h2>
+        <div class="related-tags">
+          <a href="/#featured" class="related-tag">EP-3482 镜面构图</a>
+          <a href="/#featured" class="related-tag">KZ-788B 最终版</a>
+          <a href="/#featured" class="related-tag">EP-3501 日常向粉衣</a>
+          <a href="/#featured" class="related-tag">KZ-771 走廊追加镜头</a>
+          <a href="/#deep-dive" class="related-tag">粉衣色号取色方法</a>
+          <a href="/#deep-dive" class="related-tag">EP 与 KZ 番号前缀区别</a>
+          <a href="/#guide" class="related-tag">电梯场景观看顺序</a>
+          <a href="/#chart" class="related-tag">本月讨论量排行</a>
+        </div>
+      </section>
+
+      <!-- 热门榜单 -->
+      <section id="chart" class="section">
+        <h2>本月条目热度榜</h2>
+        <ul class="chart-list">
+          <li class="chart-item">
+            <span class="chart-rank top">1</span>
+            <div class="chart-info">
+              <div class="chart-name">EP-3482 镜面反射下的粉衣定格</div>
+              <div class="chart-score">讨论量 9,420 · 评分 7.8</div>
+            </div>
+          </li>
+          <li class="chart-item">
+            <span class="chart-rank top">2</span>
+            <div class="chart-info">
+              <div class="chart-name">KZ-788B 最终版电梯停靠 1 楼</div>
+              <div class="chart-score">讨论量 8,150 · 评分 7.6</div>
+            </div>
+          </li>
+          <li class="chart-item">
+            <span class="chart-rank">3</span>
+            <div class="chart-info">
+              <div class="chart-name">KZ-771 片尾 40 秒走廊追加</div>
+              <div class="chart-score">讨论量 7,340 · 评分 7.5</div>
+            </div>
+          </li>
+          <li class="chart-item">
+            <span class="chart-rank">4</span>
+            <div class="chart-info">
+              <div class="chart-name">EP-3501 日常通勤粉衣新作</div>
+              <div class="chart-score">讨论量 6,870 · 评分 7.2</div>
+            </div>
+          </li>
+          <li class="chart-item">
+            <span class="chart-rank">5</span>
+            <div class="chart-info">
+              <div class="chart-name">EP-3499 手持长镜头 8 分 12 秒</div>
+              <div class="chart-score">讨论量 5,960 · 评分 7.0</div>
+            </div>
+          </li>
+          <li class="chart-item">
+            <span class="chart-rank">6</span>
+            <div class="chart-info">
+              <div class="chart-name">KZ-754 日期命名误会澄清</div>
+              <div class="chart-score">讨论量 4,780 · 评分 6.9</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 投稿交流 -->
+      <section id="submit" class="section">
+        <h2>投稿与番号补充</h2>
+        <div class="deep-dive">
+          <p>如果你发现了未收录的番号，或者有逐帧对比、色号取色的记录，可以提交到索引补充通道。提交时请附带番号全称、发行方、时长和至少一处可核对的时间码。没有时间码的提交会进入待核实区，核实周期约 3 个工作日。</p>
+          <p>10 月共收到 47 条补充提交，其中 29 条通过核实并加入索引，11 条因番号格式不符退回，7 条等待制作方确认。通过率最高的一类是附了逐帧截图的版本差异报告，最低的是只写了标题没有番号的转发帖。</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="sidebar-right">
+      <div class="side-block">
+        <h3>今日热榜</h3>
+        <ul class="hot-list">
+          <li><span class="rank">1</span> EP-3482 镜面定格</li>
+          <li><span class="rank">2</span> KZ-788B 最终版</li>
+          <li><span class="rank">3</span> KZ-771 走廊追加</li>
+          <li><span class="rank">4</span> EP-3501 日常向</li>
+          <li><span class="rank">5</span> EP-3505 新上架</li>
+        </ul>
+      </div>
+      <div class="side-block">
+        <h3>最近更新</h3>
+        <ul class="hot-list">
+          <li>11-08 EP-3505 上架</li>
+          <li>11-07 KZ-792 番号更正</li>
+          <li>11-06 EP-3482 追加字幕</li>
+          <li>11-05 KZ-788B 补货</li>
+        </ul>
+      </div>
+      <div class="side-block">
+        <h3>番号前缀速查</h3>
+        <ul class="hot-list">
+          <li>EP · 流水号，数字递增</li>
+          <li>KZ · 场景号 + 版本字母</li>
+          <li>独立 · 日期 + 场景代号</li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h4>电梯粉衣女子番号</h4>
+      <p>聚焦电梯场景粉衣女子相关作品条目，覆盖 2026 年 10 月至 11 月的 EP 与 KZ 系列番号，含版本差异记录、用户逐帧对比与观看顺序建议。</p>
+      <p>内容类型：番号索引、场景分析、版本核对、用户评论。更新节奏：工作日每日更新，周末汇总。</p>
+    </div>
+    <div>
+      <h4>频道</h4>
+      <p><a href="/#overview">领域概览</a></p>
+      <p><a href="/#featured">精选推荐</a></p>
+      <p><a href="/#updates">最新更新</a></p>
+      <p><a href="/#categories">分类入口</a></p>
+    </div>
+    <div>
+      <h4>互动</h4>
+      <p><a href="/#comments">用户评论</a></p>
+      <p><a href="/#submit">投稿补充</a></p>
+      <p><a href="/#faq">常见问答</a></p>
+      <p><a href="/#chart">热度榜单</a></p>
+    </div>
+    <div>
+      <h4>索引</h4>
+      <p><a href="/#deep-dive">深度解析</a></p>
+      <p><a href="/#guide">体验指南</a></p>
+      <p><a href="/#news">相关资讯</a></p>
+      <p><a href="/#related">相关推荐</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>条目与评论为示例数据，用于展示内容聚合结构。番号与发行信息以各制作方公告为准。© 2026 电梯粉衣女子番号索引</p>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+  // 移动端菜单
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mainNav');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // 回到顶部
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backTop.classList.add('show');
+    } else {
+      backTop.classList.remove('show');
+    }
+  });
+  backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Esc 关闭菜单
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
+  });
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "电梯粉衣女子番号",
+  "description": "电梯粉衣女子番号聚合页，收录相关作品条目、番号索引、网友评论与更新动态。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "EP-3482 和 KZ-771 哪个版本更完整？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EP-3482 正片 22 分钟，片尾花絮 15 秒；KZ-771 正片 18 分钟，片尾追加走廊镜头 40 秒。论电梯内场景时长，EP-3482 更长；论片尾附加内容，KZ-771 更多。两者不是同一制作方，番号不能直接换算时长。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "粉衣色号有官方标准吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "发行方没有公布过色号。目前可参考的是用户用原始帧取色得出的 #e878a8，来自 10 月 19 日调色帖。这个值受片源和播放器影响，不能当官方标准用。不同条目之间的粉衣色值本身就有差异，EP-3501 的材质是聚酯纤维，反光比棉质高，色值会偏亮。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "KZ-788A 和 KZ-788B 有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "三处不同：第 14 分 02 秒楼层显示 A 版 13 楼、B 版 1 楼；第 14 分 09 秒粉衣角色 A 版转身面向门、B 版背对；第 17 分 31 秒配乐 A 版有低频持续音、B 版淡出。发行方 10 月 22 日公告确认 B 版为最终版。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "番号里的数字是日期吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EP 系列的数字是流水号，越大越新，不是日期。KZ 系列的数字是场景号，也不是日期；KZ-754 里的 754 指 7 月 54 号场景，制作方 10 月 8 日专门发过说明。把番号数字当日期去算发布年份，会出错。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "EP-3488 为什么下架了？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "发行方给出的原因是“场景授权到期”，没有涉及内容修改或粉衣设定。10 月 24 日下架，已下载的数字版不受影响。同系列其他条目目前正常供应。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "哪里能看到逐帧对比的讨论？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "影像索引版块和评论区都有。10 月 25 日用户“帧数计”发的 KZ-788 A/B 对比帖是讨论量最高的一篇，附了时间码和截图。调色帖在技术分析分类下，搜“粉衣色号 原始帧”可以找到。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+            </html>
