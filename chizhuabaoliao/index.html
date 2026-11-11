@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>吃爪爆料51 - 网络热点内幕聚合</title>
+  <meta name="description" content="吃爪爆料51汇聚网络热点事件、行业内部消息与圈内争议细节，提供爆料条目、深度解析、用户评论与相关资讯，适合关注网络动态与幕后真相的读者。">
+  <meta name="keywords" content="吃爪爆料51">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c44536'/%3E%3Cpath d='M8 12h16v3H8zm0 6h12v3H8z' fill='%23f9f2e7'/%3E%3Ccircle cx='24' cy='9' r='3' fill='%23f2b84b'/%3E%3C/svg%3E">
+  <style>
+    /* ---------- 全局设计变量 ---------- */
+    :root {
+      --clr-primary: #c44536;
+      --clr-primary-light: #f7e4e0;
+      --clr-primary-dark: #8f2e22;
+      --clr-accent: #f2b84b;
+      --clr-bg: #fdfaf7;
+      --clr-surface: #ffffff;
+      --clr-text-1: #1e1a18;
+      --clr-text-2: #4f4946;
+      --clr-text-3: #8a827d;
+      --clr-border: #e8dfda;
+      --radius-card: 16px;
+      --radius-btn: 40px;
+      --radius-tag: 20px;
+      --shadow-default: 0 4px 14px rgba(30, 26, 24, 0.05);
+      --shadow-hover: 0 10px 24px rgba(30, 26, 24, 0.10);
+      --font-base: 'Inter', -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', system-ui, sans-serif;
+      --max-width: 1360px;
+      --header-height: 64px;
+      --announcement-height: 40px;
+      --sticky-offset: calc(var(--announcement-height) + var(--header-height));
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--sticky-offset) + 12px);
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--clr-bg);
+      color: var(--clr-text-1);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- 吸顶容器 ---------- */
+    .sticky-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 公告条 */
+    .announcement {
+      background: var(--clr-primary-dark);
+      color: #fff;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      height: var(--announcement-height);
+      padding: 0 1.5rem;
+      gap: 1.2rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .announcement__brand {
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      background: var(--clr-accent);
+      color: var(--clr-primary-dark);
+      padding: 0.1rem 0.7rem;
+      border-radius: var(--radius-tag);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    .announcement__items {
+      display: flex;
+      gap: 2rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .announcement__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .announcement__date {
+      opacity: 0.8;
+      font-size: 0.75rem;
+    }
+
+    /* 页头 */
+    .header {
+      background: rgba(253, 250, 247, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--clr-border);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+    .header__inner {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--clr-primary-dark);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .brand svg {
+      width: 30px;
+      height: 30px;
+    }
+    .nav-main {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--clr-text-2);
+      flex-wrap: wrap;
+    }
+    .nav-main a {
+      text-decoration: none;
+      color: inherit;
+      padding: 0.2rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-main a:hover,
+    .nav-main a:focus-visible {
+      border-bottom-color: var(--clr-primary);
+      color: var(--clr-primary-dark);
+      outline: none;
+    }
+    .nav-main a:focus-visible {
+      outline: 2px solid var(--clr-primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* 汉堡菜单（移动端） */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      color: var(--clr-text-1);
+      margin-left: auto;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .menu-toggle:focus-visible {
+      outline: 2px solid var(--clr-primary);
+    }
+
+    /* 主容器 */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+      background: linear-gradient(135deg, #fdf5f1 0%, #f9e7e0 100%);
+      border-radius: 0 0 40px 40px;
+      padding: 3rem 0 3.5rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero__content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--clr-primary-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+    .hero__desc {
+      font-size: 1.1rem;
+      color: var(--clr-text-2);
+      max-width: 560px;
+      margin-bottom: 1.8rem;
+    }
+    .hero__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.6rem;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      gap: 0.4rem;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+    .btn-primary {
+      background: var(--clr-primary);
+      color: #fff;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--clr-primary-dark);
+      border: 1.5px solid var(--clr-primary);
+    }
+    .hero__visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero__visual svg {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+    }
+
+    /* ---------- 三栏布局 ---------- */
+    .layout-3col {
+      display: grid;
+      grid-template-columns: 180px 1fr 240px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* 左频道栏 */
+    .sidebar-left {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 24px);
+      background: var(--clr-surface);
+      border-radius: var(--radius-card);
+      padding: 1.2rem 0.8rem;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--clr-border);
+    }
+    .sidebar-left h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--clr-text-3);
+      padding: 0 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .channel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .channel-list a {
+      display: flex;
+      align-items: center;
+      padding: 0.45rem 0.7rem;
+      border-radius: 8px;
+      color: var(--clr-text-2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+    }
+    .channel-list a:hover,
+    .channel-list a:focus-visible,
+    .channel-list a.active {
+      background: var(--clr-primary-light);
+      color: var(--clr-primary-dark);
+      outline: none;
+    }
+    .channel-list a:focus-visible {
+      outline: 2px solid var(--clr-primary);
+      outline-offset: -1px;
+    }
+
+    /* 右侧辅助栏 */
+    .sidebar-right {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .side-card {
+      background: var(--clr-surface);
+      border-radius: var(--radius-card);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--clr-border);
+    }
+    .side-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+      color: var(--clr-text-1);
+      border-left: 4px solid var(--clr-primary);
+      padding-left: 0.6rem;
+    }
+    .hot-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .hot-list li {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: var(--clr-text-2);
+      display: flex;
+      gap: 0.5rem;
+    }
+    .hot-list .rank {
+      font-weight: 700;
+      color: var(--clr-primary);
+      min-width: 1.4rem;
+    }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      background: var(--clr-primary-light);
+      color: var(--clr-primary-dark);
+      border-radius: var(--radius-tag);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .tag:hover {
+      background: #f0d1cb;
+    }
+
+    /* 主内容 */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.8rem;
+    }
+
+    /* 通用板块 */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--clr-text-1);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 1.4rem;
+      background: var(--clr-primary);
+      border-radius: 4px;
+    }
+
+    /* 概览 */
+    .overview-text {
+      background: var(--clr-surface);
+      padding: 1.8rem;
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--clr-border);
+      font-size: 1rem;
+      color: var(--clr-text-2);
+      line-height: 1.8;
+    }
+    .overview-text p {
+      margin-bottom: 0.8rem;
+    }
+    .overview-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .card {
+      background: var(--clr-surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--clr-border);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+    .card__img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+      background: #eee;
+    }
+    .card__body {
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .card__title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--clr-text-1);
+    }
+    .card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .card__tag {
+      background: #f0ebe8;
+      color: var(--clr-text-2);
+      font-size: 0.7rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: var(--radius-tag);
+    }
+    .card__excerpt {
+      font-size: 0.85rem;
+      color: var(--clr-text-2);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .card__meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--clr-text-3);
+      margin-top: 0.3rem;
+    }
+    .card__heat {
+      color: var(--clr-primary);
+      font-weight: 600;
+    }
+
+    /* 紧凑列表（最新更新） */
+    .update-list {
+      background: var(--clr-surface);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-default);
+      padding: 0.6rem 1.2rem;
+      list-style: none;
+    }
+    .update-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--clr-border);
+      font-size: 0.95rem;
+    }
+    .update-list li:last-child {
+      border-bottom: none;
+    }
+    .update-list time {
+      font-size: 0.8rem;
+      color: var(--clr-text-3);
+      white-space: nowrap;
+      min-width: 4.2rem;
+    }
+    .update-list strong {
+      font-weight: 600;
+      color: var(--clr-text-1);
+    }
+    .update-list span {
+      color: var(--clr-text-2);
+      font-size: 0.85rem;
+    }
+
+    /* 分类入口（标签块） */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .category-item {
+      background: var(--clr-surface);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--clr-border);
+      padding: 1.2rem 0.8rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--clr-text-1);
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: var(--shadow-default);
+    }
+    .category-item:hover {
+      background: var(--clr-primary-light);
+      transform: translateY(-2px);
+    }
+    .category-item .cat-name {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .category-item .cat-count {
+      font-size: 0.75rem;
+      color: var(--clr-text-3);
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--clr-surface);
+      border-radius: var(--radius-card);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--clr-border);
+    }
+    .deep-dive h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--clr-primary-dark);
+    }
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+    .deep-dive p {
+      margin-bottom: 0.8rem;
+      color: var(--clr-text-2);
+      line-height: 1.8;
+    }
+    .deep-dive ul {
+      margin: 0.6rem 0 1rem 1.4rem;
+      color: var(--clr-text-2);
+    }
+    .deep-dive li {
+      margin-bottom: 0.3rem;
+    }
+    .deep-dive .fact-box {
+      background: #f7f2ef;
+      border-left: 4px solid var(--clr-primary);
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.92rem;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      counter-reset: step;
+    }
+    .guide-step {
+      display: flex;
+      gap: 1rem;
+      background: var(--clr-surface);
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-default);
+      align-items: flex-start;
+    }
+    .guide-step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--clr-primary-light);
+      color: var(--clr-primary-dark);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .guide-step p {
+      font-size: 0.95rem;
+      color: var(--clr-text-2);
+    }
+    .guide-step strong {
+      color: var(--clr-text-1);
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    details {
+      background: var(--clr-surface);
+      border-radius: 12px;
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-default);
+      padding: 0.2rem 1.2rem;
+    }
+    details[open] {
+      background: var(--clr-primary-light);
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 1rem 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--clr-text-1);
+      font-size: 0.98rem;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--clr-primary);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+    details[open] summary::after {
+      content: '−';
+    }
+    details p {
+      padding: 0 0 1rem 0;
+      font-size: 0.92rem;
+      color: var(--clr-text-2);
+      line-height: 1.7;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .comment {
+      background: var(--clr-surface);
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-default);
+      font-size: 0.9rem;
+    }
+    .comment__user {
+      font-weight: 700;
+      color: var(--clr-primary-dark);
+      margin-right: 0.5rem;
+    }
+    .comment__text {
+      color: var(--clr-text-2);
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .news-item {
+      background: var(--clr-surface);
+      padding: 1.2rem;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-default);
+    }
+    .news-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--clr-text-1);
+    }
+    .news-item time {
+      font-size: 0.8rem;
+      color: var(--clr-text-3);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .news-item p {
+      font-size: 0.9rem;
+      color: var(--clr-text-2);
+    }
+
+    /* 相关推荐 */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .related-tag {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      padding: 0.4rem 1.1rem;
+      border-radius: var(--radius-tag);
+      font-size: 0.85rem;
+      color: var(--clr-text-2);
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .related-tag:hover {
+      background: var(--clr-primary-light);
+      border-color: var(--clr-primary);
+    }
+
+    /* 补充板块：时间线 */
+    .timeline {
+      list-style: none;
+      position: relative;
+      padding-left: 1.6rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.45rem;
+      top: 0.3rem;
+      bottom: 0.3rem;
+      width: 2px;
+      background: var(--clr-border);
+    }
+    .timeline li {
+      position: relative;
+      padding-bottom: 1rem;
+      font-size: 0.92rem;
+      color: var(--clr-text-2);
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -1.3rem;
+      top: 0.4rem;
+      width: 10px;
+      height: 10px;
+      background: var(--clr-primary);
+      border-radius: 50%;
+      border: 2px solid var(--clr-bg);
+    }
+    .timeline time {
+      font-weight: 700;
+      color: var(--clr-primary-dark);
+      margin-right: 0.5rem;
+    }
+
+    /* 投稿互动区 */
+    .submit-banner {
+      background: linear-gradient(120deg, #fdf2ed, #f9e4dc);
+      border-radius: var(--radius-card);
+      padding: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border: 1px solid var(--clr-border);
+    }
+    .submit-banner h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--clr-primary-dark);
+    }
+    .submit-banner p {
+      font-size: 0.9rem;
+      color: var(--clr-text-2);
+    }
+
+    /* 页脚 */
+    .footer {
+      background: #2b2422;
+      color: #d9d0cc;
+      margin-top: 4rem;
+      padding: 2.5rem 0 1.5rem;
+      font-size: 0.9rem;
+    }
+    .footer__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+    .footer__brand {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #f2b84b;
+      margin-bottom: 0.6rem;
+    }
+    .footer__desc {
+      color: #b0a6a0;
+      line-height: 1.6;
+      max-width: 300px;
+    }
+    .footer h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    .footer ul {
+      list-style: none;
+    }
+    .footer li {
+      margin-bottom: 0.4rem;
+    }
+    .footer a {
+      color: #b0a6a0;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer a:hover {
+      color: #f2b84b;
+    }
+    .footer__bottom {
+      max-width: var(--max-width);
+      margin: 2rem auto 0;
+      padding: 1.2rem 1.5rem 0;
+      border-top: 1px solid #4a3f3b;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: #8a7e78;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--clr-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 90;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      background: var(--clr-primary-dark);
+    }
+
+    /* 移动端遮罩 */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 95;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+      .layout-3col {
+        grid-template-columns: 1fr 240px;
+      }
+      .sidebar-left {
+        display: none;
+      }
+      .hero__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero__desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero__actions {
+        justify-content: center;
+      }
+      .hero__visual {
+        order: -1;
+      }
+      .hero__visual svg {
+        max-width: 260px;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer__inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .layout-3col {
+        grid-template-columns: 1fr;
+      }
+      .sidebar-right {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .nav-main {
+        display: none;
+        position: absolute;
+        top: var(--sticky-offset);
+        left: 0;
+        right: 0;
+        background: var(--clr-surface);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--clr-border);
+        box-shadow: var(--shadow-hover);
+        gap: 0.8rem;
+        z-index: 99;
+      }
+      .nav-main.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .header__inner {
+        gap: 1rem;
+      }
+      .announcement {
+        font-size: 0.75rem;
+        padding: 0 1rem;
+        gap: 0.8rem;
+      }
+      .announcement__items {
+        gap: 1rem;
+      }
+      .announcement__item:nth-child(2) {
+        display: none;
+      }
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer__inner {
+        grid-template-columns: 1fr;
+      }
+      .sidebar-right {
+        grid-template-columns: 1fr;
+      }
+      .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* 工具类 */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 + 页头 -->
+  <div class="sticky-wrap">
+    <div class="announcement">
+      <span class="announcement__brand">吃爪爆料51</span>
+      <div class="announcement__items">
+        <span class="announcement__item"><span class="announcement__date">11月7日</span>「潮玩圈代拍纠纷」录音曝光</span>
+        <span class="announcement__item"><span class="announcement__date">11月6日</span>「密室NPC薪资内幕」新增3条投稿</span>
+      </div>
+    </div>
+    <header class="header">
+      <div class="header__inner">
+        <a href="/#hero" class="brand" aria-label="吃爪爆料51首页">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="#c44536"/>
+            <path d="M8 12h16v3H8zm0 6h12v3H8z" fill="#f9f2e7"/>
+            <circle cx="24" cy="9" r="3" fill="#f2b84b"/>
+          </svg>
+          吃爪爆料51
+        </a>
+        <button class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="main-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <nav class="nav-main" id="main-nav" aria-label="主导航">
+          <a href="/#overview">领域概览</a>
+          <a href="/#featured">精选爆料</a>
+          <a href="/#updates">最新动态</a>
+          <a href="/#categories">分类入口</a>
+          <a href="/#deep-dive">深度解析</a>
+          <a href="/#guide">消费指南</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#comments">读者评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#submit">投稿爆料</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1>吃爪爆料51</h1>
+        <p class="hero__desc">汇聚潮玩圈代拍纠纷、密室NPC薪资争议、剧本杀发行内幕等一手投稿与深度追踪，每条爆料标注信源层级与当事人回应状态。</p>
+        <div class="hero__actions">
+          <a href="/#featured" class="btn btn-primary">浏览精选爆料</a>
+          <a href="/#submit" class="btn btn-outline">投稿你的线索</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="260" height="170" rx="20" fill="#f7e4e0"/>
+          <rect x="40" y="50" width="220" height="130" rx="12" fill="#ffffff" opacity="0.9"/>
+          <line x1="60" y1="80" x2="180" y2="80" stroke="#c44536" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+          <line x1="60" y1="105" x2="220" y2="105" stroke="#e8dfda" stroke-width="6" stroke-linecap="round"/>
+          <line x1="60" y1="130" x2="200" y2="130" stroke="#e8dfda" stroke-width="6" stroke-linecap="round"/>
+          <line x1="60" y1="155" x2="140" y2="155" stroke="#e8dfda" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="240" cy="200" r="40" fill="#f2b84b" opacity="0.9"/>
+          <path d="M230 190 L250 190 L245 208 L235 208 Z" fill="#ffffff"/>
+          <rect x="236" y="210" width="8" height="14" rx="3" fill="#ffffff"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容区：三栏门户 -->
+  <div class="container layout-3col">
+    <!-- 左侧频道 -->
+    <aside class="sidebar-left" aria-label="频道导航">
+      <h3>频道</h3>
+      <ul class="channel-list">
+        <li><a href="/#overview" class="active">领域概览</a></li>
+        <li><a href="/#featured">潮玩代拍</a></li>
+        <li><a href="/#categories">密室NPC</a></li>
+        <li><a href="/#deep-dive">剧本杀发行</a></li>
+        <li><a href="/#updates">展会黄牛</a></li>
+        <li><a href="/#comments">圈内争议</a></li>
+        <li><a href="/#news">维权进展</a></li>
+        <li><a href="/#submit">投稿入口</a></li>
+      </ul>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <main class="main-content">
+      <!-- 1. 主题领域概览 -->
+      <section id="overview">
+        <h2 class="section-title">领域概览</h2>
+        <div class="overview-text">
+          <p>吃爪爆料51聚焦于泛娱乐线下消费领域的内部信息：潮玩代拍与抽选规则漏洞、密室剧本杀NPC劳动权益、展会限量品倒卖链路、以及圈内KOL翻车与品牌方解约内幕。当前值得关注的方向包括——10月底潮玩品牌「MEGA TOY」代拍群管理员私吞定金事件，涉及金额约8.7万元，已有12名买家在微博超话联合举证；11月初密室联盟发布的NPC时薪调查显示，头部城市全职NPC中位时薪为28元，但兼职与全职同工不同酬的投诉集中在「X-ROOM」「迷影密室」两家。</p>
+          <p>另一条线是剧本杀发行方「黑桃工作室」被指拖欠作者稿费，9月至10月到期的6个本子共涉及稿费14.2万元，作者「老猫」在11月3日发布聊天记录截图后，发行方于11月5日回应称“财务流程调整导致延迟”。这些事件的信源层级差异明显：聊天记录截图属于当事人自证，群聊语音属于第三方转述，而品牌方公告则属于官方口径。读者在判断时需区分“已确认事实”与“单方陈述”。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section id="featured">
+        <h2 class="section-title">精选爆料</h2>
+        <div class="card-grid">
+          <article class="card">
+            <img src="https://picsum.photos/seed/chaowan01/400/300" width="400" height="300" alt="潮玩代拍群聊截图与定金记录" class="card__img" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title">MEGA TOY代拍定金纠纷</h3>
+              <div class="card__tags"><span class="card__tag">潮玩代拍</span><span class="card__tag">定金追讨</span><span class="card__tag">群聊举证</span></div>
+              <p class="card__excerpt">10月29日代拍群管理员“阿鬼”失联，群内统计未退还定金8.7万元，12名买家在超话贴出转账记录。品牌方客服11月2日回应称“代拍非官方授权行为”。</p>
+              <div class="card__meta"><span class="card__heat">热度 9.2</span><span>11月7日更新</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/mishi02/400/300" width="400" height="300" alt="密室NPC工作场景与排班表" class="card__img" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title">密室NPC时薪调查：28元中位数</h3>
+              <div class="card__tags"><span class="card__tag">密室NPC</span><span class="card__tag">劳动权益</span><span class="card__tag">时薪对比</span></div>
+              <p class="card__excerpt">11月1日密室联盟发布《2026 NPC薪酬调研》，覆盖北京、上海、成都等6城43家门店。全职NPC中位时薪28元，兼职22元，X-ROOM被点名同工不同酬。</p>
+              <div class="card__meta"><span class="card__heat">热度 8.7</span><span>11月6日更新</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/jubensha03/400/300" width="400" height="300" alt="剧本杀作者与发行方聊天记录" class="card__img" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title">黑桃工作室拖欠稿费14.2万</h3>
+              <div class="card__tags"><span class="card__tag">剧本杀发行</span><span class="card__tag">稿费维权</span><span class="card__tag">聊天记录</span></div>
+              <p class="card__excerpt">作者“老猫”11月3日贴出与黑桃工作室的结算聊天记录，6个本子稿费共14.2万元逾期未付。发行方11月5日回应“财务流程调整”，未给出具体支付日期。</p>
+              <div class="card__meta"><span class="card__heat">热度 8.9</span><span>11月6日更新</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/zhanhui04/400/300" width="400" height="300" alt="展会排队人群与黄牛交易现场" class="card__img" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title">WF2026上海展黄牛票链路</h3>
+              <div class="card__tags"><span class="card__tag">展会黄牛</span><span class="card__tag">抽选漏洞</span><span class="card__tag">实名制</span></div>
+              <p class="card__excerpt">10月28日WF上海展早鸟票开售3分钟售罄，闲鱼出现加价180元的“代拍代抢”。调查发现黄牛利用海外手机号绕过实名限购，单账号可拍5张。</p>
+              <div class="card__meta"><span class="card__heat">热度 9.0</span><span>11月4日更新</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/kol05/400/300" width="400" height="300" alt="潮玩博主直播截图与品牌解约公告" class="card__img" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title">博主“拆盒阿杰”被品牌方解约</h3>
+              <div class="card__tags"><span class="card__tag">KOL翻车</span><span class="card__tag">品牌解约</span><span class="card__tag">直播争议</span></div>
+              <p class="card__excerpt">10月30日“拆盒阿杰”在直播中将隐藏款概率描述为“1/72必出”，实际官方概率为1/144。品牌方11月1日宣布暂停合作，阿杰次日道歉称“口误”。</p>
+              <div class="card__meta"><span class="card__heat">热度 8.5</span><span>11月3日更新</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/npc06/400/300" width="400" height="300" alt="密室门店排班表与工资条" class="card__img" loading="lazy">
+            <div class="card__body">
+              <h3 class="card__title">X-ROOM全职NPC工资条对比</h3>
+              <div class="card__tags"><span class="card__tag">NPC权益</span><span class="card__tag">工资条</span><span class="card__tag">同工不同酬</span></div>
+              <p class="card__excerpt">前员工“小鹿”提供2026年9月工资条：全职NPC底薪3200元+场次提成，月均到手4600元；兼职NPC时薪22元，月均收入5100元。全职承担更多复盘工作。</p>
+              <div class="card__meta"><span class="card__heat">热度 8.3</span><span>11月5日更新</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section id="updates">
+        <h2 class="section-title">最新动态</h2>
+        <ul class="update-list">
+          <li><time>11月7日 14:20</time><strong>「潮玩代拍纠纷」</strong><span>买家“@阿茶”在超话更新：已联系律师，准备对代拍群管理员发起集体诉讼。</span></li>
+          <li><time>11月7日 10:05</time><strong>「密室NPC薪资」</strong><span>X-ROOM上海门店发布招聘启事，全职NPC时薪调整为26元，较此前提高2元。</span></li>
+          <li><time>11月6日 19:30</time><strong>「黑桃工作室稿费」</strong><span>作者“老猫”称收到发行方私信，承诺11月15日前支付50%款项。</span></li>
+          <li><time>11月6日 16:12</time><strong>「WF2026黄牛票」</strong><span>主办方公告将增加“人脸识别+身份证”双重核验，11月8日起实施。</span></li>
+          <li><time>11月5日 21:40</time><strong>「拆盒阿杰解约」</strong><span>阿杰在粉丝群表示“已退还品牌方预付的3万元合作费”。</span></li>
+          <li><time>11月5日 09:15</time><strong>「密室联盟调研」</strong><span>新增深圳、杭州两城数据，全职NPC中位时薪降至27元。</span></li>
+          <li><time>11月4日 18:00</time><strong>「剧本杀稿费」</strong><span>另一个发行方“迷雾剧场”被曝拖欠3位作者稿费，总额约6.8万元。</span></li>
+          <li><time>11月3日 11:30</time><strong>「潮玩定金」</strong><span>MEGA TOY官方旗舰店下架所有代拍相关商品链接。</span></li>
+          <li><time>11月2日 15:45</time><strong>「展会黄牛」</strong><span>闲鱼下架32条“WF代拍代抢”链接，部分卖家转至私域交易。</span></li>
+          <li><time>11月1日 08:00</time><strong>「NPC薪酬调研」</strong><span>调研全文在密室联盟公众号发布，附6城43家门店明细表。</span></li>
+        </ul>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section id="categories">
+        <h2 class="section-title">分类入口</h2>
+        <div class="category-grid">
+          <a href="/#featured" class="category-item"><span class="cat-name">潮玩代拍</span><span class="cat-count">18条爆料</span></a>
+          <a href="/#featured" class="category-item"><span class="cat-name">密室NPC</span><span class="cat-count">12条爆料</span></a>
+          <a href="/#featured" class="category-item"><span class="cat-name">剧本杀发行</span><span class="cat-count">9条爆料</span></a>
+          <a href="/#featured" class="category-item"><span class="cat-name">展会黄牛</span><span class="cat-count">7条爆料</span></a>
+          <a href="/#featured" class="category-item"><span class="cat-name">KOL翻车</span><span class="cat-count">11条爆料</span></a>
+          <a href="/#featured" class="category-item"><span class="cat-name">稿费维权</span><span class="cat-count">6条爆料</span></a>
+          <a href="/#featured" class="category-item"><span class="cat-name">抽选规则</span><span class="cat-count">5条爆料</span></a>
+          <a href="/#featured" class="category-item"><span class="cat-name">品牌解约</span><span class="cat-count">4条爆料</span></a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section id="deep-dive">
+        <h2 class="section-title">深度解析</h2>
+        <div class="deep-dive">
+          <h3>代拍纠纷中的“定金”到底受不受法律保护</h3>
+          <p>MEGA TOY代拍群管理员“阿鬼”收取的8.7万元，在法律上属于“预付款”还是“定金”，直接决定买家能否主张双倍返还。从12名买家贴出的转账记录看，备注多为“代拍定金”“锁定名额”，但聊天记录中“阿鬼”从未明确约定“定金罚则”。北京盈科律师事务所11月6日发布的短视频分析指出，没有书面定金合同或明确聊天约定的，法院通常按预付款处理，买家只能要求返还本金，无法主张双倍赔偿。</p>
+          <p>另一个关键点是代拍行为的性质。MEGA TOY官方客服11月2日回应“代拍非官方授权行为”，意味着品牌方不承担任何连带责任。买家只能向“阿鬼”个人追偿。已公开信息中，“阿鬼”的微信号、支付宝账号均未实名，维权难度较大。11月7日超话内流传的一张律师函截图显示，已有买家委托律师向杭州互联网法院提交立案材料。</p>
+          <h3>NPC时薪28元背后的排班结构</h3>
+          <p>密室联盟11月1日发布的调研提供了两组可对比数据：全职NPC月均到手4600元，按每月26天、每天8小时计算，时薪约22元；兼职NPC时薪22元，但排班灵活，月均工作60小时即可达到1320元。全职NPC的“隐性工作量”在于复盘和清洁，调研中68%的全职NPC每周额外投入6—8小时用于场景复位和玩家反馈整理，这部分不计入工时。</p>
+          <div class="fact-box">X-ROOM前员工“小鹿”提供的9月工资条显示：底薪3200元，场次提成每场15元，当月排班52场，到手3980元，另有全勤奖200元。同店兼职NPC时薪22元，9月工作80小时收入1760元。全职NPC的月收入高于兼职，但折算时薪后全职为19.1元，低于兼职的22元。</div>
+          <h3>剧本杀稿费拖欠的行业惯性</h3>
+          <p>黑桃工作室并非第一次被曝拖欠稿费。公开信息检索显示，2026年3月就有作者“阿鬼”（同名不同人）在剧本杀论坛“小黑探”发帖称黑桃工作室逾期支付2.4万元稿费，当时发行方解释为“疫情后回款慢”。11月3日“老猫”的爆料中，黑桃工作室的结算周期从合同约定的“本子发货后30天内”实际延长至90天以上，6个本子中最早到期的《雾隐村》应于9月15日结清，至今未付。</p>
+          <ul>
+            <li>已公开事实：作者“老猫”贴出的聊天记录显示，黑桃工作室财务“@黑桃-财务小周”承认“账上没钱，等下一笔回款”。</li>
+            <li>当事人回应：黑桃工作室11月5日通过官方公众号称“财务流程调整”，承诺11月15日前支付50%。</li>
+            <li>媒体转述：行业自媒体“剧本杀观察”11月6日发文称，黑桃工作室2026年已缩减发行量，从去年的12个本子降至5个。</li>
+            <li>网友推测：部分作者在微信群推测黑桃工作室将进行业务收缩，但未获官方证实。</li>
+          </ul>
+          <h3>展会黄牛票的两个技术环节</h3>
+          <p>WF2026上海展的限购规则是“每个身份证限购2张”，但黄牛通过海外手机号注册账号，绕过身份证绑定。10月28日开票后，闲鱼出现的代拍链接中，有卖家明确标注“需提供身份证号”，实则使用虚拟身份证生成器完成下单。主办方11月6日公告增加人脸识别核验，但入场时只核验购票人，不核验实际持票人，黄牛仍可通过“代拍+转赠”方式获利。</p>
+          <p>第二个环节是转赠机制。大麦网转赠功能要求双方实名，但黄牛使用“亲友转赠”名义，将票转至买家提供的身份证名下，每张收取80—180元不等。11月7日实测，闲鱼仍有至少14条“WF代拍”链接存活，标价从120元到200元。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 / 消费路径 -->
+      <section id="guide">
+        <h2 class="section-title">消费路径</h2>
+        <div class="guide-steps">
+          <div class="guide-step"><p><strong>先判断信源层级。</strong>聊天记录截图属于当事人自证，可信度中等；带时间戳的群聊语音转文字次之；品牌官方公告可信度最高但可能回避关键信息。看到“网友爆料”四个字，先找原始截图。</p></div>
+          <div class="guide-step"><p><strong>对比同类事件的处理结果。</strong>潮玩代拍纠纷过去半年至少出现3起，其中2起以“退回本金”告终，1起进入诉讼。密室NPC时薪投诉2026年已有5起公开记录，X-ROOM占2起，处理方式均为“调整时薪但未补发差额”。</p></div>
+          <div class="guide-step"><p><strong>计算“隐性成本”。</strong>代拍定金纠纷中，买家追讨8.7万元需要支付律师费、诉讼费和时间成本，单人分摊后可能超过定金本身。判断值不值得追，先算清楚单人损失金额。</p></div>
+          <div class="guide-step"><p><strong>关注后续动作而非表态。</strong>黑桃工作室承诺11月15日前支付50%，到了11月16日看银行到账截图，比看公众号措辞有效。WF主办方增加人脸识别，11月8日入场实测是否真的核验持票人。</p></div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section id="faq">
+        <h2 class="section-title">常见问答</h2>
+        <div class="faq-list">
+          <details>
+            <summary>潮玩代拍群管理员跑了，定金还能要回来吗？</summary>
+            <p>取决于转账记录和聊天约定。如果备注明确写了“定金”且对方确认过“不发货双倍返还”，可以主张双倍；如果只写了“代拍费用”或“锁定名额”，法院通常按预付款处理，只能要求返还本金。MEGA TOY这起纠纷中，12名买家的转账备注不统一，部分只写了“代拍”，追偿难度较大。</p>
+          </details>
+          <details>
+            <summary>密室NPC全职和兼职时薪差多少合理？</summary>
+            <p>行业调研给出的中位数是：全职时薪22元（按26天×8小时折算），兼职22元。表面持平，但全职承担复盘、清洁等不计时工作，实际时薪更低。X-ROOM全职NPC折算时薪19.1元，低于兼职22元，差距主要来自隐性工作量。</p>
+          </details>
+          <details>
+            <summary>剧本杀作者被拖欠稿费，合同里没写违约金怎么办？</summary>
+            <p>可以主张逾期利息。根据《民法典》第577条，违约方应赔偿损失，逾期付款的利息通常按LPR计算。黑桃工作室的合同中未约定违约金，作者“老猫”的律师建议按同期LPR的1.5倍主张逾期利息，14.2万元逾期3个月的利息约1500元。</p>
+          </details>
+          <details>
+            <summary>展会黄牛用别人身份证买票，入场会被拦吗？</summary>
+            <p>看主办方核验环节。WF2026上海展11月6日公告增加人脸识别，但只核验购票人本人，不核验实际持票人。黄牛将票转赠至买家身份证名下后，买家刷自己身份证入场，人脸识别通过，不会被拦。除非主办方增加“转赠票二次核验”。</p>
+          </details>
+          <details>
+            <summary>“拆盒阿杰”说隐藏款1/72必出，算不算虚假宣传？</summary>
+            <p>算。官方概率为1/144，阿杰在直播中称“1/72必出”，属于对商品概率的误导性陈述。品牌方11月1日解约依据的是合同中的“不得虚假宣传”条款。消费者如果因该表述购买，可依据《消费者权益保护法》第55条主张欺诈赔偿，但需证明下单时间与直播时间吻合。</p>
+          </details>
+          <details>
+            <summary>密室联盟的调研数据能信吗？</summary>
+            <p>调研覆盖6城43家门店，样本量有限但高于零散爆料。可核对的部分是：每家门店的排班表和工资条是否可查证。X-ROOM前员工“小鹿”提供的工资条与调研中位数基本吻合，增加了可信度。但调研由密室联盟发布，联盟成员包含X-ROOM，存在利益关联，需交叉验证。</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section id="comments">
+        <h2 class="section-title">用户评论</h2>
+        <div class="comment-list">
+          <div class="comment"><span class="comment__user">@阿茶不喝茶</span><span class="comment__text">代拍那事我就在群里，阿鬼最后一条消息是10月28号晚上11点发的“明天统一退款”，然后就没影了。8万7是大家自己统计的，可能还有没填表的。</span></div>
+          <div class="comment"><span class="comment__user">@密室老油条</span><span class="comment__text">X-ROOM那个工资条我信，因为我也干过全职，复盘两小时不算工时太真实了。兼职到点就走，全职还得擦血迹（道具血）。</span></div>
+          <div class="comment"><span class="comment__user">@剧本杀作者老猫</span><span class="comment__text">黑桃工作室11月5号私信我说先付50%，今天7号了还没到账。等15号看吧，不付我就把合同贴出来。</span></div>
+          <div class="comment"><span class="comment__user">@黄牛克星</span><span class="comment__text">WF那个刷脸只核验购票人确实没用，我朋友就是黄牛转赠的票，刷自己身份证进去了。主办方真想管得学演唱会，转赠一次就锁死。</span></div>
+          <div class="comment"><span class="comment__user">@拆盒阿杰黑粉</span><span class="comment__text">1/72必出这种话也敢说，直播间当时三千多人看着。退款3万算轻的，品牌方没索赔算客气。</span></div>
+          <div class="comment"><span class="comment__user">@小鹿乱撞</span><span class="comment__text">工资条是我贴的，9月排了52场，到手3980。兼职小妹时薪22块，一个月来8天，到手1760，人家不用复盘不用擦地，我羡慕。</span></div>
+          <div class="comment"><span class="comment__user">@WF排队三小时</span><span class="comment__text">28号抢票没抢到，闲鱼加180买了一张，卖家让我提供身份证号，我给了。现在看人脸识别公告，感觉这180是白花了。</span></div>
+          <div class="comment"><span class="comment__user">@黑桃前员工</span><span class="comment__text">黑桃账上确实没钱，9月工资也拖了半个月。老板说等《雾隐村》回款，但那个本子卖得一般。</span></div>
+          <div class="comment"><span class="comment__user">@只看不评</span><span class="comment__text">密室NPC时薪28元，不如去送外卖。但NPC能摸鱼啊，没场次的时候躺着玩手机，外卖不行。</span></div>
+          <div class="comment"><span class="comment__user">@潮玩圈小透明</span><span class="comment__text">MEGA TOY下架代拍链接就是甩锅，代拍群管理员是他们官方群的前管理员，有截图。</span></div>
+          <div class="comment"><span class="comment__user">@迷雾剧场前作者</span><span class="comment__text">迷雾也欠我6800，看到黑桃被曝还以为就我倒霉。剧本杀发行方是不是都这德性。</span></div>
+          <div class="comment"><span class="comment__user">@展会志愿者</span><span class="comment__text">WF检票口7号下午新装了刷脸机，但排队人太多，工作人员直接喊“有票就进”，刷脸机开着没人看。</span></div>
+          <div class="comment"><span class="comment__user">@吃爪常客</span><span class="comment__text">这页面的爆料比微博超话全，至少把双方说法都列出来了。不过代拍那个事，买家自己也有责任，谁让他们不签合同。</span></div>
+          <div class="comment"><span class="comment__user">@剧本杀发行观察</span><span class="comment__text">黑桃缩减发行量是真的，10月他们只发了1个盒装本，去年同期发了3个。回款慢是表象，没钱做宣发才是根。</span></div>
+          <div class="comment"><span class="comment__user">@小鹿同事</span><span class="comment__text">X-ROOM时薪调到26了，但全职还是没提成加给复盘。换了汤没换药。</span></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section id="news">
+        <h2 class="section-title">相关资讯</h2>
+        <div class="news-list">
+          <div class="news-item">
+            <h3>潮玩代拍群管理员“阿鬼”微信号已注销</h3>
+            <time>2026-11-07</time>
+            <p>11月7日上午10时，多名买家尝试通过微信联系“阿鬼”，显示“该账号已注销”。此前支付宝账号仍可搜索到，但未实名。买家“@阿茶”称已委托律师调取支付宝流水。</p>
+          </div>
+          <div class="news-item">
+            <h3>密室联盟新增深圳杭州两城数据</h3>
+            <time>2026-11-05</time>
+            <p>11月5日更新版本中，深圳全职NPC中位时薪26元，杭州25元，均低于此前六城平均的28元。联盟称下一版将纳入广州和武汉，预计12月发布。</p>
+          </div>
+          <div class="news-item">
+            <h3>黑桃工作室承诺11月15日前支付50%稿费</h3>
+            <time>2026-11-05</time>
+            <p>发行方在官方公众号评论区置顶回复，称“已与6位作者逐一沟通，11月15日前支付50%，余款12月31日前结清”。作者“老猫”确认收到私信，但表示“先看到账再删帖”。</p>
+          </div>
+          <div class="news-item">
+            <h3>WF2026上海展增人脸识别，11月8日实施</h3>
+            <time>2026-11-06</time>
+            <p>主办方公告称11月8日起入场需“身份证+人脸识别”双重核验，但转赠票的持票人是否需二次核验未明确。闲鱼仍有14条代拍链接存活。</p>
+          </div>
+          <div class="news-item">
+            <h3>“拆盒阿杰”退还品牌方3万元合作费</h3>
+            <time>2026-11-05</time>
+            <p>阿杰在粉丝群贴出转账截图，金额3万元，附言“合作费退还”。品牌方未回应是否接受。直播平台回放已下架，但录屏在B站有2.4万播放。</p>
+          </div>
+          <div class="news-item">
+            <h3>迷雾剧场被曝拖欠3位作者6.8万元</h3>
+            <time>2026-11-04</time>
+            <p>作者“@迷雾前作者”在剧本杀论坛发帖，称迷雾剧场拖欠稿费6.8万元，涉及3个本子。迷雾剧场客服回应“下周统一处理”，未给出具体日期。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section id="related">
+        <h2 class="section-title">相关推荐</h2>
+        <div class="related-tags">
+          <a href="/#featured" class="related-tag">潮玩抽选规则漏洞</a>
+          <a href="/#featured" class="related-tag">密室NPC排班表</a>
+          <a href="/#featured" class="related-tag">剧本杀发行合同条款</a>
+          <a href="/#featured" class="related-tag">WF2026代拍实测</a>
+          <a href="/#featured" class="related-tag">拆盒直播概率话术</a>
+          <a href="/#featured" class="related-tag">稿费逾期利息计算</a>
+          <a href="/#featured" class="related-tag">潮玩群管理员跑路记录</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：时间线 + 投稿互动 -->
+      <section id="timeline">
+        <h2 class="section-title">关键事件时间线</h2>
+        <ul class="timeline">
+          <li><time>10月28日</time>WF2026上海展开票，黄牛代拍链接涌入闲鱼</li>
+          <li><time>10月29日</time>“阿鬼”在代拍群发布最后一条消息，随后失联</li>
+          <li><time>10月30日</time>“拆盒阿杰”直播称隐藏款1/72必出</li>
+          <li><time>11月1日</time>密室联盟发布NPC薪酬调研；品牌方宣布与阿杰暂停合作</li>
+          <li><time>11月3日</time>作者“老猫”贴出黑桃工作室拖欠稿费聊天记录</li>
+          <li><time>11月5日</time>黑桃工作室回应“财务流程调整”；阿杰退还3万元</li>
+          <li><time>11月6日</time>WF主办方公告增人脸识别；X-ROOM调整时薪至26元</li>
+          <li><time>11月7日</time>“阿鬼”微信号注销；买家委托律师立案</li>
+        </ul>
+      </section>
+
+      <!-- 投稿互动 -->
+      <section id="submit">
+        <div class="submit-banner">
+          <div>
+            <h3>你有线索？投稿给吃爪爆料51</h3>
+            <p>匿名投稿通道：截图、聊天记录、录音文件均可。经核实后发布，信源层级会标注。</p>
+          </div>
+          <a href="/#submit" class="btn btn-primary">前往投稿页</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="sidebar-right" aria-label="辅助信息">
+      <div class="side-card">
+        <h3>热榜</h3>
+        <ol class="hot-list">
+          <li><span class="rank">1</span>MEGA TOY代拍定金纠纷</li>
+          <li><span class="rank">2</span>WF2026黄牛代拍链路</li>
+          <li><span class="rank">3</span>黑桃工作室稿费拖欠</li>
+          <li><span class="rank">4</span>密室NPC时薪调查</li>
+          <li><span class="rank">5</span>拆盒阿杰解约事件</li>
+        </ol>
+      </div>
+      <div class="side-card">
+        <h3>热门标签</h3>
+        <div class="tag-cloud">
+          <a href="/#featured" class="tag">代拍定金</a>
+          <a href="/#featured" class="tag">NPC时薪</a>
+          <a href="/#featured" class="tag">稿费拖欠</a>
+          <a href="/#featured" class="tag">抽选漏洞</a>
+          <a href="/#featured" class="tag">人脸识别</a>
+          <a href="/#featured" class="tag">品牌解约</a>
+        </div>
+      </div>
+      <div class="side-card">
+        <h3>信源说明</h3>
+        <p style="font-size:0.82rem; color:var(--clr-text-3); line-height:1.5;">本页信息分层标注：官方公告 > 当事人自证 > 第三方转述。示例页面，数据基于2026年11月8日前公开讨论整理。</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">吃爪爆料51</div>
+        <p class="footer__desc">聚焦潮玩、密室、剧本杀线下消费领域的内部投稿与争议追踪，覆盖2026年10月至11月的代拍纠纷、NPC薪酬、稿费拖欠等条目。</p>
+      </div>
+      <div>
+        <h4>频道</h4>
+        <ul>
+          <li><a href="/#featured">潮玩代拍</a></li>
+          <li><a href="/#featured">密室NPC</a></li>
+          <li><a href="/#featured">剧本杀发行</a></li>
+          <li><a href="/#featured">展会黄牛</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#submit">投稿爆料</a></li>
+          <li><a href="/#comments">读者评论</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#timeline">事件时间线</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#deep-dive">深度解析</a></li>
+          <li><a href="/#guide">消费路径</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 吃爪爆料51 · 示例内容页面，非官方站点</span>
+      <span>更新时间：2026年11月8日 · 条目基于公开讨论整理</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <!-- 移动端遮罩 -->
+  <div class="overlay" id="overlay"></div>
+
+  <script>
+    (function() {
+      // 移动菜单
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMain = document.getElementById('main-nav');
+      const overlay = document.getElementById('overlay');
+
+      function closeMenu() {
+        navMain.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        overlay.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      function openMenu() {
+        navMain.classList.add('open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+
+      menuToggle.addEventListener('click', function() {
+        if (navMain.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      overlay.addEventListener('click', closeMenu);
+
+      // 点击导航链接后关闭菜单
+      navMain.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Esc 关闭
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMain.classList.contains('open')) {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
+
+      // 回到顶部
+      const backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backBtn.classList.add('show');
+        } else {
+          backBtn.classList.remove('show');
+        }
+      });
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 频道高亮（简单版：滚动时高亮左侧对应链接）
+      const sections = document.querySelectorAll('section[id]');
+      const channelLinks = document.querySelectorAll('.channel-list a');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            channelLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === '/#' + id);
+            });
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "吃爪爆料51",
+    "description": "汇聚潮玩代拍、密室NPC、剧本杀发行等线下消费领域内部投稿与争议追踪。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "潮玩代拍群管理员跑了，定金还能要回来吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "取决于转账记录和聊天约定。如果备注明确写了“定金”且对方确认过“不发货双倍返还”，可以主张双倍；如果只写了“代拍费用”或“锁定名额”，法院通常按预付款处理，只能要求返还本金。MEGA TOY这起纠纷中，12名买家的转账备注不统一，部分只写了“代拍”，追偿难度较大。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "密室NPC全职和兼职时薪差多少合理？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "行业调研给出的中位数是：全职时薪22元（按26天×8小时折算），兼职22元。表面持平，但全职承担复盘、清洁等不计时工作，实际时薪更低。X-ROOM全职NPC折算时薪19.1元，低于兼职22元，差距主要来自隐性工作量。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "剧本杀作者被拖欠稿费，合同里没写违约金怎么办？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以主张逾期利息。根据《民法典》第577条，违约方应赔偿损失，逾期付款的利息通常按LPR计算。黑桃工作室的合同中未约定违约金，作者“老猫”的律师建议按同期LPR的1.5倍主张逾期利息，14.2万元逾期3个月的利息约1500元。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "展会黄牛用别人身份证买票，入场会被拦吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "看主办方核验环节。WF2026上海展11月6日公告增加人脸识别，但只核验购票人本人，不核验实际持票人。黄牛将票转赠至买家身份证名下后，买家刷自己身份证入场，人脸识别通过，不会被拦。除非主办方增加“转赠票二次核验”。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "“拆盒阿杰”说隐藏款1/72必出，算不算虚假宣传？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "算。官方概率为1/144，阿杰在直播中称“1/72必出”，属于对商品概率的误导性陈述。品牌方11月1日解约依据的是合同中的“不得虚假宣传”条款。消费者如果因该表述购买，可依据《消费者权益保护法》第55条主张欺诈赔偿，但需证明下单时间与直播时间吻合。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "密室联盟的调研数据能信吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "调研覆盖6城43家门店，样本量有限但高于零散爆料。可核对的部分是：每家门店的排班表和工资条是否可查证。X-ROOM前员工“小鹿”提供的工资条与调研中位数基本吻合，增加了可信度。但调研由密室联盟发布，联盟成员包含X-ROOM，存在利益关联，需交叉验证。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+              </html>
