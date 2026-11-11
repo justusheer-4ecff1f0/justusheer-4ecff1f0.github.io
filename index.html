@@ -1,0 +1,1931 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黑料比赛51 - 赛事爆料与选手动态聚合</title>
+  <meta name="description" content="黑料比赛51 聚合近期赛事中的争议判罚、选手状态与社区讨论。提供51号赛事复盘、选手恩怨时间线、赛制规则解读与观众评论，适合关注比赛内幕与舆论反应的观众阅读。">
+  <meta name="keywords" content="黑料比赛51">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1a2e'/%3E%3Cpath d='M8 22L14 10l4 7 4-7 3 12' stroke='%23e94560' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #e94560;
+      --primary-light: #ff6b81;
+      --primary-dark: #b8233c;
+      --bg: #f5f5f7;
+      --bg-panel: #ffffff;
+      --bg-alt: #fafafa;
+      --text-1: #1a1a2e;
+      --text-2: #4a4a5a;
+      --text-3: #8a8a9a;
+      --border: #e2e2ea;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 4px;
+      --radius-banner: 16px;
+      --shadow-default: 0 2px 8px rgba(26,26,46,0.06);
+      --shadow-hover: 0 6px 20px rgba(233,69,96,0.12);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --header-height: 56px;
+      --announce-height: 36px;
+      --sticky-offset: calc(var(--header-height) + var(--announce-height));
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ---------- 吸顶公告条 ---------- */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(90deg, #1a1a2e 0%, #2d1b3a 100%);
+      color: #f0f0f5;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      font-size: 13px;
+      overflow: hidden;
+    }
+    .announce-bar .brand-tag {
+      background: var(--primary);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      font-weight: 600;
+      font-size: 12px;
+      margin-right: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .announce-track {
+      display: flex;
+      gap: 48px;
+      animation: announce-scroll 30s linear infinite;
+      white-space: nowrap;
+    }
+    .announce-track:hover { animation-play-state: paused; }
+    @keyframes announce-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .announce-item { display: flex; align-items: center; gap: 6px; }
+    .announce-date { color: var(--primary-light); font-weight: 600; font-size: 12px; }
+
+    /* ---------- 吸顶页头 ---------- */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .logo svg { width: 30px; height: 30px; }
+    .logo-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-1);
+      letter-spacing: -0.5px;
+    }
+    .logo-text span { color: var(--primary); }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex: 1;
+    }
+    .main-nav::-webkit-scrollbar { display: none; }
+    .main-nav a {
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-2);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a:hover, .main-nav a.active {
+      background: rgba(233,69,96,0.08);
+      color: var(--primary);
+    }
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .btn-submit {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-submit:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 6px 10px;
+      font-size: 18px;
+      color: var(--text-1);
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3a 50%, #1a1a2e 100%);
+      color: #fff;
+      padding: 60px 24px 50px;
+      overflow: hidden;
+    }
+    .hero-bg-shapes { position: absolute; inset: 0; pointer-events: none; opacity: 0.15; }
+    .hero-bg-shapes svg { width: 100%; height: 100%; }
+    .hero-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--primary-light);
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 560px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: none;
+    }
+    .hero-btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .hero-btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(233,69,96,0.4); }
+    .hero-btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .hero-btn-outline:hover { border-color: var(--primary-light); color: var(--primary-light); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .hero-stat-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-card);
+      padding: 18px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary-light);
+      line-height: 1.2;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    /* ---------- 主内容三栏 ---------- */
+    .page-wrap {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 28px 24px 0;
+      display: grid;
+      grid-template-columns: 180px 1fr 240px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* 左侧频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      background: var(--bg-panel);
+      border-radius: var(--radius-card);
+      padding: 16px 0;
+      box-shadow: var(--shadow-default);
+    }
+    .channel-sidebar h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-3);
+      padding: 0 16px 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .channel-sidebar nav { display: flex; flex-direction: column; }
+    .channel-sidebar nav a {
+      padding: 7px 16px;
+      font-size: 14px;
+      color: var(--text-2);
+      border-left: 3px solid transparent;
+      transition: all 0.15s;
+    }
+    .channel-sidebar nav a:hover,
+    .channel-sidebar nav a.active {
+      color: var(--primary);
+      background: rgba(233,69,96,0.05);
+      border-left-color: var(--primary);
+    }
+
+    /* 中间主内容 */
+    .main-content { min-width: 0; }
+
+    .section {
+      background: var(--bg-panel);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-default);
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-1);
+      letter-spacing: -0.3px;
+    }
+    .section-header .h2-accent {
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .section-more {
+      font-size: 13px;
+      color: var(--text-3);
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .section-more:hover { color: var(--primary); }
+
+    /* 概览 */
+    .overview-text {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.85;
+    }
+    .overview-text p { margin-bottom: 10px; }
+    .overview-text p:last-child { margin-bottom: 0; }
+    .overview-text strong { color: var(--text-1); font-weight: 600; }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      background: var(--bg-panel);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+    .card-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+      background: var(--bg-alt);
+    }
+    .card-body { padding: 14px; display: flex; flex-direction: column; flex: 1; }
+    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: var(--radius-tag);
+      background: rgba(233,69,96,0.08);
+      color: var(--primary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .tag-gray {
+      background: var(--bg-alt);
+      color: var(--text-3);
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 10px;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-3);
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: auto;
+    }
+    .card-hot { color: var(--primary); font-weight: 600; }
+
+    /* 动态列表 */
+    .update-list { display: flex; flex-direction: column; }
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-time {
+      font-size: 12px;
+      color: var(--text-3);
+      white-space: nowrap;
+      min-width: 48px;
+      padding-top: 2px;
+    }
+    .update-body { flex: 1; min-width: 0; }
+    .update-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-1);
+      margin-bottom: 2px;
+    }
+    .update-title:hover { color: var(--primary); }
+    .update-summary {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 18px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: var(--bg-alt);
+      text-align: center;
+      transition: all 0.2s;
+      min-height: 80px;
+    }
+    .category-item:hover {
+      border-color: var(--primary);
+      background: rgba(233,69,96,0.04);
+      transform: translateY(-2px);
+    }
+    .category-icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+    .category-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-1);
+    }
+    .category-count {
+      font-size: 11px;
+      color: var(--text-3);
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-1);
+      margin: 22px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--primary);
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.85;
+      margin-bottom: 10px;
+    }
+    .deep-dive ul {
+      margin: 8px 0 12px 20px;
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.8;
+    }
+    .deep-dive li { margin-bottom: 4px; }
+    .deep-dive .highlight-box {
+      background: rgba(233,69,96,0.05);
+      border-left: 3px solid var(--primary);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+      margin: 14px 0;
+      font-size: 14px;
+      color: var(--text-2);
+    }
+
+    /* 对照面板 */
+    .compare-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 14px 0;
+    }
+    .compare-col {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 14px;
+      background: var(--bg-alt);
+    }
+    .compare-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .compare-col.col-a h4 { color: var(--primary); }
+    .compare-col.col-b h4 { color: var(--text-1); }
+    .compare-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-2);
+    }
+    .compare-col li { padding: 2px 0; }
+    .compare-col li::before { content: "· "; color: var(--primary); font-weight: 700; }
+
+    /* 体验指南步骤 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      counter-reset: step;
+    }
+    .guide-step {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--border);
+      counter-increment: step;
+    }
+    .guide-step:last-child { border-bottom: none; }
+    .guide-step-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .guide-step-num::before { content: counter(step); }
+    .guide-step-body { flex: 1; }
+    .guide-step-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .guide-step-body p {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary {
+      padding: 13px 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-1);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: color 0.2s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { color: var(--primary); }
+    .faq-item summary::after {
+      content: "+";
+      font-size: 20px;
+      color: var(--text-3);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after {
+      content: "−";
+      color: var(--primary);
+    }
+    .faq-item .faq-answer {
+      padding: 0 0 14px;
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.8;
+      overflow: hidden;
+    }
+
+    /* 评论 */
+    .comment-list { display: flex; flex-direction: column; gap: 0; }
+    .comment-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .comment-item:last-child { border-bottom: none; }
+    .comment-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .comment-body { flex: 1; min-width: 0; }
+    .comment-head {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+    }
+    .comment-nick {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-1);
+    }
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-3);
+    }
+    .comment-text {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.65;
+    }
+    .comment-text .at { color: var(--primary); font-weight: 500; }
+
+    /* 资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 0; }
+    .news-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+    .news-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-1);
+    }
+    .news-title:hover { color: var(--primary); }
+    .news-date {
+      font-size: 12px;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+    .news-summary {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* 相关推荐 */
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .rec-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-2);
+      background: var(--bg-alt);
+      transition: all 0.2s;
+    }
+    .rec-tag:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(233,69,96,0.04);
+    }
+    .rec-tag .rec-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* 榜单 */
+    .rank-list { display: flex; flex-direction: column; gap: 0; }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-3);
+      flex-shrink: 0;
+    }
+    .rank-num.top1 { background: var(--primary); color: #fff; }
+    .rank-num.top2 { background: #ff8a9e; color: #fff; }
+    .rank-num.top3 { background: #ffb3c0; color: #fff; }
+    .rank-name {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-1);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .rank-score {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* 右侧辅助栏 */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .side-card {
+      background: var(--bg-panel);
+      border-radius: var(--radius-card);
+      padding: 16px;
+      box-shadow: var(--shadow-default);
+    }
+    .side-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .side-news-item {
+      display: flex;
+      gap: 8px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .side-news-item:last-child { border-bottom: none; }
+    .side-news-date {
+      color: var(--text-3);
+      flex-shrink: 0;
+      font-size: 12px;
+      padding-top: 1px;
+    }
+    .side-news-title {
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .side-news-title:hover { color: var(--primary); }
+
+    .side-tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+    .side-tag-cloud a {
+      padding: 3px 10px;
+      border-radius: var(--radius-tag);
+      background: var(--bg-alt);
+      font-size: 12px;
+      color: var(--text-2);
+      transition: all 0.2s;
+    }
+    .side-tag-cloud a:hover { background: rgba(233,69,96,0.08); color: var(--primary); }
+
+    /* 页尾 */
+    .site-footer {
+      background: #1a1a2e;
+      color: rgba(255,255,255,0.7);
+      margin-top: 40px;
+      padding: 40px 24px 24px;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-brand-name span { color: var(--primary-light); }
+    .footer-tagline {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.55);
+      max-width: 300px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      padding: 3px 0;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--primary-light); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 20px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-bottom .update-note { color: rgba(255,255,255,0.5); }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      box-shadow: 0 4px 16px rgba(233,69,96,0.35);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top:hover { background: var(--primary-dark); }
+
+    /* 搜索框 */
+    .search-wrap { position: relative; margin-bottom: 14px; }
+    .search-input {
+      width: 100%;
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-family: inherit;
+      background: var(--bg-alt);
+      color: var(--text-1);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus { border-color: var(--primary); background: #fff; }
+    .search-empty {
+      display: none;
+      padding: 12px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-3);
+      background: var(--bg-alt);
+      border-radius: var(--radius-btn);
+      margin-top: 8px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .page-wrap { grid-template-columns: 1fr 240px; }
+      .channel-sidebar { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+      .hero h1 { font-size: 34px; }
+      .hero-stats { max-width: 420px; }
+      .category-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 740px) {
+      .page-wrap { grid-template-columns: 1fr; padding: 16px 14px 0; }
+      .right-sidebar { position: static; }
+      .main-nav { display: none; }
+      .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        padding: 12px 16px;
+        gap: 2px;
+        box-shadow: var(--shadow-default);
+        z-index: 98;
+        max-height: 60vh;
+        overflow-y: auto;
+      }
+      .hamburger { display: block; }
+      .header-actions .btn-submit { display: none; }
+      .hero { padding: 36px 16px 32px; }
+      .hero h1 { font-size: 28px; }
+      .hero-desc { font-size: 14px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .section { padding: 18px 14px; }
+      .card-grid { grid-template-columns: 1fr 1fr; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .compare-panel { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 20px; }
+      .announce-track { gap: 28px; }
+      .back-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+    }
+
+    @media (max-width: 480px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 24px; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" aria-label="最新公告">
+    <span class="brand-tag">黑料比赛51</span>
+    <div class="announce-track">
+      <span class="announce-item"><span class="announce-date">11月7日</span> 51号赛事裁判报告公开，第三局争议判罚细则已发布</span>
+      <span class="announce-item"><span class="announce-date">11月6日</span> 选手“阿鬼”直播回应暂停门，录像回放已置顶</span>
+      <span class="announce-item"><span class="announce-date">11月5日</span> 社区投票：42%观众认为重赛应扩大到第四局</span>
+      <span class="announce-item"><span class="announce-date">11月7日</span> 51号赛事裁判报告公开，第三局争议判罚细则已发布</span>
+      <span class="announce-item"><span class="announce-date">11月6日</span> 选手“阿鬼”直播回应暂停门，录像回放已置顶</span>
+      <span class="announce-item"><span class="announce-date">11月5日</span> 社区投票：42%观众认为重赛应扩大到第四局</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#1a1a2e"/>
+          <path d="M8 22L14 10l4 7 4-7 3 12" stroke="#e94560" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">黑料比赛<span>51</span></span>
+      </div>
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <a href="#overview">赛事概览</a>
+        <a href="#featured">精选复盘</a>
+        <a href="#updates">最新动态</a>
+        <a href="#categories">分类入口</a>
+        <a href="#deep-dive">深度解析</a>
+        <a href="#guide">观赛指南</a>
+        <a href="#faq">常见问题</a>
+        <a href="#comments">观众评论</a>
+        <a href="#news">相关资讯</a>
+        <a href="#recommend">相关推荐</a>
+        <a href="#rank">争议榜单</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-submit" type="button" onclick="document.getElementById('submit-note').scrollIntoView({behavior:'smooth'})">投稿爆料</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <circle cx="950" cy="80" r="180" fill="none" stroke="#e94560" stroke-width="1.5"/>
+        <circle cx="950" cy="80" r="120" fill="none" stroke="#e94560" stroke-width="1"/>
+        <circle cx="1050" cy="300" r="100" fill="none" stroke="#ff6b81" stroke-width="0.8"/>
+        <path d="M0 350 Q300 250 600 320 T1200 280" fill="none" stroke="#e94560" stroke-width="1.2"/>
+        <path d="M0 380 Q400 300 800 360 T1200 340" fill="none" stroke="#ff6b81" stroke-width="0.8"/>
+      </svg>
+    </div>
+    <div class="hero-inner">
+      <div>
+        <h1>黑料比赛51</h1>
+        <p class="hero-desc">
+          聚焦51号赛事第三局暂停门、裁判报告与选手复盘。汇集争议判罚的逐帧分析、社区投票结果、选手直播回应以及赛制规则变动，适合想看清比赛内幕与舆论走向的观众。
+        </p>
+        <div class="hero-actions">
+          <a class="hero-btn hero-btn-primary" href="#featured">查看精选复盘 →</a>
+          <a class="hero-btn hero-btn-outline" href="#updates">最新动态</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">11.07</div>
+          <div class="hero-stat-label">裁判报告发布日</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">42%</div>
+          <div class="hero-stat-label">支持重赛扩围投票</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">3局</div>
+          <div class="hero-stat-label">争议判罚集中局</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-num">18条</div>
+          <div class="hero-stat-label">选手与裁判回应</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容区 -->
+  <div class="page-wrap">
+
+    <!-- 左侧频道索引 -->
+    <aside class="channel-sidebar">
+      <h3>频道索引</h3>
+      <nav aria-label="频道导航">
+        <a href="#overview" class="active">赛事概览</a>
+        <a href="#featured">精选复盘</a>
+        <a href="#updates">最新动态</a>
+        <a href="#categories">分类入口</a>
+        <a href="#deep-dive">深度解析</a>
+        <a href="#guide">观赛指南</a>
+        <a href="#faq">常见问题</a>
+        <a href="#comments">观众评论</a>
+        <a href="#news">相关资讯</a>
+        <a href="#recommend">相关推荐</a>
+        <a href="#rank">争议榜单</a>
+        <a href="#submit-note">投稿爆料</a>
+      </nav>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <main class="main-content">
+
+      <!-- 1. 主题领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>赛事概览与争议脉络</h2>
+        </div>
+        <div class="overview-text">
+          <p>51号赛事在第三局出现的暂停争议，把<strong>裁判回看流程、选手设备状态、直播流信号切换</strong>三个环节推到了讨论中心。11月5日社区投票中42%的参与者认为重赛范围应覆盖第四局，而赛事组委会11月7日发布的裁判报告仅确认第三局存在“回看计时偏差”，未提及第四局。</p>
+          <p>争议的核心集中在：暂停发生时裁判是否收到完整的设备日志、选手“阿鬼”的耳机返听是否在暂停前已出现异常、以及直播流中缺失的17秒画面是否与裁判通讯频道有关。这些细节分别对应<strong>技术记录、选手口述、直播录像</strong>三类来源，彼此之间并不完全吻合。</p>
+          <p>目前公开的信息层级大致可分四层：赛事组委会的裁判报告属于官方公开事实；选手直播回应对应当事人陈述；社区逐帧分析属于网友推测；媒体转述则在不同报道间存在时间差——例如11月6日《电竞前线》的报道将暂停时长写为“约90秒”，而裁判报告写的是“94秒”。</p>
+          <p>值得关注的还有赛制变化：51号赛事从第三局起启用了新的暂停申请流程，要求选手先举手再由裁判长确认，旧流程则是选手直接向裁判示意。这一改动是否与本次争议有关，组委会尚未正面回应。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section" id="featured">
+        <div class="search-wrap">
+          <input class="search-input" type="text" id="featuredSearch" placeholder="搜索精选复盘条目…" aria-label="搜索精选复盘">
+          <div class="search-empty" id="searchEmpty">没有匹配的条目，试试“暂停”“裁判”“阿鬼”</div>
+        </div>
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>精选复盘与争议条目</h2>
+          <a class="section-more" href="#featured">共8条 →</a>
+        </div>
+        <div class="card-grid" id="featuredGrid">
+          <article class="card" data-search="第三局暂停门 裁判回看 阿鬼">
+            <img class="card-img" src="https://picsum.photos/seed/bc51-pause/400/300" alt="第三局暂停门回放画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">争议判罚</span><span class="tag tag-gray">第三局</span></div>
+              <h3 class="card-title">第三局暂停门：94秒里裁判回看了什么</h3>
+              <p class="card-desc">逐帧比对直播流与裁判报告，发现回看画面跳过了设备日志页面，直接进入地图重开选项。报告里写的“计时偏差”与此有关。</p>
+              <div class="card-meta"><span class="card-hot">热度 9.4</span><span>11月7日更新</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="阿鬼 直播回应 耳机返听">
+            <img class="card-img" src="https://picsum.photos/seed/bc51-agui/400/300" alt="选手阿鬼直播回应画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">选手回应</span><span class="tag tag-gray">直播</span></div>
+              <h3 class="card-title">阿鬼直播回应“耳机返听异常”：赛前调试已录到杂音</h3>
+              <p class="card-desc">11月6日晚直播中，阿鬼展示了赛前设备调试的录音片段，约在2分17秒处出现断续杂音。赛事方回应称该片段未纳入正式设备日志。</p>
+              <div class="card-meta"><span class="card-hot">热度 8.9</span><span>11月6日更新</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="裁判报告 计时偏差 回看流程">
+            <img class="card-img" src="https://picsum.photos/seed/bc51-report/400/300" alt="裁判报告文档截图" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">官方文件</span><span class="tag tag-gray">裁判报告</span></div>
+              <h3 class="card-title">裁判报告逐条读：四页文档里只有两处提到选手设备</h3>
+              <p class="card-desc">11月7日发布的报告共四页，涉及选手设备的描述仅出现在第2页和第4页的附注里，正文主体围绕计时流程展开。</p>
+              <div class="card-meta"><span class="card-hot">热度 8.2</span><span>11月7日更新</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="社区投票 重赛 第四局">
+            <img class="card-img" src="https://picsum.photos/seed/bc51-vote/400/300" alt="社区投票结果示意" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">社区投票</span><span class="tag tag-gray">数据</span></div>
+              <h3 class="card-title">重赛投票拆解：42%支持扩围，但样本只有1873票</h3>
+              <p class="card-desc">投票在赛事论坛进行，持续22小时。支持扩围的票数集中在第三局结束后的前6小时，后期增速明显放缓。</p>
+              <div class="card-meta"><span class="card-hot">热度 7.8</span><span>11月5日更新</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="直播流 缺失17秒 信号切换">
+            <img class="card-img" src="https://picsum.photos/seed/bc51-stream/400/300" alt="直播流信号切换画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">技术分析</span><span class="tag tag-gray">直播流</span></div>
+              <h3 class="card-title">直播流缺失的17秒：信号切换还是导播切错机位</h3>
+              <p class="card-desc">有观众逐帧发现暂停发生时直播画面从选手摄像头切到了场馆全景，音频轨也出现约1.2秒静音，与导播操作记录存在时间差。</p>
+              <div class="card-meta"><span class="card-hot">热度 7.5</span><span>11月6日更新</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="第四局 重开 赛制流程">
+            <img class="card-img" src="https://picsum.photos/seed/bc51-fourth/400/300" alt="第四局重开讨论画面" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">赛制讨论</span><span class="tag tag-gray">第四局</span></div>
+              <h3 class="card-title">第四局未重开：组委会给出的两个理由与一个未答问题</h3>
+              <p class="card-desc">组委会称“第四局开局前双方选手均确认设备正常”，且“暂停影响未延续至第四局”。但未回应第三局回看是否改变了双方战术节奏。</p>
+              <div class="card-meta"><span class="card-hot">热度 7.2</span><span>11月7日更新</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="新暂停流程 第三局 裁判长确认">
+            <img class="card-img" src="https://picsum.photos/seed/bc51-rule/400/300" alt="新暂停流程规则示意" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">规则变化</span><span class="tag tag-gray">暂停流程</span></div>
+              <h3 class="card-title">第三局起启用的新暂停流程：选手举手后裁判长确认</h3>
+              <p class="card-desc">旧流程允许选手直接向就近裁判示意，新流程要求举手后等待裁判长通过通讯频道确认。本次争议正好发生在新旧流程交替的第三局。</p>
+              <div class="card-meta"><span class="card-hot">热度 7.0</span><span>11月5日更新</span></div>
+            </div>
+          </article>
+          <article class="card" data-search="媒体转述 90秒 94秒 时间差">
+            <img class="card-img" src="https://picsum.photos/seed/bc51-media/400/300" alt="媒体报道时间差对比" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <div class="card-tags"><span class="tag">媒体对比</span><span class="tag tag-gray">报道差异</span></div>
+              <h3 class="card-title">报道里的90秒与报告里的94秒：四家媒体时间差对照</h3>
+              <p class="card-desc">《电竞前线》写“约90秒”，《竞核》写“近两分钟”，裁判报告写94秒，社区逐帧分析称从举手到回看开始为87秒，记录节点不同。</p>
+              <div class="card-meta"><span class="card-hot">热度 6.8</span><span>11月7日更新</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section class="section" id="updates">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>最新动态与进度更新</h2>
+          <a class="section-more" href="#updates">更多 →</a>
+        </div>
+        <div class="update-list">
+          <div class="update-item">
+            <span class="update-time">11月7日</span>
+            <div class="update-body">
+              <a href="#featured" class="update-title">裁判报告第四页附注公开，列出“回看计时偏差”具体秒数</a>
+              <p class="update-summary">附注显示回看启动到地图重开选项之间间隔94秒，其中裁判通讯频道占用约11秒。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11月6日</span>
+            <div class="update-body">
+              <a href="#featured" class="update-title">阿鬼直播展示赛前设备调试录音，称2分17秒处有杂音</a>
+              <p class="update-summary">直播中播放了约40秒的录音片段，杂音出现在第2分17秒至2分21秒，赛事方未确认该片段与正式日志的对应关系。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11月6日</span>
+            <div class="update-body">
+              <a href="#featured" class="update-title">观众逐帧分析直播流，发现缺失17秒画面与1.2秒音频静音</a>
+              <p class="update-summary">分析帖发布于赛事论坛，附有12张逐帧截图，导播操作记录尚未公开。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11月5日</span>
+            <div class="update-body">
+              <a href="#featured" class="update-title">社区投票结束，1873票中42%支持重赛范围扩至第四局</a>
+              <p class="update-summary">投票发起于第三局结束后约1小时，持续22小时，支持扩围的票数在前期增速较快。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11月5日</span>
+            <div class="update-body">
+              <a href="#featured" class="update-title">51号赛事第三局起启用新暂停流程，选手需举手等裁判长确认</a>
+              <p class="update-summary">旧流程允许直接向就近裁判示意。组委会未说明流程调整与本次争议的先后关系。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11月4日</span>
+            <div class="update-body">
+              <a href="#featured" class="update-title">《电竞前线》报道暂停时长“约90秒”，与裁判报告存在4秒差</a>
+              <p class="update-summary">报道引述现场观众说法，裁判报告记录为94秒，差异可能来自计时起点不同。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11月4日</span>
+            <div class="update-body">
+              <a href="#featured" class="update-title">赛事组委会发布初步声明，确认第三局存在“回看流程偏差”</a>
+              <p class="update-summary">声明共两段，未涉及第四局安排，也未提及选手设备状态。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-time">11月3日</span>
+            <div class="update-body">
+              <a href="#featured" class="update-title">第三局暂停发生时直播画面切至场馆全景，音频轨出现静音</a>
+              <p class="update-summary">多路观众录像显示切画面时间点与裁判回看启动时间基本吻合。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section" id="categories">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>按类别查找</h2>
+        </div>
+        <div class="category-grid">
+          <a class="category-item" href="#featured">
+            <span class="category-icon">⚖️</span>
+            <span class="category-name">争议判罚</span>
+            <span class="category-count">12条</span>
+          </a>
+          <a class="category-item" href="#featured">
+            <span class="category-icon">🎙️</span>
+            <span class="category-name">选手回应</span>
+            <span class="category-count">8条</span>
+          </a>
+          <a class="category-item" href="#deep-dive">
+            <span class="category-icon">📋</span>
+            <span class="category-name">裁判报告</span>
+            <span class="category-count">6条</span>
+          </a>
+          <a class="category-item" href="#featured">
+            <span class="category-icon">📡</span>
+            <span class="category-name">直播流分析</span>
+            <span class="category-count">9条</span>
+          </a>
+          <a class="category-item" href="#featured">
+            <span class="category-icon">📊</span>
+            <span class="category-name">社区投票</span>
+            <span class="category-count">5条</span>
+          </a>
+          <a class="category-item" href="#deep-dive">
+            <span class="category-icon">📜</span>
+            <span class="category-name">赛制规则</span>
+            <span class="category-count">7条</span>
+          </a>
+          <a class="category-item" href="#news">
+            <span class="category-icon">📰</span>
+            <span class="category-name">媒体报道</span>
+            <span class="category-count">11条</span>
+          </a>
+          <a class="category-item" href="#comments">
+            <span class="category-icon">💬</span>
+            <span class="category-name">观众讨论</span>
+            <span class="category-count">23条</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section class="section" id="deep-dive">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>深度解析：判罚争议里的信息层级</h2>
+        </div>
+        <div class="deep-dive">
+          <h3>三类来源为什么对不上</h3>
+          <p>裁判报告、选手直播回应、社区逐帧分析，三份材料对同一段94秒的描述存在明显缝隙。裁判报告写的是回看流程：从裁判长确认暂停到地图重开选项出现，中间经历了通讯频道确认、设备日志调取、回看画面定位三个步骤。阿鬼直播里说的是赛前设备调试录音，时间点在比赛开始之前。社区逐帧分析针对的是直播流输出画面，与裁判端的内部回看是两条不同的信号路径。</p>
+          <p>这三者对不上，根源在于记录节点不同。裁判报告记录的是裁判操作时间轴，选手录音记录的是设备状态时间轴，直播流记录的是导播输出时间轴。三条时间轴在暂停那一刻交汇，但各自的起点和刻度并不一致。比如裁判报告里的94秒从裁判长按下确认键开始算，而社区分析里的87秒从选手举手开始算，中间差了7秒的通讯频道等待时间。</p>
+          <div class="highlight-box">可核对的时间差：裁判报告94秒 vs 社区分析87秒，差值7秒落在裁判长确认前的通讯等待环节。这一差值在报告第3页有对应描述，但未与选手举手时间点做关联。</div>
+
+          <h3>新暂停流程改变了什么</h3>
+          <p>51号赛事从第三局起执行的暂停申请流程，要求选手先举手，再由裁判长通过通讯频道确认后启动回看。旧流程允许选手直接向就近裁判示意，裁判可当场决定是否暂停。这一改动在赛前技术会议上被提及，会议记录第4页列出了流程变更的三条理由：统一裁判尺度、减少误触发、便于记录时间戳。</p>
+          <p>第三局的争议恰好发生在新旧流程交替的第一局。选手举手时间、裁判长确认时间、回看启动时间三个节点在报告里都有记录，但彼此间隔未做说明。阿鬼在直播中称“举手后等了大概十几秒才收到裁判回应”，报告未记录这段等待。</p>
+          <ul>
+            <li>旧流程：选手示意 → 就近裁判判断 → 启动回看</li>
+            <li>新流程：选手举手 → 裁判长通讯确认 → 启动回看</li>
+            <li>第三局实际记录：举手时间点缺失，裁判长确认时间点有记录</li>
+          </ul>
+
+          <h3>设备日志为什么成了关键</h3>
+          <p>裁判报告第2页提到“调取设备日志未发现异常”，第4页附注写的是“设备日志调取范围限于音频输出模块”。阿鬼展示的赛前调试录音属于输入模块的杂音记录，不在报告调取范围内。两个“设备日志”指向的模块不同，报告里的“未发现异常”不能直接用来反驳阿鬼的录音片段。</p>
+          <p>赛事方11月7日的补充说明称“选手设备在赛前已通过常规检测”，但未公开检测项目清单。社区论坛上有自称赛事志愿者的账号发帖称检测清单包含耳机返听和麦克风输入两项，帖子未获官方确认，信源层级属于网友推测。</p>
+
+          <h3>重赛范围争议里的两个判断依据</h3>
+          <p>社区投票中42%支持重赛扩至第四局，依据是“第三局暂停改变了双方经济差走势”。反对扩围的票数占37%，主要理由是“第四局开局前双方均确认设备正常”。剩下21%选择“只重赛第三局”。</p>
+          <p>这两个依据的差别在于对“影响延续性”的判断。支持扩围的一方把第三局结束时的经济差作为参照点，反对的一方把第四局开局的设备确认作为分割线。裁判报告没有对经济差变化做分析，只在第3页记录了暂停前后的金币差数值：暂停前相差1.2k，暂停后相差2.8k。</p>
+          <div class="compare-panel">
+            <div class="compare-col col-a">
+              <h4>支持扩围的依据</h4>
+              <ul>
+                <li>暂停前经济差1.2k，暂停后2.8k</li>
+                <li>第三局战术节奏在暂停后明显改变</li>
+                <li>第四局开局设备确认流程未覆盖返听模块</li>
+              </ul>
+            </div>
+            <div class="compare-col col-b">
+              <h4>反对扩围的依据</h4>
+              <ul>
+                <li>第四局开局双方选手均签字确认设备正常</li>
+                <li>裁判报告未认定暂停影响延续至第四局</li>
+                <li>经济差变化在暂停前已呈扩大趋势</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 / 消费路径 -->
+      <section class="section" id="guide">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>观赛与信息判断路径</h2>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="guide-step-num"></div>
+            <div class="guide-step-body">
+              <h4>先看裁判报告原文，再看社区分析</h4>
+              <p>裁判报告是唯一带时间戳和操作记录的官方文件，四页篇幅里第2页和第4页附注信息最密。先建立官方时间轴，再对照社区逐帧分析，能快速定位分歧点在哪一秒。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num"></div>
+            <div class="guide-step-body">
+              <h4>区分“设备日志”指的是哪个模块</h4>
+              <p>报告里调取的是音频输出模块日志，阿鬼展示的是输入模块录音。看到“设备日志未发现异常”时，先确认它覆盖的范围，再判断能否用来反驳选手的录音证据。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num"></div>
+            <div class="guide-step-body">
+              <h4>用经济差数据判断影响延续性</h4>
+              <p>暂停前1.2k、暂停后2.8k的差值变化是判断第三局影响的核心数字。但需要同时看暂停前5分钟的经济差曲线，如果扩大趋势在暂停前已存在，暂停的权重就要下调。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num"></div>
+            <div class="guide-step-body">
+              <h4>直播流缺失画面单独归档</h4>
+              <p>17秒画面缺失和1.2秒音频静音属于导播输出层的问题，与裁判回看是两条线。判断时需要问：缺失画面里是否包含裁判通讯内容？导播操作记录是否公开？目前两个问题的答案都是否。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num"></div>
+            <div class="guide-step-body">
+              <h4>媒体报道作为时间线参照，不作为事实源</h4>
+              <p>《电竞前线》的“约90秒”和裁判报告的94秒之间差4秒，这类差异用来校准时间线可以，用来判断对错不够。优先采信带时间戳的原始记录。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>常见问题</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>51号赛事第三局暂停到底持续了多久？</summary>
+            <div class="faq-answer">裁判报告记录为94秒，从裁判长确认暂停到地图重开选项出现。社区逐帧分析从选手举手开始计时，得出87秒。两个数字的差值7秒落在裁判长通讯确认环节。《电竞前线》报道的“约90秒”是现场观众估算，未精确到秒。</div>
+          </details>
+          <details class="faq-item">
+            <summary>阿鬼展示的录音能证明设备有问题吗？</summary>
+            <div class="faq-answer">录音片段在2分17秒处出现断续杂音，属于输入模块记录。裁判报告调取的是音频输出模块日志，两者覆盖范围不同。录音能说明赛前调试阶段存在杂音，但不能直接推导出比赛暂停时设备仍处于异常状态——中间缺少连续监测记录。</div>
+          </details>
+          <details class="faq-item">
+            <summary>为什么第四局没有重赛？</summary>
+            <div class="faq-answer">组委会给出两个理由：第四局开局前双方选手均签字确认设备正常；裁判报告未认定暂停影响延续至第四局。未回答的问题是第三局暂停后的经济差变化（1.2k→2.8k）是否改变了第四局的战术起点。社区投票中42%的参与者认为这个影响存在。</div>
+          </details>
+          <details class="faq-item">
+            <summary>新暂停流程和这次争议有关系吗？</summary>
+            <div class="faq-answer">第三局是51号赛事启用新流程的第一局。新流程要求选手举手后等裁判长通讯确认，旧流程允许直接向就近裁判示意。争议发生时，选手举手时间点未在报告中记录，裁判长确认时间点有记录。组委会未说明流程调整与争议的因果关系。</div>
+          </details>
+          <details class="faq-item">
+            <summary>直播流缺失的17秒里有什么？</summary>
+            <div class="faq-answer">目前公开的导播操作记录只显示画面从选手摄像头切到场馆全景，音频轨静音1.2秒。缺失片段是否包含裁判通讯内容、是否拍到选手举手动作，导播记录和裁判报告均未涉及。社区分析基于12张逐帧截图推测切画面与回看启动基本同步，属于网友推测层级。</div>
+          </details>
+          <details class="faq-item">
+            <summary>裁判报告里“计时偏差”具体指什么？</summary>
+            <div class="faq-answer">报告第4页附注写明：回看启动到地图重开选项之间，裁判通讯频道占用约11秒，导致回看计时与操作时间轴出现偏差。报告将这一偏差定性为“流程性偏差”，未认定为判罚错误。第3页记录了暂停前后金币差数值：1.2k和2.8k。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>观众评论</h2>
+        </div>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="comment-avatar">电</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">电竞老猫</span><span class="comment-time">11月7日 22:14</span></div>
+              <p class="comment-text">裁判报告第4页那个附注比正文信息量大。正文四页里两页在讲流程，附注里才提设备日志调取范围。这种写法让人第一遍读完以为设备没问题。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">阿</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">阿鬼的耳机</span><span class="comment-time">11月7日 20:02</span></div>
+              <p class="comment-text">2分17秒那段杂音我反复听了，确实有断续，但录音环境和比赛环境不是一回事。直播里阿鬼自己也没说“比赛时一定有问题”，他说的是“赛前调试就有”。这个区别挺大的。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">第</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">第四局观众</span><span class="comment-time">11月7日 18:37</span></div>
+              <p class="comment-text">投票42%支持扩围，但样本1873票里有多少是第三局结束后一小时内投的？前期增速快说明情绪驱动明显。后期放缓可能才是真实比例。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">逐</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">逐帧看比赛</span><span class="comment-time">11月6日 23:51</span></div>
+              <p class="comment-text">17秒缺失画面里导播切的是场馆全景，那个机位拍不到选手台。想从画面里找裁判通讯内容基本没戏。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">路</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">路人甲不甲</span><span class="comment-time">11月6日 21:18</span></div>
+              <p class="comment-text">94秒和87秒差7秒，7秒在裁判通讯频道里。这个数字报告里有，但没跟选手举手时间对上。少一个时间戳，链条就是断的。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">经</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">经济差研究员</span><span class="comment-time">11月6日 19:44</span></div>
+              <p class="comment-text">1.2k到2.8k，暂停前后差1.6k。但第三局暂停前五分钟经济差已经在往上走了，斜率跟暂停后差不多。光看两个点不够。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">赛</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">赛制观察员</span><span class="comment-time">11月5日 22:30</span></div>
+              <p class="comment-text">新旧流程交替的第一局就出争议，组委会赛前技术会议记录里写了三条变更理由，但没写过渡期怎么处理。第三局就是过渡期。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">不</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">不想熬夜了</span><span class="comment-time">11月5日 20:11</span></div>
+              <p class="comment-text">看累了。两边都有道理，但官方报告就是不敢把设备日志调取范围写进正文。这个藏法本身比争议更让人在意。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">前</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">前赛事志愿者</span><span class="comment-time">11月5日 16:08</span></div>
+              <p class="comment-text">赛前检测清单确实分输出和输入两个模块，但志愿者培训时说的是“两个模块都查”。报告只写输出模块，不知道是写漏了还是真没查。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">录</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">录像带收藏家</span><span class="comment-time">11月4日 23:22</span></div>
+              <p class="comment-text">《电竞前线》那个“约90秒”的稿子配了现场观众采访，受访者说自己掐表算的。掐表从哪个节点开始掐？没说。这种数字拿来用要小心。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">阿</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">阿鬼路转粉</span><span class="comment-time">11月4日 21:56</span></div>
+              <p class="comment-text">以前对阿鬼无感，这次直播回应没卖惨没煽情，把自己赛前调试的录音直接放出来了。虽然不能完全证明比赛时有问题，但态度可以。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">T</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">T3导播间</span><span class="comment-time">11月4日 19:33</span></div>
+              <p class="comment-text">导播操作记录不公开这事，比画面缺失17秒严重。操作记录里有切机位的时间戳，公开了至少能确认切画面和回看启动的先后顺序。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">周</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">周三下午场</span><span class="comment-time">11月3日 22:40</span></div>
+              <p class="comment-text">第三局暂停的时候我在现场，场馆大屏黑了几秒然后切全景。当时以为就是普通技术故障，没想到后面扯出这么多。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">数</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">数据不会骗人</span><span class="comment-time">11月3日 20:17</span></div>
+              <p class="comment-text">裁判报告第2页说“未发现异常”，第4页附注说调取范围限于输出模块。这两句话放在同一份文档里，读的时候得先看完第4页再回头看第2页。排序有问题。</p>
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-avatar">摸</div>
+            <div class="comment-body">
+              <div class="comment-head"><span class="comment-nick">摸鱼看比赛</span><span class="comment-time">11月3日 15:09</span></div>
+              <p class="comment-text">说实话第三局暂停前我就在刷手机，回来发现经济差变了但不知道发生了什么。现在补完这些分析帖大概搞清楚了，不过比赛本身已经看不下去了。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>相关资讯</h2>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-head">
+              <a class="news-title" href="#featured">51号赛事组委会发布裁判报告，四页文档回应第三局暂停</a>
+              <span class="news-date">11月7日</span>
+            </div>
+            <p class="news-summary">报告首次公开回看计时数据：94秒内含11秒通讯频道占用。第4页附注写明设备日志调取范围限于音频输出模块，未覆盖输入模块。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-head">
+              <a class="news-title" href="#featured">阿鬼直播展示赛前调试录音，2分17秒处出现断续杂音</a>
+              <span class="news-date">11月6日</span>
+            </div>
+            <p class="news-summary">直播持续约40分钟，播放录音片段约40秒。阿鬼称“赛前就录到了”，赛事方回应称该片段未纳入正式设备日志，两者不构成直接冲突。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-head">
+              <a class="news-title" href="#featured">社区投票1873票：42%支持重赛扩至第四局，37%反对</a>
+              <span class="news-date">11月5日</span>
+            </div>
+            <p class="news-summary">投票在赛事论坛持续22小时，第三局结束后前6小时票数增速最快。剩余21%选择“只重赛第三局”，发起人未公开身份。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-head">
+              <a class="news-title" href="#featured">《电竞前线》报道暂停“约90秒”，与裁判报告相差4秒</a>
+              <span class="news-date">11月4日</span>
+            </div>
+            <p class="news-summary">报道引述现场观众掐表数据，未说明计时起点。裁判报告94秒从裁判长确认开始算，社区分析87秒从选手举手开始算。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-head">
+              <a class="news-title" href="#featured">51号赛事第三局起执行新暂停流程，选手需举手等裁判长确认</a>
+              <span class="news-date">11月4日</span>
+            </div>
+            <p class="news-summary">赛前技术会议记录第4页列出三条变更理由。第三局为流程切换首局，选手举手时间点未在裁判报告中记录。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-head">
+              <a class="news-title" href="#featured">直播流缺失17秒画面，导播操作记录尚未公开</a>
+              <span class="news-date">11月3日</span>
+            </div>
+            <p class="news-summary">多路观众录像显示切画面与裁判回看启动基本同步。场馆全景机位拍不到选手台，缺失片段是否含裁判通讯内容无法确认。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section" id="recommend">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>相关推荐</h2>
+        </div>
+        <div class="rec-tags">
+          <a class="rec-tag" href="#featured"><span class="rec-dot"></span>第三局回看计时偏差</a>
+          <a class="rec-tag" href="#featured"><span class="rec-dot"></span>阿鬼耳机返听录音</a>
+          <a class="rec-tag" href="#deep-dive"><span class="rec-dot"></span>裁判报告第4页附注</a>
+          <a class="rec-tag" href="#featured"><span class="rec-dot"></span>经济差1.2k到2.8k</a>
+          <a class="rec-tag" href="#guide"><span class="rec-dot"></span>新旧暂停流程对比</a>
+          <a class="rec-tag" href="#news"><span class="rec-dot"></span>四家媒体时间差对照</a>
+          <a class="rec-tag" href="#comments"><span class="rec-dot"></span>1873票样本讨论</a>
+          <a class="rec-tag" href="#featured"><span class="rec-dot"></span>直播流17秒缺失</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：争议榜单 -->
+      <section class="section" id="rank">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>争议热度榜</h2>
+          <span class="section-more">截至11月8日</span>
+        </div>
+        <div class="rank-list">
+          <div class="rank-item">
+            <span class="rank-num top1">1</span>
+            <span class="rank-name">第三局94秒回看计时偏差</span>
+            <span class="rank-score">9.4</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num top2">2</span>
+            <span class="rank-name">阿鬼赛前调试录音2分17秒杂音</span>
+            <span class="rank-score">8.9</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num top3">3</span>
+            <span class="rank-name">裁判报告设备日志调取范围</span>
+            <span class="rank-score">8.2</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">4</span>
+            <span class="rank-name">直播流17秒缺失与1.2秒静音</span>
+            <span class="rank-score">7.5</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">5</span>
+            <span class="rank-name">重赛扩围投票42%与样本量</span>
+            <span class="rank-score">7.2</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">6</span>
+            <span class="rank-name">新暂停流程第三局切换首局</span>
+            <span class="rank-score">7.0</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">7</span>
+            <span class="rank-name">经济差暂停前后1.2k→2.8k</span>
+            <span class="rank-score">6.6</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">8</span>
+            <span class="rank-name">《电竞前线》90秒与报告94秒差</span>
+            <span class="rank-score">6.2</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 投稿互动 -->
+      <section class="section" id="submit-note">
+        <div class="section-header">
+          <h2><span class="h2-accent"></span>投稿与线索提供</h2>
+        </div>
+        <div class="overview-text">
+          <p>如果你有第三局暂停前后的现场录像、裁判通讯频道录音片段，或导播操作记录截图，可以通过赛事论坛的“线索提交”版块发布。论坛要求附上拍摄时间、设备型号和原始文件哈希值，便于核对时间线。</p>
+          <p>文字线索请标注具体时间点（精确到秒）和对应画面描述。涉及选手设备状态的线索，请注明是输入模块还是输出模块的记录。11月7日之后提交的线索将并入下一次裁判报告补充说明的参考范围。</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="right-sidebar">
+      <div class="side-card">
+        <h3>关键时间线</h3>
+        <div class="side-news-item"><span class="side-news-date">11.03</span><span class="side-news-title">直播流缺失17秒画面</span></div>
+        <div class="side-news-item"><span class="side-news-date">11.04</span><span class="side-news-title">新暂停流程启用，第三局为切换首局</span></div>
+        <div class="side-news-item"><span class="side-news-date">11.05</span><span class="side-news-title">社区投票结束，42%支持扩围</span></div>
+        <div class="side-news-item"><span class="side-news-date">11.06</span><span class="side-news-title">阿鬼直播展示赛前录音</span></div>
+        <div class="side-news-item"><span class="side-news-date">11.07</span><span class="side-news-title">裁判报告发布，附注公开计时数据</span></div>
+        <div class="side-news-item"><span class="side-news-date">11.08</span><span class="side-news-title">导播操作记录仍未公开</span></div>
+      </div>
+
+      <div class="side-card">
+        <h3>热门标签</h3>
+        <div class="side-tag-cloud">
+          <a href="#featured">暂停门</a>
+          <a href="#deep-dive">裁判报告</a>
+          <a href="#featured">阿鬼</a>
+          <a href="#featured">耳机返听</a>
+          <a href="#guide">暂停流程</a>
+          <a href="#featured">经济差</a>
+          <a href="#news">电竞前线</a>
+          <a href="#comments">社区投票</a>
+          <a href="#featured">直播流</a>
+          <a href="#rank">争议榜</a>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <h3>数据速览</h3>
+        <div class="side-news-item"><span class="side-news-date">94秒</span><span class="side-news-title">裁判报告回看时长</span></div>
+        <div class="side-news-item"><span class="side-news-date">87秒</span><span class="side-news-title">社区分析举手计时</span></div>
+        <div class="side-news-item"><span class="side-news-date">11秒</span><span class="side-news-title">通讯频道占用</span></div>
+        <div class="side-news-item"><span class="side-news-date">1873</span><span class="side-news-title">社区投票样本量</span></div>
+        <div class="side-news-item"><span class="side-news-date">1.2k→2.8k</span><span class="side-news-title">暂停前后经济差</span></div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">黑料比赛<span>51</span></div>
+          <p class="footer-tagline">覆盖51号赛事第三局暂停争议的完整信息链条：从11月3日直播流异常到11月7日裁判报告发布，持续追踪选手回应、赛制调整与社区讨论。条目类型包括裁判报告附注、逐帧分析、直播片段、投票数据与媒体对照。</p>
+        </div>
+        <div class="footer-col">
+          <h4>内容栏目</h4>
+          <a href="#overview">赛事概览</a>
+          <a href="#featured">精选复盘</a>
+          <a href="#updates">最新动态</a>
+          <a href="#deep-dive">深度解析</a>
+        </div>
+        <div class="footer-col">
+          <h4>互动与线索</h4>
+          <a href="#comments">观众评论</a>
+          <a href="#submit-note">投稿爆料</a>
+          <a href="#faq">常见问题</a>
+          <a href="#rank">争议榜单</a>
+        </div>
+        <div class="footer-col">
+          <h4>数据与参考</h4>
+          <a href="#news">相关资讯</a>
+          <a href="#guide">观赛指南</a>
+          <a href="#recommend">相关推荐</a>
+          <a href="#categories">分类入口</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 黑料比赛51 · 内容聚合示例页面</span>
+        <span class="update-note">页面更新：2026年11月8日 · 对应裁判报告11月7日发布</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 移动端菜单
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mainNav = document.getElementById('mainNav');
+      hamburger.addEventListener('click', function() {
+        var isOpen = mainNav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        hamburger.textContent = isOpen ? '✕' : '☰';
+      });
+      // 点击导航后收起
+      mainNav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.textContent = '☰';
+          }
+        });
+      });
+      // Esc 关闭
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+          mainNav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.textContent = '☰';
+        }
+      });
+
+      // 回到顶部
+      var backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backTop.classList.add('show');
+        } else {
+          backTop.classList.remove('show');
+        }
+      });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 精选搜索
+      var searchInput = document.getElementById('featuredSearch');
+      var featuredGrid = document.getElementById('featuredGrid');
+      var searchEmpty = document.getElementById('searchEmpty');
+      if (searchInput && featuredGrid) {
+        var cards = Array.prototype.slice.call(featuredGrid.querySelectorAll('.card'));
+        searchInput.addEventListener('input', function() {
+          var q = this.value.trim().toLowerCase();
+          var visible = 0;
+          cards.forEach(function(card) {
+            var text = (card.getAttribute('data-search') || '') + ' ' + card.textContent.toLowerCase();
+            var match = q === '' || text.indexOf(q) !== -1;
+            card.style.display = match ? '' : 'none';
+            if (match) visible++;
+          });
+          searchEmpty.style.display = (q !== '' && visible === 0) ? 'block' : 'none';
+        });
+      }
+
+      // 侧栏频道高亮
+      var sections = document.querySelectorAll('main section[id]');
+      var channelLinks = document.querySelectorAll('.channel-sidebar nav a');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.id;
+            channelLinks.forEach(function(link) {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
+          }
+        });
+      }, { rootMargin: '-20% 0px -60% 0px' });
+      sections.forEach(function(s) { observer.observe(s); });
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "黑料比赛51",
+    "description": "聚合51号赛事争议判罚、选手回应与社区讨论的内容页面",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "51号赛事第三局暂停到底持续了多久？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "裁判报告记录为94秒，从裁判长确认暂停到地图重开选项出现。社区逐帧分析从选手举手开始计时，得出87秒。两个数字的差值7秒落在裁判长通讯确认环节。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "阿鬼展示的录音能证明设备有问题吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "录音片段在2分17秒处出现断续杂音，属于输入模块记录。裁判报告调取的是音频输出模块日志，两者覆盖范围不同，不能直接推导出比赛暂停时设备仍处于异常状态。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "为什么第四局没有重赛？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "组委会给出两个理由：第四局开局前双方选手均签字确认设备正常；裁判报告未认定暂停影响延续至第四局。社区投票中42%的参与者认为经济差变化影响了第四局战术起点。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "新暂停流程和这次争议有关系吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "第三局是51号赛事启用新流程的第一局。新流程要求选手举手后等裁判长通讯确认，旧流程允许直接向就近裁判示意。组委会未说明流程调整与争议的因果关系。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "直播流缺失的17秒里有什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "导播操作记录只显示画面从选手摄像头切到场馆全景，音频轨静音1.2秒。缺失片段是否包含裁判通讯内容，导播记录和裁判报告均未涉及。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "裁判报告里“计时偏差”具体指什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "报告第4页附注写明：回看启动到地图重开选项之间，裁判通讯频道占用约11秒，导致回看计时与操作时间轴出现偏差。报告将这一偏差定性为流程性偏差，未认定为判罚错误。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+  </html>
